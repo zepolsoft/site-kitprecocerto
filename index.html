@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de preço para manicure · Kit Preço Certo</title>
+<meta name="description" content="Planilha grátis para manicures calcularem o preço de cada serviço: custo da hora, material, taxa da maquininha e lucro.">
+<meta property="og:title" content="Quanto cobrar em cada serviço? Calculadora grátis para manicures"><meta property="og:description" content="Coloque seus custos e veja o preço sugerido e o lucro de cada serviço."><meta property="og:image" content="capa.jpg"><meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><div class="wrap"><a class="brand" href="./"><img src="favicon.png" alt="">Kit Preço Certo</a></div></header>
+
+<div class="wrap hero">
+  <div>
+    <h1>Quanto cobrar em cada serviço <em>sem trabalhar no prejuízo?</em></h1>
+    <p class="sub">Calculadora de preço para manicures, em planilha. Você coloca seus custos e o tempo de cada serviço, e ela mostra o preço sugerido e quanto sobra de lucro.</p>
+    <ul class="ok">
+      <li>Descobre <b>quanto custa a sua hora</b> de trabalho</li>
+      <li>Soma material, tempo, taxa da maquininha e uma reserva</li>
+      <li>Avisa quando o preço atual está <b>abaixo do custo</b></li>
+      <li>Gera uma <b>tabela de preços</b> pronta para divulgar</li>
+    </ul>
+  </div>
+  <div class="card" id="baixar">
+    <h2>Baixar a calculadora grátis</h2>
+    <p class="s">Deixe seus dados e libere o download na hora.</p>
+    <form id="f" novalidate>
+      <label for="nome">Seu nome</label>
+      <input id="nome" name="nome" type="text" autocomplete="given-name" required>
+      <label for="zap">Seu WhatsApp (com DDD)</label>
+      <input id="zap" name="zap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" required>
+      <div class="chk"><input id="ok" type="checkbox" required><label for="ok" style="margin:0;font-weight:400">Concordo em receber a calculadora e mensagens sobre o Kit Preço Certo no WhatsApp. Posso sair quando quiser. <a href="privacidade.html">Política de privacidade</a>.</label></div>
+      <button id="b" type="submit">Quero a calculadora grátis</button>
+      <div class="err" id="e" role="alert"></div>
+    </form>
+  </div>
+</div>
+
+<section class="alt"><div class="wrap">
+  <h2 class="t">Como funciona (10 minutos)</h2>
+  <div class="steps">
+    <div class="step"><b class="n">1</b><br><b>Seus custos</b><br>Aluguel, luz, imposto, o quanto você quer tirar por mês e suas horas de trabalho.</div>
+    <div class="step"><b class="n">2</b><br><b>Seus serviços</b><br>Tempo, material gasto e o preço que você cobra hoje em cada um.</div>
+    <div class="step"><b class="n">3</b><br><b>O resultado</b><br>Preço sugerido, lucro por serviço e um aviso quando o preço não cobre o custo.</div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="t">Um exemplo do que a planilha mostra</h2>
+  <div class="scroll"><table>
+    <tr><th>Serviço</th><th>Cobra hoje</th><th>Preço sugerido</th><th>Situação</th></tr>
+    <tr><td>Mão + pé</td><td>R$ 60</td><td>R$ 72</td><td class="bad">Prejuízo</td></tr>
+    <tr><td>Blindagem</td><td>R$ 90</td><td>R$ 84</td><td class="good">OK</td></tr>
+    <tr><td>Alongamento em gel</td><td>R$ 180</td><td>R$ 145</td><td class="good">OK</td></tr>
+  </table></div>
+  <p class="note">Exemplo ilustrativo, com custos de exemplo. Na sua planilha, os números saem dos seus próprios custos. A calculadora mostra a conta do preço; não promete ganho nem resultado, que dependem dos seus custos e da sua demanda.</p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2 class="t">Perguntas frequentes</h2>
+  <details><summary>É grátis mesmo?</summary><p>Sim. A calculadora é gratuita. Depois dela, podemos avisar sobre o Kit Preço Certo completo, e você decide se quer.</p></details>
+  <details><summary>Preciso saber Excel?</summary><p>Não. Você só preenche as células amarelas. Funciona no Excel e no Google Planilhas (pelo celular, use o app Planilhas).</p></details>
+  <details><summary>Serve para qualquer serviço de unha?</summary><p>Sim: esmaltação, gel, blindagem, alongamento, manutenção, pedicure... Você cadastra os seus serviços.</p></details>
+  <details><summary>O que fazem com o meu contato?</summary><p>Usamos para entregar a calculadora e enviar avisos do Kit Preço Certo. Não vendemos seus dados. Detalhes na <a href="privacidade.html">política de privacidade</a>.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+<p><a href="privacidade.html">Política de privacidade</a></p>
+<p>Kit Preço Certo · CNPJ 39.680.100/0001-41</p>
+<p>Ferramenta de apoio ao cálculo de preços; não substitui orientação contábil.</p>
+</div></footer>
+
+<script>
+// URL do webhook do n8n que recebe os cadastros. Enquanto vazio, o formulário só libera o download.
+var WEBHOOK_URL="";
+var f=document.getElementById('f'),b=document.getElementById('b'),e=document.getElementById('e');
+f.addEventListener('submit',function(ev){
+  ev.preventDefault(); e.textContent='';
+  var nome=f.nome.value.trim(), zap=f.zap.value.replace(/\D/g,'');
+  if(nome.length<2){e.textContent='Digite seu nome.';return;}
+  if(zap.length<10||zap.length>13){e.textContent='Digite seu WhatsApp com DDD.';return;}
+  if(!f.ok.checked){e.textContent='Marque a caixinha para continuar.';return;}
+  b.disabled=true; b.textContent='Liberando...';
+  var go=function(){location.href='obrigado.html';}, done=false;
+  var once=function(){if(!done){done=true;go();}};
+  if(!WEBHOOK_URL){once();return;}
+  setTimeout(once,2500);
+  try{fetch(WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},
+    body:JSON.stringify({nome:nome,whatsapp:zap,consentimento:true,origem:'site-kitprecocerto',data:new Date().toISOString()}),keepalive:true}).then(once,once);}catch(x){once();}
+});
+</script>
+</body></html>
