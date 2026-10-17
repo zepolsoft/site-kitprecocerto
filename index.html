@@ -6,35 +6,81 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"></head><body>
+<link rel="stylesheet" href="style.css?v=5">
+<script>document.documentElement.className+=' js';</script></head><body>
+
+<!-- ícones -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-polish" viewBox="0 0 24 24"><rect x="6.5" y="11" width="11" height="10" rx="3.2"/><rect x="9.5" y="3.5" width="5" height="5" rx="1.4"/><path d="M10.5 8.5v2.5M13.5 8.5v2.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.4c-.6-.9-1.6-1.4-2.8-1.4-1.7 0-2.8.9-2.8 2.1s1 1.7 2.9 2.1 2.9.9 2.9 2.1-1.1 2.1-2.9 2.1c-1.3 0-2.4-.6-3-1.5M12 5.8V8M12 16v2.2"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7a1 1 0 0 1 .7.3l8 8a1 1 0 0 1 0 1.4l-7.7 7.7a1 1 0 0 1-1.4 0l-8-8a1 1 0 0 1-.3-.7z"/><circle cx="8" cy="8" r="1.3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.2l9.5 16.6H2.5z"/><path d="M12 9.8v4.6M12 17.4v.4"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><rect x="5" y="3.2" width="14" height="17.6" rx="2.2"/><path d="M9 8.5h6M9 12.5h6M9 16.5h3.6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M15.5 17H21v-5.5"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9.2 18.5h5.6M10.2 21h3.6"/><path d="M12 3a6 6 0 0 0-3.9 10.6c.7.7 1.1 1.4 1.1 2.4h5.6c0-1 .4-1.7 1.1-2.4A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l2.3 6.2L21 12l-6.7 2.8L12 21l-2.3-6.2L3 12l6.7-2.8z"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3.5" y="9" width="17" height="11" rx="2"/><path d="M12 9v11M3.5 13h17M12 9c-1.5-4.5-5.5-4-5.5-1.5S10.5 9 12 9zm0 0c1.5-4.5 5.5-4 5.5-1.5S13.5 9 12 9z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M3.5 9h17M9 9v11M3.5 14.5h17"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.4"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5h16v10H10l-4.5 4v-4H4z"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M12 21c-4.4 0-7-2.8-7-6.5V9.2a1.6 1.6 0 0 1 3.2 0V12V5.6a1.6 1.6 0 0 1 3.2 0V11V4.8a1.6 1.6 0 0 1 3.2 0V11V6.4a1.6 1.6 0 0 1 3.2 0V14.5c0 3.7-2.6 6.5-6.8 6.5z"/></symbol>
+</defs></svg>
 
 <header><div class="wrap"><a class="brand" href="./"><img src="favicon.png" alt="">Kit Preço Certo</a></div></header>
 
 <!-- 1. HERO -->
 <div class="wrap hero">
   <div>
-    <span class="badge">🎁 100% grátis · Planilha para manicures</span>
+    <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="#9a7a1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gift"/></svg>100% grátis · Planilha para manicures</span>
     <h1>Pare de perder dinheiro <em>em cada atendimento.</em></h1>
-    <p class="sub">A calculadora grátis que mostra, em minutos, quanto você precisa cobrar para cobrir material, tempo, aluguel e maquininha, e ainda sobrar lucro. 💅</p>
+    <p class="sub">A calculadora grátis que mostra, em minutos, quanto você precisa cobrar para cobrir material, tempo, aluguel e maquininha, e ainda sobrar lucro.</p>
     <ul class="ok">
       <li>Preço sugerido para cada serviço seu</li>
       <li>Aviso quando um preço está dando prejuízo</li>
       <li>Tabela de preços pronta para postar</li>
     </ul>
-    <div class="trust"><span>✅ Sem cartão</span><span>📱 Excel e Google Planilhas</span><span>⚡ Download na hora</span></div>
-    <div class="mock">
-      <div class="scroll"><table>
-        <tr><th>Serviço</th><th>Cobra hoje</th><th>Sugerido</th><th>Situação</th></tr>
-        <tr><td>Mão + pé</td><td>R$ 60</td><td>R$ 72</td><td class="bad">Prejuízo</td></tr>
-        <tr><td>Blindagem</td><td>R$ 90</td><td>R$ 84</td><td class="good">OK</td></tr>
-      </table></div>
-      <p class="note">Exemplo ilustrativo, com custos de exemplo.</p>
+    <div class="trust">
+      <span><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>Sem cartão</span>
+      <span><svg viewBox="0 0 24 24"><use href="#i-sheet"/></svg>Excel e Google Planilhas</span>
+      <span><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg>Download na hora</span>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 440 230" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="220" cy="205" rx="200" ry="18" fill="#F4B6CC" opacity=".55"/>
+        <g class="float">
+          <rect x="84" y="92" width="86" height="108" rx="26" fill="#C2185B"/>
+          <rect x="95" y="106" width="11" height="74" rx="5.5" fill="#fff" opacity=".35"/>
+          <rect x="110" y="72" width="34" height="24" fill="#fff"/>
+          <rect x="99" y="22" width="56" height="56" rx="12" fill="#3A0A26"/>
+          <rect x="112" y="30" width="6" height="40" rx="3" fill="#6b2348"/><rect x="124" y="30" width="6" height="40" rx="3" fill="#6b2348"/><rect x="136" y="30" width="6" height="40" rx="3" fill="#6b2348"/>
+        </g>
+        <g class="float b">
+          <rect x="186" y="68" width="96" height="132" rx="28" fill="#F48FB1"/>
+          <rect x="198" y="84" width="12" height="92" rx="6" fill="#fff" opacity=".4"/>
+          <rect x="216" y="46" width="38" height="26" fill="#fff"/>
+          <rect x="203" y="-4" width="64" height="56" rx="13" fill="#C9A24B"/>
+          <rect x="218" y="4" width="6" height="40" rx="3" fill="#E3C57A"/><rect x="232" y="4" width="6" height="40" rx="3" fill="#E3C57A"/><rect x="246" y="4" width="6" height="40" rx="3" fill="#E3C57A"/>
+        </g>
+        <g class="float c">
+          <rect x="298" y="112" width="74" height="88" rx="24" fill="#E8A5BF"/>
+          <rect x="308" y="124" width="9" height="56" rx="4.5" fill="#fff" opacity=".4"/>
+          <rect x="322" y="96" width="26" height="20" fill="#fff"/>
+          <rect x="312" y="52" width="46" height="48" rx="11" fill="#3A0A26"/>
+        </g>
+        <g class="float b"><circle cx="396" cy="60" r="30" fill="#C9A24B"/><circle cx="396" cy="60" r="23" fill="none" stroke="#F3E3B6" stroke-width="2.5"/><text x="396" y="68" text-anchor="middle" font-family="Poppins,Arial" font-weight="700" font-size="21" fill="#fff">R$</text></g>
+        <path class="tw" d="M40 60l5 14 14 5-14 5-5 14-5-14-14-5 14-5z" fill="#C9A24B"/>
+        <path class="tw b" d="M410 150l3.5 9.5 9.5 3.5-9.5 3.5-3.5 9.5-3.5-9.5-9.5-3.5 9.5-3.5z" fill="#C2185B"/>
+        <path class="tw" d="M30 150l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#F48FB1"/>
+      </svg>
     </div>
   </div>
 
   <div class="card" id="baixar">
     <h2>Receba a calculadora agora</h2>
-    <p class="s">Leva menos de 20 segundos. 💗</p>
+    <p class="s">Leva menos de 20 segundos.</p>
     <form class="lead-form" novalidate>
       <label for="nome1">Seu nome</label>
       <input id="nome1" name="nome" type="text" autocomplete="given-name" enterkeyhint="next" required>
@@ -44,64 +90,92 @@
       <button type="submit">Quero minha calculadora grátis</button>
       <div class="err" role="alert"></div>
     </form>
-    <p class="micro">🔒 Grátis e sem cartão. Seu WhatsApp é usado só para enviar a calculadora e avisos do Kit.</p>
+    <p class="micro">Grátis e sem cartão. Seu WhatsApp é usado só para enviar a calculadora e avisos do Kit.</p>
   </div>
 </div>
 
 <!-- 2. DOR -->
 <section class="nude pain"><div class="wrap">
-  <div class="center"><h2>Será que você se reconhece aqui?</h2></div>
+  <div class="center rv"><h2>Será que você se reconhece aqui?</h2></div>
   <div class="grid g2">
-    <div class="tile"><div class="ic">😩</div><div><b>Trabalha o dia inteiro</b><span>e no fim do mês o dinheiro parece que some.</span></div></div>
-    <div class="tile"><div class="ic">🏷️</div><div><b>Cobra o que “todo mundo cobra”</b><span>sem saber se o preço paga o seu custo.</span></div></div>
-    <div class="tile"><div class="ic">🧴</div><div><b>Não sabe quanto gasta de material</b><span>em cada esmaltação, gel ou alongamento.</span></div></div>
-    <div class="tile"><div class="ic">💡</div><div><b>Esquece custos escondidos</b><span>aluguel, luz, internet, maquininha e o seu próprio tempo.</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg></div><div><b>Trabalha o dia inteiro</b><span>e no fim do mês o dinheiro parece que some.</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-tag"/></svg></div><div><b>Cobra o que “todo mundo cobra”</b><span>sem saber se o preço paga o seu custo.</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-polish"/></svg></div><div><b>Não sabe quanto gasta de material</b><span>em cada esmaltação, gel ou alongamento.</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-bulb"/></svg></div><div><b>Esquece custos escondidos</b><span>aluguel, luz, internet, maquininha e o seu próprio tempo.</span></div></div>
   </div>
-  <p class="bridge">Não é falta de talento. É falta da conta certa.</p>
+  <p class="bridge rv">Não é falta de talento. É falta da conta certa.</p>
 </div></section>
 
 <!-- 3. BENEFÍCIOS -->
 <section><div class="wrap">
-  <div class="center"><h2>O que a calculadora faz por você</h2><p class="lead">Você preenche as células amarelas. Ela faz a conta.</p></div>
+  <div class="center rv"><h2>O que a calculadora faz por você</h2><p class="lead">Você preenche as células amarelas. Ela faz a conta.</p></div>
   <div class="grid g3">
-    <div class="tile"><div class="ic">🧴</div><div><b>Custo do material</b><span>quanto você gasta em cada serviço</span></div></div>
-    <div class="tile"><div class="ic">⏱️</div><div><b>Valor do seu tempo</b><span>quanto custa a sua hora de trabalho</span></div></div>
-    <div class="tile"><div class="ic">💰</div><div><b>Lucro de cada serviço</b><span>o que realmente sobra no seu bolso</span></div></div>
-    <div class="tile"><div class="ic">✨</div><div><b>Preço sugerido</b><span>já com maquininha e uma reserva</span></div></div>
-    <div class="tile"><div class="ic">⚠️</div><div><b>Alerta de prejuízo</b><span>avisa quando o preço está abaixo do custo</span></div></div>
-    <div class="tile"><div class="ic">📋</div><div><b>Tabela para divulgar</b><span>pronta para Instagram e WhatsApp</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-polish"/></svg></div><div><b>Custo do material</b><span>quanto você gasta em cada serviço</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg></div><div><b>Valor do seu tempo</b><span>quanto custa a sua hora de trabalho</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-coin"/></svg></div><div><b>Lucro de cada serviço</b><span>o que realmente sobra no seu bolso</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></div><div><b>Preço sugerido</b><span>já com maquininha e uma reserva</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-alert"/></svg></div><div><b>Alerta de prejuízo</b><span>avisa quando o preço está abaixo do custo</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-list"/></svg></div><div><b>Tabela para divulgar</b><span>pronta para Instagram e WhatsApp</span></div></div>
   </div>
 </div></section>
 
 <!-- 4. COMO FUNCIONA -->
 <section class="blush"><div class="wrap">
-  <div class="center"><h2>Como receber: 3 passos</h2></div>
+  <div class="center rv"><h2>Como receber: 3 passos</h2></div>
   <div class="grid g3">
-    <div class="step"><div class="n">1</div><br><b>Preencha nome e WhatsApp</b><small>Leva menos de 20 segundos.</small></div>
-    <div class="step"><div class="n">2</div><br><b>Baixe a calculadora</b><small>Abre no Excel ou no Google Planilhas.</small></div>
-    <div class="step"><div class="n">3</div><br><b>Descubra quanto cobrar</b><small>Coloque seus custos (cerca de 10 minutos) e veja o preço de cada serviço.</small></div>
+    <div class="step rv"><div class="n">1</div><b>Preencha nome e WhatsApp</b><small>Leva menos de 20 segundos.</small></div>
+    <div class="step rv"><div class="n">2</div><b>Baixe a calculadora</b><small>Abre no Excel ou no Google Planilhas.</small></div>
+    <div class="step rv"><div class="n">3</div><b>Descubra quanto cobrar</b><small>Coloque seus custos (cerca de 10 minutos) e veja o preço de cada serviço.</small></div>
   </div>
-  <p class="center" style="margin-top:22px"><a class="btn" href="#baixar" style="display:inline-block;width:auto;padding:14px 30px">Quero minha calculadora grátis</a></p>
+  <div class="cta-row"><a class="btn shine" href="#baixar">Quero minha calculadora grátis</a></div>
 </div></section>
 
-<!-- 5. PROVA: A CALCULADORA EM AÇÃO -->
-<section><div class="wrap">
-  <div class="center"><h2>Veja a conta acontecendo</h2><p class="lead">Um exemplo de como a planilha mostra onde o dinheiro está escapando.</p></div>
-  <div class="scroll" style="margin-top:24px"><table>
-    <tr><th>Serviço</th><th>Cobra hoje</th><th>Preço sugerido</th><th>Situação</th></tr>
-    <tr><td>Mão + pé</td><td>R$ 60</td><td>R$ 72</td><td class="bad">Prejuízo</td></tr>
-    <tr><td>Blindagem</td><td>R$ 90</td><td>R$ 84</td><td class="good">OK</td></tr>
-    <tr><td>Alongamento em gel</td><td>R$ 180</td><td>R$ 145</td><td class="good">OK</td></tr>
-  </table></div>
-  <p class="note">Exemplo ilustrativo, com custos de exemplo. Na sua planilha, os números saem dos seus próprios custos. A calculadora mostra a conta do preço e não promete ganho: o resultado depende dos seus custos e da sua demanda.</p>
-  <div class="callout">💡 Neste exemplo, “mão + pé” a R$ 60 custa mais do que rende. Sem fazer a conta, a manicure não percebe.</div>
-  <div class="chips"><span>💅 Manicure</span><span>🎨 Nail designer</span><span>🌱 Quem está começando</span><span>🏠 Quem atende em casa</span></div>
+<!-- 5. DEMONSTRAÇÃO (celular animado) -->
+<section id="demo"><div class="wrap">
+  <div class="center rv"><h2>Veja a conta acontecendo</h2><p class="lead">Quando a cliente pergunta o preço, você responde com segurança.</p></div>
+  <div class="demo">
+    <div class="rv">
+      <div class="phone" aria-label="Simulação de conversa e cálculo de preço">
+        <div class="notch"></div>
+        <div class="scr">
+          <div class="ph-head"><span class="av">C</span><div><b>Camila</b><small>cliente · online</small></div></div>
+          <div class="ph-body">
+            <div class="msg in" id="m1">Oi! Quanto fica mão + pé? 💅</div>
+            <div class="typing" id="ty"><i></i><i></i><i></i></div>
+            <div class="msg out" id="m2">Fica R$ 60 😊</div>
+            <div class="flag" id="f1">Atenção: nesse preço você perde R$ 3,83</div>
+            <div class="msg out" id="m3">Corrigindo: fica R$ 72 ✨</div>
+            <div class="flag ok" id="f2">Preço certo: cobre tudo e sobra lucro</div>
+          </div>
+          <div class="calc" id="calc">
+            <h4>Calculadora Preço Certo</h4>
+            <div class="row" id="r1"><span>Material gasto</span><b>R$ 8,00</b></div>
+            <div class="row" id="r2"><span>Seu tempo (90 min)</span><b>R$ 53,43</b></div>
+            <div class="row" id="r3"><span>Maquininha + reserva</span><b>R$ 10,57</b></div>
+            <div class="total" id="tt"><div><small>Preço sugerido</small><small>mão + pé</small></div><b id="pv">R$ 60</b></div>
+          </div>
+        </div>
+      </div>
+      <p class="note center">Simulação ilustrativa, com valores de exemplo.</p>
+    </div>
+    <div class="demo-txt rv">
+      <h3>Sem a conta, o prejuízo fica invisível.</h3>
+      <p>Neste exemplo, o serviço de “mão + pé” a R$ 60 custa mais do que rende. A calculadora mostra isso na hora e sugere o preço que cobre material, tempo e taxas.</p>
+      <div class="legend">
+        <div><i style="background:#C2185B"></i>Material, tempo e taxas somados automaticamente</div>
+        <div><i style="background:#C9A24B"></i>Preço sugerido arredondado para cima</div>
+        <div><i style="background:#1b7a4a"></i>Alerta quando o preço atual está abaixo do custo</div>
+      </div>
+      <p class="note">Os números saem dos seus próprios custos. A calculadora mostra a conta do preço e não promete ganho: o resultado depende dos seus custos e da sua demanda.</p>
+    </div>
+  </div>
+  <div class="chips rv"><span>Manicure</span><span>Nail designer</span><span>Quem está começando</span><span>Quem atende em casa</span></div>
   <!-- Quando você tiver depoimentos REAIS, com autorização por escrito de quem os deu, inserir aqui. Não publique depoimentos inventados. -->
 </div></section>
 
 <!-- FAQ -->
 <section class="nude"><div class="wrap" style="max-width:760px">
-  <div class="center"><h2>Perguntas frequentes</h2></div>
+  <div class="center rv"><h2>Perguntas frequentes</h2></div>
   <div style="margin-top:22px">
   <details><summary>É grátis mesmo?</summary><p>Sim. A calculadora é gratuita, sem cartão. Depois, podemos avisar sobre o Kit Preço Certo completo, e você decide se quer.</p></details>
   <details><summary>Preciso saber Excel?</summary><p>Não. Você só preenche as células amarelas. Funciona no Excel e no Google Planilhas (no celular, use o app Planilhas).</p></details>
@@ -112,11 +186,13 @@
 
 <!-- 6. CTA FINAL -->
 <section class="final" id="final"><div class="wrap center">
-  <h2>Cada semana cobrando errado é dinheiro que fica na mesa.</h2>
-  <p class="lead">Pare de trabalhar muito para ganhar pouco. Em cerca de 10 minutos você descobre o seu preço certo.</p>
-  <div class="card">
+  <svg class="spk tw" style="left:6%;top:14%" width="36" height="36" viewBox="0 0 24 24" fill="#F3E3B6" aria-hidden="true"><use href="#i-spark" stroke="none"/></svg>
+  <svg class="spk tw b" style="right:8%;top:30%" width="26" height="26" viewBox="0 0 24 24" fill="#F4B6CC" aria-hidden="true"><use href="#i-spark" stroke="none"/></svg>
+  <h2 class="rv">Cada semana cobrando errado é dinheiro que fica na mesa.</h2>
+  <p class="lead rv">Pare de trabalhar muito para ganhar pouco. Em cerca de 10 minutos você descobre o seu preço certo.</p>
+  <div class="card rv">
     <h3>Baixe a calculadora grátis</h3>
-    <p class="s">Leva menos de 20 segundos. 💗</p>
+    <p class="s">Leva menos de 20 segundos.</p>
     <form class="lead-form" novalidate>
       <label for="nome2">Seu nome</label>
       <input id="nome2" name="nome" type="text" autocomplete="given-name" required>
@@ -131,7 +207,11 @@
 
 <!-- 7. RODAPÉ -->
 <footer><div class="wrap">
-  <div class="fbadges"><span>🎁 Entrega gratuita</span><span>🔒 Seu WhatsApp protegido</span><span>💬 <a href="https://wa.me/5511916960280" target="_blank" rel="noopener">Suporte no WhatsApp</a></span></div>
+  <div class="fbadges">
+    <span><svg viewBox="0 0 24 24"><use href="#i-gift"/></svg>Entrega gratuita</span>
+    <span><svg viewBox="0 0 24 24"><use href="#i-lock"/></svg>Seu WhatsApp protegido</span>
+    <span><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg><a href="https://wa.me/5511916960280" target="_blank" rel="noopener">Suporte no WhatsApp</a></span>
+  </div>
   <p><a href="privacidade.html">Política de privacidade</a></p>
   <p>Kit Preço Certo · CNPJ 39.680.100/0001-41</p>
   <p>Ferramenta de apoio ao cálculo de preços; não substitui orientação contábil.</p>
@@ -143,7 +223,7 @@
 // URL do webhook do n8n que recebe os cadastros. Enquanto vazio, o formulário só libera o download.
 var WEBHOOK_URL="";
 
-// Máscara de telefone (11) 90000-0000
+/* Máscara de telefone */
 document.querySelectorAll('input[name=zap]').forEach(function(i){
   i.addEventListener('input',function(){
     var d=i.value.replace(/\D/g,'').slice(0,11), o=d;
@@ -153,6 +233,7 @@ document.querySelectorAll('input[name=zap]').forEach(function(i){
   });
 });
 
+/* Formulários */
 document.querySelectorAll('form.lead-form').forEach(function(f){
   f.addEventListener('submit',function(ev){
     ev.preventDefault();
@@ -170,7 +251,7 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
   });
 });
 
-// Barra fixa no celular: aparece quando o formulário do topo sai da tela
+/* Barra fixa no celular */
 (function(){
   var s=document.getElementById('sticky'), top=document.getElementById('baixar'), fin=document.getElementById('final');
   if(!('IntersectionObserver' in window)||!s)return;
@@ -178,6 +259,49 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
   function upd(){s.classList.toggle('show',!vis.top&&!vis.fin);}
   new IntersectionObserver(function(e){vis.top=e[0].isIntersecting;upd();}).observe(top);
   new IntersectionObserver(function(e){vis.fin=e[0].isIntersecting;upd();}).observe(fin);
+})();
+
+/* Entrada suave dos blocos */
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(x){x.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
+  els.forEach(function(x){io.observe(x);});
+})();
+
+/* Celular animado: conversa + cálculo (loop, só roda quando visível) */
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var ids=['m1','ty','m2','f1','m3','f2'], calc=$('calc'), rows=['r1','r2','r3','tt'], pv=$('pv'), timers=[];
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function at(ms,fn){timers.push(setTimeout(fn,ms));}
+  function reset(){timers.forEach(clearTimeout);timers=[];ids.forEach(function(i){$(i).classList.remove('show');});
+    rows.forEach(function(i){$(i).classList.remove('show');});calc.classList.remove('up');pv.textContent='R$ 60';}
+  function count(from,to,ms){var t0=null;function st(t){if(!t0)t0=t;var p=Math.min((t-t0)/ms,1);pv.textContent='R$ '+Math.round(from+(to-from)*p);if(p<1)requestAnimationFrame(st);}requestAnimationFrame(st);}
+  function final(){ids.forEach(function(i){if(i!=='ty'&&i!=='m2'&&i!=='f1')$(i).classList.add('show');});pv.textContent='R$ 72';}
+  function play(){
+    reset();
+    at(500,function(){$('m1').classList.add('show');});
+    at(1700,function(){$('ty').classList.add('show');});
+    at(2900,function(){$('ty').classList.remove('show');$('m2').classList.add('show');});
+    at(3900,function(){$('calc').classList.add('up');});
+    at(4700,function(){$('r1').classList.add('show');});
+    at(5300,function(){$('r2').classList.add('show');});
+    at(5900,function(){$('r3').classList.add('show');});
+    at(6500,function(){$('tt').classList.add('show');count(60,72,900);});
+    at(7900,function(){$('calc').classList.remove('up');$('f1').classList.add('show');});
+    at(9100,function(){$('m3').classList.add('show');});
+    at(10100,function(){$('f2').classList.add('show');});
+    at(14200,play);
+  }
+  var ph=document.querySelector('.phone'); if(!ph)return;
+  if(reduce){final();calc.classList.add('up');rows.forEach(function(i){$(i).classList.add('show');});return;}
+  if(!('IntersectionObserver' in window)){play();return;}
+  var on=false;
+  new IntersectionObserver(function(e){
+    if(e[0].isIntersecting&&!on){on=true;play();}
+    else if(!e[0].isIntersecting&&on){on=false;reset();}
+  },{threshold:.35}).observe(ph);
 })();
 </script>
 </body></html>
