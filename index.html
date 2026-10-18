@@ -240,7 +240,7 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     var e=f.querySelector('.err'), b=f.querySelector('button'); e.textContent='';
     var nome=f.elements.nome.value.trim(), zap=f.elements.zap.value.replace(/\D/g,'');
     if(nome.length<2){e.textContent='Digite seu nome.';f.elements.nome.focus();return;}
-    if(zap.length<10||zap.length>11){e.textContent='Digite seu WhatsApp com DDD.';f.elements.zap.focus();return;}
+    if(!/^[1-9][1-9]9\d{8}$/.test(zap)){e.textContent='Digite seu WhatsApp com DDD, com 11 números. Ex.: (11) 91234-5678';f.elements.zap.focus();return;}
     if(!f.elements.ok.checked){e.textContent='Marque a caixinha para continuar.';return;}
     b.disabled=true; b.textContent='Liberando sua calculadora...';
     var done=false, go=function(){if(!done){done=true;location.href='obrigado.html';}};
