@@ -9,10 +9,10 @@
 <h1>Pronto! Sua calculadora está liberada 💅</h1>
 <p class="sub">Baixe a planilha e siga os 3 passos da primeira aba.</p>
 <div class="dl-box" id="dlbox">
-<a class="btn" id="dl" href="Calculadora-Preco-Certo.xlsx" download>Baixar para Excel (computador)</a>
+<a class="btn" id="dl" href="Calculadora-Preco-Certo.xlsx" download>Baixar a calculadora (Excel)</a>
 <a class="btn ig" id="gs" href="#" target="_blank" rel="noopener" hidden>Abrir no Google Planilhas (celular)</a>
 </div>
-<p class="note-s" id="dlhint" style="margin-top:10px" hidden>É a mesma calculadora. No celular, o Google Planilhas é mais fácil de editar. No computador, use o Excel.</p>
+<p class="note-s" id="dlhint" style="margin-top:10px">Funciona melhor no computador ou notebook (Excel ou Google Planilhas). No celular dá para usar, mas é mais trabalhoso de editar.</p>
 <div class="card" style="margin-top:22px">
 <h2>Como usar</h2>
 <ul class="ok"><li>Preencha só as células <b>amarelas</b>. Os números que já estão lá são exemplos.</li>
@@ -30,7 +30,7 @@ var dl=document.getElementById("dl"), gs=document.getElementById("gs"), box=docu
 function go(){setTimeout(function(){location.href="valeu.html";},900);}
 dl.addEventListener("click",go);
 if(GSHEET_URL){
-  gs.href=GSHEET_URL; gs.hidden=false; document.getElementById("dlhint").hidden=false; gs.addEventListener("click",go);
+  gs.href=GSHEET_URL; gs.hidden=false; gs.addEventListener("click",go);
   var mobile=window.matchMedia("(pointer:coarse)").matches||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   if(mobile){ box.insertBefore(gs,dl); gs.classList.remove("ig"); dl.classList.add("ig"); }
 }
