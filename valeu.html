@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valeu! · Kit Preço Certo</title><meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=8"></head><body>
+<header><div class="wrap"><a class="brand" href="./"><img src="favicon.png" alt="">Kit Preço Certo</a></div></header>
+<div class="wrap" style="max-width:640px;padding-bottom:60px">
+<h1>Tudo certo! Sua calculadora está baixando.</h1>
+<p class="sub">Se o download não começou, <a href="Calculadora-Preco-Certo.xlsx" download style="color:var(--magenta);font-weight:600">clique aqui para baixar de novo</a>.</p>
+<div class="card" style="margin-top:22px">
+<h2>Siga o Kit Preço Certo no Instagram</h2>
+<p class="sub" style="margin:8px 0 18px">Vamos postar dicas curtas de preço para manicures. Siga para não perder.</p>
+<a class="btn" href="https://www.instagram.com/kit.preco.certo/" target="_blank" rel="noopener">Seguir @kit.preco.certo</a>
+</div>
+<p class="count" id="count">Voltando para a página principal em <b id="n">5</b> segundos. <a href="#" id="stay">Ficar aqui</a></p>
+</div>
+<footer><div class="wrap"><p><a href="privacidade.html">Política de privacidade</a></p><p>Kit Preço Certo · CNPJ 39.680.100/0001-41</p></div></footer>
+<script>
+(function(){
+  var n=5, el=document.getElementById("n"), box=document.getElementById("count"), t;
+  t=setInterval(function(){ n--; el.textContent=n; if(n<=0){clearInterval(t); location.href="./";} },1000);
+  document.getElementById("stay").addEventListener("click",function(e){ e.preventDefault(); clearInterval(t); box.textContent="Tudo bem, você pode ficar. A página principal está no topo, em “Kit Preço Certo”."; });
+})();
+</script>
+</body></html>
