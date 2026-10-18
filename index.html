@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calculadora de preço grátis para manicures · Kit Preço Certo</title>
-<meta name="description" content="Calculadora grátis para manicures descobrirem quanto cobrar em cada serviço: material, tempo, aluguel, maquininha e lucro. Planilha para Excel e Google Planilhas.">
-<meta property="og:title" content="Como calcular o preço certo das suas unhas sem trabalhar no prejuízo. Calculadora grátis para manicures"><meta property="og:description" content="Descubra em minutos quanto cobrar em cada serviço."><meta property="og:image" content="capa.jpg"><meta property="og:type" content="website">
+<title>Calculadora de preço grátis para serviços · Kit Preço Certo</title>
+<meta name="description" content="Calculadora grátis para você descobrir quanto cobrar em cada serviço: material, tempo, aluguel, maquininha e lucro. Planilha para Excel e Google Planilhas.">
+<meta property="og:title" content="Como calcular o preço certo dos seus serviços sem trabalhar no prejuízo. Calculadora grátis"><meta property="og:description" content="Descubra em minutos quanto cobrar em cada serviço."><meta property="og:image" content="capa.jpg"><meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 <script>document.documentElement.className+=' js';</script></head><body>
 
 <!-- ícones -->
@@ -34,8 +34,8 @@
 <!-- 1. HERO -->
 <div class="wrap hero">
   <div>
-    <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="#9a7a1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gift"/></svg>Ferramenta grátis · Planilha para manicures</span>
-    <h1>Como calcular o preço certo das suas unhas <em>sem trabalhar no prejuízo</em></h1>
+    <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="#9a7a1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gift"/></svg>Ferramenta grátis · Planilha de preços</span>
+    <h1>Como calcular o preço certo dos seus serviços <em>sem trabalhar no prejuízo</em></h1>
     <p class="sub">Ferramenta prática em planilha: você preenche as células amarelas e ela mostra quanto cobrar em cada serviço para cobrir material, tempo, aluguel e maquininha, e ainda sobrar lucro.</p>
     <ul class="ok">
       <li>Preço sugerido para cada serviço seu</li>
@@ -99,6 +99,9 @@
   </div>
   <div class="cta-row center rv" style="margin-top:30px"><a class="btn" href="#baixar">Quero a minha grátis</a></div>
 </div></section>
+
+<!-- slot do formulário no celular -->
+<div class="wrap" id="form-slot"></div>
 
 <!-- 2. DOR -->
 <section class="blush pain"><div class="wrap">
@@ -309,6 +312,15 @@ document.querySelectorAll('.peek-tabs button').forEach(function(b){
     document.querySelectorAll('.peek-pane').forEach(function(p){p.classList.toggle('on',p.id===b.getAttribute('data-p'));});
   });
 });
+/* Celular: formulário logo depois do "Veja por dentro" */
+(function(){
+  var card=document.getElementById('baixar'), slot=document.getElementById('form-slot'), hero=document.querySelector('.hero');
+  if(!card||!slot||!hero||!window.matchMedia)return;
+  var mq=matchMedia('(max-width:860px)'), home=card.parentNode;
+  function place(){ if(mq.matches){slot.appendChild(card);} else if(card.parentNode!==home){home.appendChild(card);} }
+  place(); (mq.addEventListener?mq.addEventListener('change',place):mq.addListener(place));
+})();
+
 /* Barra fixa no celular */
 (function(){
   var s=document.getElementById('sticky'), top=document.getElementById('baixar'), fin=document.getElementById('final');

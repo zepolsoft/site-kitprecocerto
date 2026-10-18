@@ -192,3 +192,5 @@ footer a{color:#fff}
 /* DOWNLOAD (2 botões) */
 .btn[hidden]{display:none}
 .dl-box{display:flex;flex-direction:column;gap:12px}
+
+#form-slot:empty{display:none}#form-slot{padding:0 20px 40px}#form-slot .card{scroll-margin-top:16px}
