@@ -3,12 +3,16 @@
 <title>Sua calculadora · Kit Preço Certo</title><meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10"></head><body>
+<link rel="stylesheet" href="style.css?v=11"></head><body>
 <header><div class="wrap"><a class="brand" href="./"><img src="favicon.png" alt="">Kit Preço Certo</a></div></header>
 <div class="wrap" style="max-width:640px;padding-bottom:60px">
 <h1>Pronto! Sua calculadora está liberada 💅</h1>
 <p class="sub">Baixe a planilha e siga os 3 passos da primeira aba.</p>
-<a class="btn" id="dl" href="Calculadora-Preco-Certo.xlsx" download>Baixar a calculadora (Excel)</a>
+<div class="dl-box" id="dlbox">
+<a class="btn" id="dl" href="Calculadora-Preco-Certo.xlsx" download>Baixar para Excel (computador)</a>
+<a class="btn ig" id="gs" href="#" target="_blank" rel="noopener" hidden>Abrir no Google Planilhas (celular)</a>
+</div>
+<p class="note-s" id="dlhint" style="margin-top:10px" hidden>É a mesma calculadora. No celular, o Google Planilhas é mais fácil de editar. No computador, use o Excel.</p>
 <div class="card" style="margin-top:22px">
 <h2>Como usar</h2>
 <ul class="ok"><li>Preencha só as células <b>amarelas</b>. Os números que já estão lá são exemplos.</li>
@@ -20,6 +24,15 @@
 </div>
 <footer><div class="wrap"><p><a href="privacidade.html">Política de privacidade</a></p><p>Kit Preço Certo · CNPJ 39.680.100/0001-41</p></div></footer>
 <script>
-document.getElementById("dl").addEventListener("click",function(){setTimeout(function(){location.href="valeu.html";},900);});
+// Link "Fazer uma cópia" do Google Planilhas (termina em /copy). Enquanto vazio, o botão fica escondido.
+var GSHEET_URL="";
+var dl=document.getElementById("dl"), gs=document.getElementById("gs"), box=document.getElementById("dlbox");
+function go(){setTimeout(function(){location.href="valeu.html";},900);}
+dl.addEventListener("click",go);
+if(GSHEET_URL){
+  gs.href=GSHEET_URL; gs.hidden=false; document.getElementById("dlhint").hidden=false; gs.addEventListener("click",go);
+  var mobile=window.matchMedia("(pointer:coarse)").matches||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if(mobile){ box.insertBefore(gs,dl); gs.classList.remove("ig"); dl.classList.add("ig"); }
+}
 </script>
 </body></html>

@@ -188,3 +188,7 @@ footer a{color:#fff}
 .count{color:var(--mut);margin-top:18px}
 .count a{color:var(--magenta)}
 .btn.ig{background:#fff;color:var(--magenta);border:2px solid var(--magenta);box-shadow:none}
+
+/* DOWNLOAD (2 botões) */
+.btn[hidden]{display:none}
+.dl-box{display:flex;flex-direction:column;gap:12px}
