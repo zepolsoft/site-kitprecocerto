@@ -13,13 +13,14 @@
 <p class="sub" style="margin:8px 0 18px">Vamos postar dicas curtas de preço para manicures. Siga para não perder.</p>
 <a class="btn" href="https://www.instagram.com/kit.preco.certo/" target="_blank" rel="noopener">Seguir @kit.preco.certo</a>
 </div>
-<p class="count" id="count">Voltando para a página principal em <b id="n">5</b> segundos. <a href="#" id="stay">Ficar aqui</a></p>
+<p class="count" id="count">Voltando para a página principal em <b id="n">60</b> segundos. <a href="#" id="stay">Ficar aqui</a></p>
 </div>
 <footer><div class="wrap"><p><a href="privacidade.html">Política de privacidade</a></p><p>Kit Preço Certo · CNPJ 39.680.100/0001-41</p></div></footer>
 <script>
 (function(){
-  var n=5, el=document.getElementById("n"), box=document.getElementById("count"), t;
+  var n=60, el=document.getElementById("n"), box=document.getElementById("count"), t;
   t=setInterval(function(){ n--; el.textContent=n; if(n<=0){clearInterval(t); location.href="./";} },1000);
+  document.querySelector('a[href*="instagram.com"]').addEventListener("click",function(){ clearInterval(t); box.textContent="Boa! Quando terminar no Instagram, a página principal está no topo, em “Kit Preço Certo”."; });
   document.getElementById("stay").addEventListener("click",function(e){ e.preventDefault(); clearInterval(t); box.textContent="Tudo bem, você pode ficar. A página principal está no topo, em “Kit Preço Certo”."; });
 })();
 </script>
