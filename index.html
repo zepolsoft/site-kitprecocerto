@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=13">
+<link rel="stylesheet" href="style.css?v=16">
 <script>document.documentElement.className+=' js';</script></head><body>
 
 <!-- ícones -->
@@ -329,6 +329,15 @@ document.querySelectorAll('.peek-tabs button').forEach(function(b){
   var mq=matchMedia('(max-width:860px)'), home=card.parentNode;
   function place(){ if(mq.matches){slot.appendChild(card);} else if(card.parentNode!==home){home.appendChild(card);} }
   place(); (mq.addEventListener?mq.addEventListener('change',place):mq.addListener(place));
+})();
+
+/* Prévia com parte de baixo borrada (curiosidade) */
+(function(){
+  document.querySelectorAll('.hero-win img, .peek-pane img').forEach(function(img){
+    var w=document.createElement('span'); w.className='bz'+(img.classList.contains('narrow')?' narrow':'');
+    var under=img.cloneNode(false); under.className=(img.className?img.className+' ':'')+'bu'; under.alt=''; under.setAttribute('aria-hidden','true'); under.removeAttribute('loading');
+    img.parentNode.insertBefore(w,img); w.appendChild(under); w.appendChild(img); img.classList.add('bs');
+  });
 })();
 
 /* Barra fixa no celular */
