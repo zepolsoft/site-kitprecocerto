@@ -276,6 +276,18 @@ document.querySelectorAll('input[name=zap]').forEach(function(i){
   });
 });
 
+/* Origem do lead (?o=ig na bio do Instagram) */
+var ORIGEM=(function(){
+  var map={ig:'instagram-bio',igs:'instagram-stories',igr:'instagram-reels',igp:'instagram-posts',wa:'whatsapp'};
+  function clean(v){return String(v||'').toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,30);}
+  var o='';
+  try{var q=new URLSearchParams(location.search);o=clean(q.get('o')||q.get('utm_source'));}catch(e){}
+  try{ if(o){sessionStorage.setItem('kpc_o',o);} else {o=sessionStorage.getItem('kpc_o')||'';} }catch(e){}
+  if(!o){try{ if(/instagram\.com/i.test(document.referrer)) o='instagram-link'; }catch(e){}}
+  if(!o) return 'site-direto';
+  return map[o]||o;
+})();
+
 /* Formulários */
 document.querySelectorAll('form.lead-form').forEach(function(f){
   f.addEventListener('submit',function(ev){
@@ -290,7 +302,7 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     if(!WEBHOOK_URL){go();return;}
     setTimeout(go,2500);
     try{fetch(WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},
-      body:JSON.stringify({nome:nome,whatsapp:zap,consentimento:true,origem:'site-kitprecocerto',data:new Date().toISOString()}),keepalive:true}).then(go,go);}catch(x){go();}
+      body:JSON.stringify({nome:nome,whatsapp:zap,consentimento:true,origem:ORIGEM,data:new Date().toISOString()}),keepalive:true}).then(go,go);}catch(x){go();}
   });
 });
 
