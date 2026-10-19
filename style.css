@@ -325,3 +325,16 @@ section.nude{background:linear-gradient(160deg,rgba(255,246,220,.85),rgba(249,23
 .top,.pain,.final{background-size:230% 230%,230% 230%,230% 230%;background-position:calc(var(--p) * 100%) calc(10% + var(--p) * 80%),calc(100% - var(--p) * 100%) calc(var(--p) * 100%),calc(var(--p) * 100%) calc(var(--p) * 100%)}
 section.pain,.final{background-size:230% 230%;background-position:calc(var(--p) * 100%) calc(var(--p) * 100%)}
 @media(prefers-reduced-motion:reduce){body::before{transform:none}}
+
+/* ===== a cor muda de leve conforme a rolagem (tom entre rosa, vinho e dourado) ===== */
+:root{--hv:calc(330 + var(--p) * 12);--ht:calc(335 + var(--p) * 75)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,hsla(var(--ht),95%,72%,.16),hsla(calc(var(--ht) + 25),95%,80%,.10))}
+.top,.pain,.final{background-image:
+  radial-gradient(circle at 85% 8%,hsla(calc(var(--hv) + 6),100%,66%,.38),transparent 46%),
+  linear-gradient(160deg,hsl(var(--hv),66%,22%),hsl(calc(var(--hv) + 2),68%,32%) 62%,hsl(calc(var(--hv) + 6),78%,43%) 135%);
+  background-size:auto,auto}
+.top,.pain,.final{background-position:0 0,0 0}
+.final{background-image:
+  radial-gradient(circle at 15% 0,hsla(calc(var(--hv) + 6),100%,66%,.4),transparent 48%),
+  linear-gradient(160deg,hsl(var(--hv),66%,22%),hsl(calc(var(--hv) + 2),68%,32%) 62%,hsl(calc(var(--hv) + 6),78%,43%) 135%)}
+.pain{background-image:linear-gradient(160deg,hsl(var(--hv),66%,22%),hsl(calc(var(--hv) + 2),68%,32%) 62%,hsl(calc(var(--hv) + 6),78%,43%) 135%)}
