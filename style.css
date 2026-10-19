@@ -379,3 +379,23 @@ button:not(.peek-tabs button):active,.btn:not(.s):not(.o):not(.ig):active{transf
 button:after{display:block}
 .peek-tabs button{animation:none}
 @media(prefers-reduced-motion:reduce){button,.btn{animation:none!important}}
+
+/* ===== v6: titulo igual ao flyer (MEGA HAIR): fonte condensada media, rosa brilhante "cromado", centralizado, enfeite de coracao, tarja rosa embaixo ===== */
+:root{--disp:Oswald,Anton,"Bebas Neue",Impact,"Arial Narrow",sans-serif}
+h1,h2{font-family:var(--disp)}
+h2{font-family:Poppins,system-ui,sans-serif}
+.ornt{display:flex;align-items:center;justify-content:center;gap:12px;margin:6px 0 10px}
+.ornt i{flex:1;max-width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(255,170,215,.8))}
+.ornt i:last-child{background:linear-gradient(270deg,transparent,rgba(255,170,215,.8))}
+.ornt svg{width:26px;height:26px;fill:none;stroke:#FF8EC6;stroke-width:1.8;stroke-linejoin:round;filter:drop-shadow(0 0 8px rgba(255,79,163,.8))}
+.top h1{font-family:var(--disp);font-weight:700;text-align:center;text-transform:uppercase;letter-spacing:.025em;line-height:1.02;font-size:clamp(2.1rem,10.5vw,3.7rem);
+  background:linear-gradient(180deg,#FFE3F1 0%,#FFB4D8 34%,#FF86C2 49%,#F3509E 51%,#E02D86 78%,#C2185B 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 1px 0 #9C1049) drop-shadow(0 2px 0 #7d1148) drop-shadow(0 0 16px rgba(255,120,190,.65))}
+.top h1 em{display:block;text-align:center;font-family:var(--script);font-weight:700;font-size:.78em;margin-top:2px;letter-spacing:0;text-transform:none;-webkit-text-fill-color:#fff;color:#fff;background:none;filter:none;text-shadow:0 0 16px rgba(255,150,205,.8)}
+.top .badge.pillbar{display:flex;width:100%;max-width:520px;margin:14px auto 18px;justify-content:center;background:linear-gradient(180deg,#FFA6D0,#F25DA6 55%,#E3338A);border:1.5px solid rgba(255,255,255,.55);box-shadow:inset 0 2px 0 rgba(255,255,255,.45),0 10px 24px rgba(233,30,120,.4);font-size:.82rem;letter-spacing:.07em;padding:11px 18px;border-radius:999px;text-shadow:0 1px 2px rgba(120,0,60,.35)}
+@media(min-width:861px){.top .hero>div:first-child{text-align:center}.top .hero>div:first-child .sub,.top .hero>div:first-child ul.ok,.top .hero>div:first-child .trust{text-align:left}.top .hero>div:first-child ul.ok{display:inline-block}}
+.top .card,.top .card label,.top .card .chk label{color:var(--ink)}
+.top .card .s,.top .card .micro,.top .card .chk,.top .card .chk label{color:var(--mut)}
+.top .card .err{color:var(--bad)}
+@media(min-width:861px){.top .hero>div:first-child ul.ok{display:block}}
