@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=18">
 <script>document.documentElement.className+=' js';</script></head><body>
 
 <!-- ícones -->
@@ -143,15 +143,16 @@
   <div class="center rv"><h2>Teste agora: quanto cobrar em um serviço?</h2><p class="lead">Mexa nos números e veja a conta acontecer. A planilha faz isso para <b>todos</b> os seus serviços de uma vez.</p></div>
   <div class="sim rv">
     <div class="sim-in">
-      <label for="s-t">Tempo do serviço (minutos)</label><input id="s-t" type="text" inputmode="numeric" value="90" autocomplete="off">
+      <label for="s-t">Tempo do serviço (minutos)</label><input id="s-t" type="text" inputmode="numeric" value="60" autocomplete="off">
       <label for="s-m">Material gasto (R$)</label><input id="s-m" type="text" inputmode="decimal" value="8" autocomplete="off">
       <label for="s-h">Custo da sua hora (R$)</label><input id="s-h" type="text" inputmode="decimal" value="35,62" autocomplete="off">
-      <label for="s-p">Quanto você cobra hoje (R$)</label><input id="s-p" type="text" inputmode="decimal" value="60" autocomplete="off">
+      <label for="s-p">Quanto você cobra hoje (R$)</label><input id="s-p" type="text" inputmode="decimal" value="40" autocomplete="off">
       <p class="sim-help">Não sabe o custo da sua hora? A planilha calcula para você, na aba “Meu custo por hora”.</p>
     </div>
     <div class="sim-out" aria-live="polite">
       <small>Preço sugerido para este serviço</small>
-      <strong id="s-r">R$ 72</strong>
+      <strong id="s-r">R$ 51</strong>
+      <div class="sim-steps" id="s-steps"></div>
       <p id="s-msg"></p>
       <a class="btn" href="#baixar">Quero isso para todos os meus serviços</a>
     </div>
@@ -305,13 +306,18 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     var T=num(el['s-t'].value),M=num(el['s-m'].value),H=num(el['s-h'].value),P=num(el['s-p'].value);
     var r=document.getElementById('s-r'),m=document.getElementById('s-msg');
     if(!(T>0&&T<=720)||isNaN(M)||M<0||!(H>0)||H>100000||M>100000){r.textContent='R$ --';m.textContent='Preencha tempo, material e custo da hora.';return;}
-    var cost=T/60*H+M, price=Math.ceil(cost/(1-0.04-0.10));
+    var tempo=T/60*H, cost=tempo+M, price=Math.ceil(cost/(1-0.04-0.10));
     r.textContent=brl(price,0);
+    var st=document.getElementById('s-steps');
+    st.innerHTML='<div><span>Seu tempo ('+T+' min)</span><b>'+brl(tempo,2)+'</b></div>'
+      +'<div><span>+ Material</span><b>'+brl(M,2)+'</b></div>'
+      +'<div class="tot"><span>= O serviço custa para você</span><b>'+brl(cost,2)+'</b></div>'
+      +'<div class="why">Para pagar a maquininha (4%) e ainda guardar uma reserva (10%), o preço precisa ficar acima do custo: '+brl(cost,2)+' ÷ 0,86 = '+brl(cost/0.86,2)+', arredondado para '+brl(price,0)+'.</div>';
     if(isNaN(P)||P<=0){m.textContent='Informe quanto você cobra hoje para comparar.';return;}
-    var lucro=P*(1-0.04)-cost;
-    if(P>=price)m.textContent='Seu preço de hoje ('+brl(P,2)+') cobre os custos e a margem.';
-    else if(lucro<0)m.textContent='Hoje você perde '+brl(-lucro,2)+' em cada atendimento deste serviço.';
-    else m.textContent='Hoje sobram só '+brl(lucro,2)+' neste serviço, com pouca folga.';
+    var taxa=P*0.04, liq=P-taxa, lucro=liq-cost;
+    if(P>=price)m.textContent='Cobrando '+brl(P,2)+', o preço cobre os custos e a margem.';
+    else if(lucro<0)m.textContent='Cobrando '+brl(P,2)+', a maquininha leva '+brl(taxa,2)+' e sobram '+brl(liq,2)+'. Como o serviço custa '+brl(cost,2)+', você perde '+brl(-lucro,2)+' a cada atendimento.';
+    else m.textContent='Cobrando '+brl(P,2)+', sobram só '+brl(lucro,2)+' depois da maquininha e dos custos. Pouca folga.';
   }
   ids.forEach(function(i){el[i].addEventListener('input',run);}); run();
 })();
