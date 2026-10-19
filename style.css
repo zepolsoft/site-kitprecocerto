@@ -74,7 +74,7 @@ section.nude{background:var(--nude)} section.blush{background:var(--blush)}
 .tile b{display:block;margin-bottom:2px}
 .tile span{color:var(--mut);font-size:.93rem}
 .pain .tile{border-left:4px solid var(--rose)}
-.bridge{margin-top:26px;text-align:center;font-family:"Playfair Display",Georgia,serif;font-size:1.35rem;color:var(--magenta);font-weight:700}
+.bridge{margin-top:30px;text-align:center;font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.6rem,6.8vw,2.05rem);line-height:1.25;color:var(--magenta);font-weight:700;padding:0 6px}
 .step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;position:relative}
 .step .n{display:inline-flex;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--magenta));color:#fff;align-items:center;justify-content:center;font-weight:700;margin-bottom:10px}
 .step b{display:block}.step small{display:block;color:var(--mut);margin-top:6px;font-size:.9rem}
@@ -128,7 +128,9 @@ summary{font-weight:600;cursor:pointer}
 details p{margin:8px 0 0;color:var(--mut)}
 .final{background:linear-gradient(160deg,var(--magenta-d),var(--magenta));color:#fff;position:relative;overflow:hidden}
 .final h2{color:#fff}.final .lead{color:#FCE9F0}
-.final .card{max-width:460px;margin:26px auto 0;text-align:left;position:relative}
+.final .card{max-width:460px;margin:26px auto 0;text-align:left;position:relative;color:var(--ink)}
+.final .card label,.final .card .chk label{color:var(--ink)}
+.final .card .s{color:var(--mut)}
 .final .spk{position:absolute;opacity:.5}
 footer{background:var(--ink);color:#E9C5D6;font-size:.85rem;padding:30px 0;text-align:center}
 footer a{color:#fff}
