@@ -439,3 +439,11 @@ a.badge.pillbar .go{font-style:normal;font-size:1.2em;line-height:1;animation:kp
 a.badge.pillbar span{white-space:nowrap}
 @media(max-width:430px){a.badge.pillbar{font-size:.68rem;letter-spacing:.04em;padding:11px 14px;gap:8px}a.badge.pillbar svg{width:18px;height:18px}a.badge.pillbar .gr{padding:1px 8px}}
 @media(max-width:560px){a.badge.pillbar .pp{display:none}a.badge.pillbar{font-size:.8rem;letter-spacing:.07em;justify-content:center}a.badge.pillbar .go{margin-left:4px}}
+
+/* ===== v10: fonte do titulo mais redonda e feminina (Fredoka), no lugar da condensada ===== */
+:root{--disp:Fredoka,Poppins,system-ui,sans-serif}
+.top h1 .tt{font-family:var(--disp);font-weight:700;letter-spacing:.01em;font-size:1em}
+.top h1{font-size:clamp(1.9rem,8.6vw,3.2rem);line-height:1.08}
+h1,h2{font-family:var(--disp)}
+h2{font-family:Poppins,system-ui,sans-serif}
+.top h1 em{font-size:1em}
