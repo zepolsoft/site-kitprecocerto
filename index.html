@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=57">
+<link rel="stylesheet" href="style.css?v=59">
 <script>document.documentElement.className+=' js';</script></head><body>
 
 <!-- ícones -->
@@ -39,11 +39,11 @@
     <p class="eyebrow">Você sabe quanto custa a sua hora de trabalho?</p>
     <h1><span class="tt">Calcule o <b>preço certo</b> dos seus serviços</span> <em>Com a calculadora que ajuda você a não ter prejuízo</em></h1>
     <a class="badge pillbar" href="#baixar"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-gift"/></svg><span>Ferramenta <b class="gr">GRÁTIS</b><span class="pp"> · Planilha de preços</span></span><i class="go">→</i></a>
-    <p class="sub">Em poucos minutos você descobre quanto cobrar em cada serviço, cobrindo material, tempo, aluguel e maquininha, e ainda sobrando lucro.</p>
+    <p class="sub">Em poucos minutos você monta a <b>sua tabela de preços</b>: cada serviço com o valor certo, cobrindo material, tempo, aluguel e maquininha, e ainda sobrando lucro.</p>
     <ul class="ok">
-      <li>Preço sugerido para cada serviço seu</li>
-      <li>Aviso quando um preço está dando prejuízo</li>
-      <li>Tabela de preços pronta para postar</li>
+      <li>Tabela de preços pronta para postar no Instagram e WhatsApp</li>
+      <li>Preço de cada serviço sem prejuízo e com lucro</li>
+      <li>Aviso quando um preço está abaixo do seu custo</li>
     </ul>
     <a class="try" href="#simule">Quer ver antes de baixar? <b>Teste a conta aqui ↓</b></a>
     <div class="trust">
@@ -51,15 +51,23 @@
       <span><svg viewBox="0 0 24 24"><use href="#i-sheet"/></svg>Excel e versão para celular</span>
       <span><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg>Download na hora</span>
     </div>
-    <div class="hero-win">
-      <div class="peek-bar"><i></i><i></i><i></i><span>Calculadora-Preco-Certo.xlsx</span></div>
-      <img src="prev-painel.jpg" width="1400" height="966" alt="Painel da calculadora com o custo da hora, quantos serviços dão prejuízo e um gráfico do preço de hoje contra o preço sugerido (valores de exemplo)">
-    </div>
+    <figure class="hero-tab" aria-label="Exemplo de tabela de preços gerada pela calculadora (valores de exemplo)">
+      <div class="ht-h">Tabela de preços</div>
+      <ul>
+        <li><span>Esmaltação simples (mão)</span><b>R$ 36,00</b></li>
+        <li><span>Mão + pé</span><b>R$ 72,00</b></li>
+        <li><span>Esmaltação em gel (mão)</span><b>R$ 70,00</b></li>
+        <li><span>Alongamento em gel</span><b>R$ 180,00</b></li>
+      </ul>
+      <div class="ht-ok"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>Nenhum serviço no prejuízo</div>
+      <figcaption>Exemplo da tabela que você recebe. Os valores são ilustrativos.</figcaption>
+    </figure>
+    
   </div>
 
   <div class="card" id="baixar">
-    <h2>Receba a calculadora agora</h2>
-    <p class="s">Leva menos de 20 segundos.</p>
+    <h2>Receba a calculadora grátis</h2>
+    <p class="s">Monte a sua tabela de preços sem prejuízo. Leva menos de 20 segundos.</p>
     <form class="lead-form" novalidate>
       <label for="nome1">Seu nome</label>
       <input id="nome1" name="nome" type="text" autocomplete="given-name" enterkeyhint="next" required>
@@ -75,9 +83,20 @@
 
 </div><!-- /top -->
 
+<!-- 1a. O GANHO -->
+<section class="gain"><div class="wrap">
+  <div class="center rv"><h2>O que muda depois que você usa</h2><p class="lead">Você sai do preço “no chute” para uma tabela que cobre todos os custos.</p></div>
+  <div class="ba">
+    <div class="ba-c bad rv"><h3>Hoje</h3><ul><li>Preço no chute ou copiado de outra pessoa</li><li>Não sabe se o dinheiro sobra no fim do mês</li><li>Desconto dado sem saber o quanto custa</li></ul></div>
+    <div class="ba-c good rv"><h3>Com a calculadora</h3><ul><li><b>Tabela de preços pronta</b> para postar</li><li>Cada preço cobre material, tempo e custos, com lucro</li><li>Aviso na hora se um serviço está dando prejuízo</li></ul></div>
+  </div>
+  <p class="ba-m rv"><svg viewBox="0 0 24 24"><use href="#i-sheet"/></svg><span>Na versão para celular, a calculadora gera a <b>imagem da tabela e o texto</b> prontos para postar no Instagram e mandar no WhatsApp.</span></p>
+  <div class="cta-row center rv"><a class="btn" href="#baixar">Quero a minha tabela sem prejuízo</a></div>
+</div></section>
+
 <!-- 1b. ESPIADINHA (prévia borrada) -->
 <section class="tease"><div class="wrap">
-  <div class="center rv"><h2>Uma espiadinha no que você vai receber</h2><p class="lead">Dois pedaços da calculadora. O resto você vê logo abaixo.</p></div>
+  <div class="center rv"><h2>Uma espiadinha no que você vai receber</h2><p class="lead">Do custo da sua hora até a tabela pronta. O resto você vê logo abaixo.</p></div>
   <div class="tease-grid">
     <figure class="tz rv"><div class="tz-img"><img class="b" src="prev-custo.jpg" width="872" height="585" alt="" aria-hidden="true"><img class="s" src="prev-custo.jpg" width="872" height="585" alt="Passo 1 da calculadora: quanto custa a sua hora (valores de exemplo)"></div><figcaption><b>Passo 1</b> · descubra quanto custa a sua hora</figcaption></figure>
     <figure class="tz rv"><div class="tz-img"><img class="b" src="prev-tabela2.jpg" width="404" height="340" alt="" aria-hidden="true"><img class="s" src="prev-tabela2.jpg" width="404" height="340" alt="Tabela de preços pronta para postar (valores de exemplo)"></div><figcaption><b>Tabela de preços</b> · pronta para postar</figcaption></figure>
