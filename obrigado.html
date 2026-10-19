@@ -8,6 +8,8 @@
 <div class="wrap" style="max-width:640px;padding-bottom:60px">
 <h1>Pronto! Sua calculadora está liberada 💅</h1>
 <p class="sub">Use direto no celular ou baixe a planilha para o computador.</p>
+<div id="inapp" style="display:none;background:#FFF3C4;border:1px solid #E8D48A;border-radius:16px;padding:14px 16px;margin:0 0 16px;text-align:left">
+<b>✨ Truque de 5 segundos</b><br>Você está no Instagram. Para a calculadora ficar 100% completa (e você poder salvar a tabela de preços na galeria), toque nos <b>3 pontinhos ⋮</b> lá em cima e depois em <b>“Abrir no navegador”</b>. Pronto, é só isso! 💅</div>
 <div class="dl-box" id="dlbox">
 <a class="btn" id="dl" href="Calculadora-Preco-Certo.xlsx" download>Baixar a calculadora (Excel)</a>
 <a class="btn ig" id="gs" href="calculadora.html" target="_blank" rel="noopener">Usar agora no celular (sem baixar)</a>
@@ -24,6 +26,7 @@
 </div>
 <footer><div class="wrap"><p><a href="privacidade.html">Política de privacidade</a></p><p>Kit Preço Certo · CNPJ 39.680.100/0001-41</p></div></footer>
 <script>
+if(/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent)){document.getElementById("inapp").style.display="block";}
 var dl=document.getElementById("dl"), gs=document.getElementById("gs"), box=document.getElementById("dlbox");
 function go(){setTimeout(function(){location.href="valeu.html";},900);}
 dl.addEventListener("click",go); gs.addEventListener("click",go);
