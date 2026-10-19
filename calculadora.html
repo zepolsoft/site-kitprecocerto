@@ -77,6 +77,9 @@ details p{margin:8px 0 0;font-size:.9rem;color:var(--mut)}
 </style></head><body>
 <div class="top"><img src="favicon.png" alt=""><b>Kit Preço Certo</b><span>Calculadora de preço</span></div>
 <main>
+<div class="banner" id="inapp" style="display:none;background:#FFE3EC;border:1px solid var(--rose)"><b>Dica:</b> você está no navegador do Instagram, que bloqueia o download da imagem. Para salvar a tabela na galeria, abra esta página no Chrome: toque nos <b>3 pontinhos (⋮)</b> no topo e escolha <b>“Abrir no navegador”</b> (ou “Abrir no Chrome”).
+<button class="btn s" id="openchrome" type="button" style="display:none">Abrir no Chrome</button>
+<p class="note" style="margin:8px 0 0">Quer só salvar agora? Abra “Salvar imagem”, e tire um print da tela (botão ligar + diminuir volume).</p></div>
 
 <!-- PASSO 1 -->
 <section class="step on" id="s1">
@@ -327,7 +330,7 @@ function showImg(cv,b){
   var old=$('imgmodal');if(old)old.remove();
   var url=cv.toDataURL('image/png');
   var m=document.createElement('div');m.id='imgmodal';
-  m.innerHTML='<div class="mbox"><p class="mt"><b>Sua tabela está pronta</b><br>Toque e segure na imagem para salvar na galeria.</p><img alt="Tabela de preços" src="'+url+'"><button class="btn" type="button" id="mshare">Compartilhar / baixar</button><button class="btn g" type="button" id="mclose">Fechar</button></div>';
+  m.innerHTML='<div class="mbox"><p class="mt"><b>Sua tabela está pronta</b><br>Toque e segure na imagem para salvar. Se o seu navegador bloquear, tire um print da tela.</p><img alt="Tabela de preços" src="'+url+'"><button class="btn" type="button" id="mshare">Compartilhar / baixar</button><button class="btn g" type="button" id="mclose">Fechar</button></div>';
   document.body.appendChild(m);
   $('mclose').onclick=function(){m.remove();};
   $('mshare').onclick=function(){
@@ -349,6 +352,15 @@ $('img').addEventListener('click',function(){
 /* Seleciona o conteúdo ao focar (facilita trocar o valor no celular) */
 document.addEventListener('focusin',function(e){var t=e.target;if(t.classList&&t.classList.contains('in')&&!t.classList.contains('txt')){setTimeout(function(){try{t.select();}catch(x){}},0);}});
 
+
+/* Navegador interno do Instagram/Facebook: bloqueia download */
+(function(){
+  var ua=navigator.userAgent||'';
+  if(!/Instagram|FBAN|FBAV|FB_IAB/i.test(ua))return;
+  $('inapp').style.display='block';
+  if(/Android/i.test(ua)){var b=$('openchrome');b.style.display='inline-block';
+    b.onclick=function(){var u=location.host+location.pathname;location.href='intent://'+u+'#Intent;scheme=https;package=com.android.chrome;end';};}
+})();
 buildFixos();fillTop();buildSvcs();update();
 })();
 </script>
