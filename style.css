@@ -543,3 +543,14 @@ body::after{opacity:.1}
 .top h1 .tt{filter:drop-shadow(0 1.5px 0 #b3185f) drop-shadow(0 3.5px 0 #7d1148) drop-shadow(0 10px 10px rgba(90,18,54,.35))}
 .top h1 em{text-shadow:-1px -1px 0 #7d1148,1px -1px 0 #7d1148,-1px 1px 0 #7d1148,1px 1px 0 #7d1148,0 2px 0 #7d1148,0 5px 8px rgba(90,18,54,.35)}
 .top h1 .tt{-webkit-text-stroke:1.5px #9c1a5c;paint-order:stroke fill}
+
+/* ===== v18: titulo profissional sobre fundo claro: vinho solido + "preco certo" em rosa; subtitulo dourado em faixa vinho (como a tarja do flyer) ===== */
+.top h1 .tt{-webkit-text-stroke:0;paint-order:normal;
+  background:linear-gradient(180deg,#7a1747 0%,#5a1236 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 2px 0 #fff) drop-shadow(0 6px 10px rgba(138,26,80,.22))}
+.top h1 .tt b{font-weight:inherit;background:linear-gradient(180deg,#FF4FA3 0%,#E91E78 70%,#c2185b 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.top h1 em{display:table;margin:22px auto 0;padding:10px 26px 12px;border-radius:30px;font-size:.62em;line-height:1.2;
+  background:linear-gradient(165deg,#5a1236,#8a1a50 70%,#a61b5f);border:2px solid rgba(246,210,122,.55);
+  color:#f6d27a;-webkit-text-fill-color:#f6d27a;text-shadow:0 1px 0 rgba(0,0,0,.25);paint-order:normal;
+  box-shadow:0 10px 22px rgba(90,18,54,.3),inset 0 1px 0 rgba(255,255,255,.18)}
+.top h1 em{max-width:min(100%,17em);width:fit-content;text-wrap:balance}
