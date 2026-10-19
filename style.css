@@ -338,3 +338,11 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;bac
   radial-gradient(circle at 15% 0,hsla(calc(var(--hv) + 6),100%,66%,.4),transparent 48%),
   linear-gradient(160deg,hsl(var(--hv),66%,22%),hsl(calc(var(--hv) + 2),68%,32%) 62%,hsl(calc(var(--hv) + 6),78%,43%) 135%)}
 .pain{background-image:linear-gradient(160deg,hsl(var(--hv),66%,22%),hsl(calc(var(--hv) + 2),68%,32%) 62%,hsl(calc(var(--hv) + 6),78%,43%) 135%)}
+
+/* ===== v3: UM fundo continuo (sem blocos chapados) cuja cor desliza com a rolagem ===== */
+:root{--hl:345}
+body::before{height:100%;transform:none;will-change:auto;background:
+  radial-gradient(120% 60% at 15% 0%,hsla(calc(var(--hl) + 40),100%,86%,.75),transparent 70%),
+  linear-gradient(170deg,hsl(var(--hl),100%,96%),hsl(calc(var(--hl) + 28),100%,90%))}
+body::after{display:none}
+section.blush:not(.pain),section.nude{background:transparent}
