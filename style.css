@@ -458,3 +458,14 @@ h3{font-weight:600;text-transform:none;letter-spacing:0;font-size:1.3rem}
 .top .card h2{font-size:1.45rem}
 .demo-txt h3,.sim h3{font-size:1.3rem}
 .card h2{font-size:1.5rem}
+
+/* ===== v12: paginas internas (obrigado, valeu, privacidade) iguais a pagina inicial ===== */
+.top .ph{text-align:center;padding:6px 20px 34px;max-width:760px}
+.top .ph .sub{margin:14px auto 0;max-width:560px;font-size:clamp(1rem,4vw,1.15rem)}
+.top .ph h1{margin-top:10px}
+body>.wrap{position:relative}
+.dl-box{max-width:520px}
+.card h2{font-size:1.5rem}
+.top + .wrap{padding-top:28px}
+.top + .wrap h2{font-size:clamp(1.25rem,4.6vw,1.5rem)}
+.top + .wrap .card h2{font-size:1.5rem}
