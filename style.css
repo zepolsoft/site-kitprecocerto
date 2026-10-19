@@ -564,3 +564,9 @@ body::after{opacity:.1}
 a.badge.pillbar:before{display:none;animation:none}
 @media(prefers-reduced-motion:reduce){.top h1 em:after{animation:none;display:none}}
 .top h1{font-size:clamp(2.2rem,11vw,3.5rem)}
+
+/* ===== v20: escala tipografica do hero (max 3 linhas no celular, CTA visivel sem rolar) ===== */
+.top h1{font-size:clamp(1.9rem,9vw,3.3rem);line-height:1.07}
+.top h1 em{font-size:.6em;margin-top:16px;padding:9px 22px 11px}
+.top .ornt{margin:0 0 6px}
+.top .eyebrow{font-size:clamp(.95rem,3.9vw,1.1rem);margin-bottom:10px}
