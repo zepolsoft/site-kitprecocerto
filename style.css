@@ -399,3 +399,4 @@ h2{font-family:Poppins,system-ui,sans-serif}
 .top .card .s,.top .card .micro,.top .card .chk,.top .card .chk label{color:var(--mut)}
 .top .card .err{color:var(--bad)}
 @media(min-width:861px){.top .hero>div:first-child ul.ok{display:block}}
+.top h1 em{-webkit-text-fill-color:#f6d27a;color:#f6d27a;text-shadow:0 0 18px rgba(246,210,122,.5)}
