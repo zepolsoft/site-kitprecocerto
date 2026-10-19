@@ -625,3 +625,7 @@ a.badge.pillbar:before{display:none;animation:none}
 .gains li b{display:block;color:#C2185B;font-size:1rem;margin-bottom:1px}
 @media(max-width:860px){.hero-tab{max-width:300px;margin:16px auto 0}.gains{max-width:none}}
 @media(min-width:861px){.top .hero{align-items:start}}
+
+/* ===== v24: frase do hero no mesmo estilo de "Nao e falta de talento": dourado cursivo com brilho, sem exagero no tamanho ===== */
+.top h1 em{font-family:var(--script);font-weight:700;font-size:clamp(1.5rem,6.6vw,2.05rem);line-height:1.18;letter-spacing:0;padding:12px 26px 14px;
+  color:#f6d27a;-webkit-text-fill-color:#f6d27a;text-shadow:0 0 22px rgba(246,210,122,.4),0 1px 0 rgba(0,0,0,.2)}
