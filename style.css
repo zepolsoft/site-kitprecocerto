@@ -472,3 +472,14 @@ body>.wrap{position:relative}
 
 /* frase de apoio do titulo (mais longa): menor e balanceada em 2 linhas */
 .top h1 em{font-size:.74em;line-height:1.12;text-wrap:balance;max-width:20em;margin-left:auto;margin-right:auto}
+
+/* ===== v13: fundo mais suave (vinho profundo, rosa so como brilho leve) ===== */
+.top,.pain,.final{background-image:
+  radial-gradient(circle at 88% 6%,hsla(calc(var(--hv) + 4),70%,60%,.20),transparent 46%),
+  linear-gradient(165deg,hsla(var(--hv),52%,15%,.97),hsla(calc(var(--hv) + 2),50%,21%,.96) 60%,hsla(calc(var(--hv) + 5),48%,27%,.95) 135%)}
+.final{background-image:
+  radial-gradient(circle at 15% 0,hsla(calc(var(--hv) + 4),70%,60%,.2),transparent 48%),
+  linear-gradient(165deg,hsla(var(--hv),52%,15%,.97),hsla(calc(var(--hv) + 2),50%,21%,.96) 60%,hsla(calc(var(--hv) + 5),48%,27%,.95) 135%)}
+.pain{background-image:linear-gradient(165deg,hsla(var(--hv),52%,15%,.97),hsla(calc(var(--hv) + 2),50%,21%,.96) 60%,hsla(calc(var(--hv) + 5),48%,27%,.95) 135%)}
+body::before{opacity:.22}
+body::after{opacity:.3}
