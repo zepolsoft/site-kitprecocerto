@@ -355,3 +355,27 @@ body::before{display:block;width:clamp(380px,50vw,640px);height:clamp(380px,50vw
 body::after{display:block;width:clamp(420px,56vw,720px);height:clamp(420px,56vw,720px);right:-16vw;bottom:-22vh;background:hsl(calc(var(--hl) + 20),100%,70%);opacity:.5;translate:calc(var(--p) * -66vw) calc(var(--p) * -72vh);animation:kpcf2 18s ease-in-out infinite}
 .top,.pain,.final{background-blend-mode:normal}
 @media(prefers-reduced-motion:reduce){body::before,body::after{animation:none}}
+
+/* ===== v5: titulo com degrade rosa "cromado" (como o flyer) e botoes 3D brilhantes ===== */
+.top h1{background:linear-gradient(180deg,#FFFFFF 0%,#FFE6F2 20%,#FFA6D2 48%,#FF5CAC 74%,#E8197A 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 1px 0 #C2185B) drop-shadow(0 3px 0 #7d1148) drop-shadow(0 0 18px rgba(255,79,163,.7))}
+.top h1 em{filter:none}
+.top h1 em:before,.top h1 em:after{display:none}
+.top h1 em{font-size:.7em;margin-top:10px}
+button:not(.peek-tabs button),.btn:not(.s):not(.o):not(.ig){
+  background:linear-gradient(180deg,#FF74BA 0%,#FF3A98 48%,#E01B7C 100%);
+  border:1.5px solid rgba(255,255,255,.6);
+  letter-spacing:.03em;font-size:.95rem;padding:17px 22px;
+  text-shadow:0 1px 2px rgba(120,0,60,.35);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.55),inset 0 -3px 0 rgba(130,0,70,.22),0 5px 0 #A3125D,0 16px 30px rgba(233,30,120,.5);
+  transition:transform .15s,box-shadow .15s,filter .2s;
+  animation:kpcpulse 3.2s ease-in-out infinite}
+button:not(.peek-tabs button):hover,.btn:not(.s):not(.o):not(.ig):hover{background:linear-gradient(180deg,#FF86C4,#FF4BA3 48%,#EC2A89);filter:saturate(1.1)}
+button:not(.peek-tabs button):active,.btn:not(.s):not(.o):not(.ig):active{transform:translateY(4px);box-shadow:inset 0 2px 0 rgba(255,255,255,.5),0 1px 0 #A3125D,0 8px 16px rgba(233,30,120,.4)}
+@keyframes kpcpulse{0%,100%{box-shadow:inset 0 2px 0 rgba(255,255,255,.55),inset 0 -3px 0 rgba(130,0,70,.22),0 5px 0 #A3125D,0 16px 30px rgba(233,30,120,.45)}50%{box-shadow:inset 0 2px 0 rgba(255,255,255,.55),inset 0 -3px 0 rgba(130,0,70,.22),0 5px 0 #A3125D,0 16px 40px rgba(255,79,163,.8)}}
+.cta-row .btn,.sticky .btn{display:flex;align-items:center;justify-content:center;gap:10px}
+.cta-row .btn:after,.sticky .btn:after{content:"→";position:static;width:auto;height:auto;left:auto;background:none;transform:none;animation:none;font-size:1.15em;line-height:1}
+.sticky .btn{font-size:.9rem;padding:14px 18px}
+button:after{display:block}
+.peek-tabs button{animation:none}
+@media(prefers-reduced-motion:reduce){button,.btn{animation:none!important}}
