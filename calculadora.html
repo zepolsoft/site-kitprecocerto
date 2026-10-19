@@ -297,9 +297,25 @@ function draw(l){
   l.forEach(function(x,i){
     var y=top+i*rh+rh/2;
     if(i>0){g.strokeStyle='#F0CFDB';g.lineWidth=2;g.beginPath();g.moveTo(100,top+i*rh);g.lineTo(W-100,top+i*rh);g.stroke();}
-    g.textAlign='left';g.fillStyle='#3A0A26';g.font='500 '+fs+'px Poppins, sans-serif';
-    var name=x.n; while(g.measureText(name).width>560&&name.length>3)name=name.slice(0,-2); if(name!==x.n)name=name.trim()+'…';
-    g.fillText(name,100,y);
+    g.textAlign='right';g.fillStyle='#C2185B';g.font='700 '+fs+'px Poppins, sans-serif';
+    var pw=g.measureText(brl(x.p)).width, maxW=W-200-pw-30;
+    g.textAlign='left';g.fillStyle='#3A0A26';
+    var f2=fs, lines=[x.n];
+    g.font='500 '+f2+'px Poppins, sans-serif';
+    if(g.measureText(x.n).width>maxW){
+      f2=Math.max(24,Math.round(fs*.8)); g.font='500 '+f2+'px Poppins, sans-serif';
+      if(g.measureText(x.n).width>maxW){
+        var words=x.n.split(/\s+/),l1='',i2=0;
+        while(i2<words.length&&g.measureText((l1?l1+' ':'')+words[i2]).width<=maxW){l1+=(l1?' ':'')+words[i2];i2++;}
+        var l2=words.slice(i2).join(' ');
+        if(!l1){l1=x.n;l2='';}
+        while(g.measureText(l2).width>maxW&&l2.length>3)l2=l2.slice(0,-2).trim()+'…'.slice(0,0);
+        if(l2&&words.slice(i2).join(' ')!==l2)l2+='…';
+        lines=l2?[l1,l2]:[l1];
+      }
+    }
+    if(lines.length===2){g.fillText(lines[0],100,y-f2*.58);g.fillText(lines[1],100,y+f2*.58);}
+    else g.fillText(lines[0],100,y);
     g.textAlign='right';g.fillStyle='#C2185B';g.font='700 '+fs+'px Poppins, sans-serif';g.fillText(brl(x.p),W-100,y);
   });
   g.textAlign='center';g.fillStyle='#9A2A5E';g.font='600 32px Poppins, sans-serif';g.fillText('Kit Preço Certo · kitprecocerto.com.br',W/2,H-90);
