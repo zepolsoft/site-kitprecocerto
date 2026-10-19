@@ -219,3 +219,73 @@ footer a{color:#fff}
 .sim-steps .tot{font-weight:700;border-bottom:0;padding-top:8px}
 .sim-steps .why{display:block;font-size:.8rem;line-height:1.4;color:#FCE9F0;border:0;padding-top:8px;font-weight:400}
 .sim-out p{min-height:0}
+
+/* ========== TEMA V2 (visual moderno: ameixa + rosa, titulos fortes, letra cursiva) ========== */
+:root{--plum:#240818;--plum2:#4B1238;--hot:#FF4FA3;--hot2:#E91E78;--script:"Dancing Script","Segoe Script","Brush Script MT",cursive}
+h1,h2,h3{font-family:Poppins,system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:1.1}
+h1{font-size:clamp(1.75rem,7.4vw,3rem);line-height:1.06;letter-spacing:.005em;color:#fff}
+h1 em{display:block;margin-top:6px;font-family:var(--script);font-weight:700;text-transform:none;letter-spacing:0;font-size:1.35em;line-height:1.05;color:var(--hot);background:none;text-shadow:0 0 22px rgba(255,79,163,.55)}
+h2{font-size:clamp(1.3rem,4.8vw,2.05rem)}
+h3{font-size:1.15rem}
+.center>h2:after{content:"";display:block;width:64px;height:6px;border-radius:99px;margin:12px auto 0;background:linear-gradient(90deg,var(--hot),var(--hot2))}
+.lead{font-size:1rem}
+/* topo escuro */
+.top{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:radial-gradient(circle at 85% 8%,rgba(255,79,163,.38),transparent 46%),radial-gradient(circle at 5% 70%,rgba(233,30,120,.22),transparent 50%),linear-gradient(165deg,var(--plum2),var(--plum))}
+.top header{padding:16px 0 4px}
+.top .brand{color:#fff}
+.top .hero:before{background:var(--hot2);opacity:.28}.top .hero:after{background:#7a2a62;opacity:.5}
+.top .sub{color:#F6D9E7;font-weight:400}
+.top ul.ok li{color:#fff}
+.top ul.ok li:before{background-color:var(--hot);box-shadow:0 0 0 3px rgba(255,255,255,.18)}
+.top .trust{color:#E9C5D6}.top .trust svg{stroke:var(--hot)}
+.top .badge{background:linear-gradient(135deg,var(--hot),var(--hot2));color:#fff;text-transform:uppercase;letter-spacing:.06em;font-size:.72rem;font-weight:700;padding:7px 16px 7px 10px;box-shadow:0 8px 22px rgba(233,30,120,.4)}
+.top .badge svg{stroke:#fff}
+.top .hero-win{border-color:rgba(255,255,255,.25);box-shadow:0 26px 60px rgba(0,0,0,.45),0 0 0 6px rgba(255,255,255,.07)}
+.top .card{border-top:0;box-shadow:0 26px 60px rgba(0,0,0,.4),0 0 0 6px rgba(255,255,255,.08);border-radius:26px}
+.top .card h2{font-size:1.2rem}.top .card h2:after{display:none}
+/* botoes em pilula */
+button,.btn{border-radius:999px;background:linear-gradient(135deg,var(--hot),var(--hot2));text-transform:uppercase;letter-spacing:.04em;font-weight:800;font-size:.98rem;box-shadow:0 10px 26px rgba(233,30,120,.45)}
+button:hover,.btn:hover{background:linear-gradient(135deg,var(--hot2),var(--magenta-d))}
+.peek-tabs button{text-transform:none;letter-spacing:0;font-weight:600;box-shadow:none;background:#fff}
+.peek-tabs button[aria-selected=true]{background:linear-gradient(135deg,var(--hot),var(--hot2));box-shadow:0 8px 18px rgba(233,30,120,.3)}
+.btn.ig{background:#fff}
+/* icones redondos rosa com desenho escuro */
+.ico{width:54px;height:54px;background:radial-gradient(circle at 32% 25%,#FF8CC4,var(--hot) 45%,var(--hot2));color:var(--plum);box-shadow:0 0 0 3px #fff,0 0 0 4px rgba(233,30,120,.35),0 10px 22px rgba(233,30,120,.35)}
+.ico svg{stroke-width:2.1}
+.tile{padding:18px 18px 18px 16px;gap:16px;align-items:center;border-radius:22px}
+.tile b{text-transform:uppercase;letter-spacing:.03em;font-size:.86rem;font-weight:800;color:var(--ink);margin-bottom:3px}
+/* secao escura (dor) */
+section.pain{background:radial-gradient(circle at 90% 0,rgba(255,79,163,.28),transparent 45%),linear-gradient(170deg,var(--plum2),var(--plum))}
+.pain h2{color:#fff}
+.pain .tile{background:rgba(255,255,255,.07);border:1px solid rgba(255,140,196,.28);border-left:1px solid rgba(255,140,196,.28);backdrop-filter:blur(4px)}
+.pain .tile b{color:#fff}.pain .tile span{color:#EBCBDB}
+.pain .ico{color:var(--plum)}
+.bridge{font-family:var(--script);font-weight:700;font-size:clamp(1.9rem,8.4vw,2.7rem);line-height:1.12;color:var(--hot);text-shadow:0 0 24px rgba(255,79,163,.45);margin-top:34px}
+.pain .bridge{color:#FFB3D6}
+/* passos, chips, demo */
+.step{border-radius:22px;text-align:center}
+.step .n{width:46px;height:46px;font-size:1.1rem;font-weight:800;background:radial-gradient(circle at 32% 25%,#FF8CC4,var(--hot) 45%,var(--hot2));box-shadow:0 0 0 3px #fff,0 0 0 4px rgba(233,30,120,.35),0 10px 20px rgba(233,30,120,.3);color:var(--plum)}
+.step b{text-transform:uppercase;letter-spacing:.03em;font-size:.9rem;font-weight:800}
+.chips span{border-color:var(--rose);font-weight:600;color:var(--magenta)}
+.demo-txt h3{font-size:1.25rem}
+.sim-out{background:linear-gradient(160deg,var(--plum2),var(--plum));box-shadow:0 22px 46px rgba(36,8,24,.4);border:1px solid rgba(255,140,196,.3)}
+.sim-out small{color:var(--hot);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.sim-out strong{font-family:Poppins,sans-serif;font-weight:800;color:#fff;text-shadow:0 0 24px rgba(255,79,163,.6)}
+.sim-out .btn{background:linear-gradient(135deg,var(--hot),var(--hot2));color:#fff}
+.total b,.calc h4{font-family:Poppins,sans-serif;font-weight:800}
+.phone{background:var(--plum)}.phone .notch{background:var(--plum)}
+.ph-head{background:linear-gradient(135deg,var(--plum2),var(--hot2))}
+.calc{border-top-color:var(--hot)}
+details{border-radius:18px;border-color:var(--rose)}
+summary{font-weight:700}
+/* final e rodape */
+.final{background:radial-gradient(circle at 15% 0,rgba(255,79,163,.4),transparent 48%),radial-gradient(circle at 95% 100%,rgba(233,30,120,.3),transparent 45%),linear-gradient(165deg,var(--plum2),var(--plum))}
+.final h2{font-size:clamp(1.4rem,5.6vw,2.2rem)}
+.final .card{border-top:0;box-shadow:0 26px 60px rgba(0,0,0,.4),0 0 0 6px rgba(255,255,255,.08)}
+.final .card h3{text-transform:none;font-family:var(--script);font-size:1.9rem;font-weight:700;color:var(--magenta)}
+.final .card h2:after,.final h2:after{margin-left:auto}
+footer{background:#14040d}
+.sticky{background:rgba(36,8,24,.94);border-top:1px solid rgba(255,140,196,.3)}
+.card h2,.card h3{margin-bottom:6px}
+.card{border-top-color:var(--hot)}
+h1{color:var(--ink)}.top h1{color:#fff}h1 em{color:var(--hot2);text-shadow:none}.top h1 em{color:var(--hot);text-shadow:0 0 22px rgba(255,79,163,.55)}
