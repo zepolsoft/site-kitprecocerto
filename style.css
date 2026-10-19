@@ -595,3 +595,22 @@ a.badge.pillbar:before{display:none;animation:none}
 .ba-m svg{flex:none;width:26px;height:26px;fill:none;stroke:#8a1a50;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .gain .cta-row{margin-top:20px}
 @media(max-width:700px){.ba{grid-template-columns:1fr}}
+
+/* ===== v22: tabela do topo com cara de post do Instagram ===== */
+.hero-tab{max-width:400px;background:#fff;border-radius:22px;padding:8px 8px 0;overflow:visible;box-shadow:0 24px 50px rgba(138,26,80,.3),0 0 0 1px rgba(138,26,80,.08);transform:rotate(-1.5deg)}
+.hero-tab .hp{border-radius:16px;padding:16px 16px 12px;background:linear-gradient(165deg,#fff4f8 0%,#fbd3e2 58%,#f4a7c3 115%);aspect-ratio:4/5;display:flex;flex-direction:column;font-family:Fredoka,Poppins,sans-serif}
+.hp-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.hp-brand{display:flex;align-items:center;gap:7px;font-weight:600;font-size:.78rem;color:#5a1236}
+.hp-brand img{border-radius:50%;border:2px solid #fff}
+.hp-tag{font-size:.6rem;font-weight:700;letter-spacing:.06em;color:#8a1a50;background:rgba(255,255,255,.75);border-radius:999px;padding:5px 10px}
+.hp-title{margin:18px 0 12px;font-size:1.75rem;line-height:1.08;font-weight:700;color:#5a1236;letter-spacing:-.01em}
+.hp-title em{display:block;font-style:normal;color:#E91E78}
+.hero-tab .hp ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.hero-tab .hp li{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border-radius:12px;padding:10px 12px;box-shadow:0 3px 10px rgba(138,26,80,.1);font-size:.86rem;font-weight:500;color:#4a0f2e;border:0}
+.hero-tab .hp li b{color:#C2185B;font-weight:700;white-space:nowrap}
+.hp-ok{margin:12px 0 auto;display:flex;align-items:center;justify-content:center;gap:7px;background:#f6d27a;color:#4a0f2e;font-weight:700;font-size:.85rem;border-radius:12px;padding:10px 12px}
+.hp-ok svg{width:17px;height:17px;fill:none;stroke:#4a0f2e;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.hp-foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:.6rem;color:#8a1a50;font-weight:500}
+.hp-dots{display:flex;gap:4px}.hp-dots i{width:6px;height:6px;border-radius:50%;background:rgba(138,26,80,.25)}.hp-dots i.on{background:#E91E78}
+.hero-tab figcaption{padding:10px 8px 12px;font-size:.78rem;color:#8a5a70;text-align:center}
+@media(max-width:860px){.hero-tab{max-width:360px;margin:16px auto 0}}
