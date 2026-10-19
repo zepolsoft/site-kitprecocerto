@@ -614,3 +614,14 @@ a.badge.pillbar:before{display:none;animation:none}
 .hp-dots{display:flex;gap:4px}.hp-dots i{width:6px;height:6px;border-radius:50%;background:rgba(138,26,80,.25)}.hp-dots i.on{background:#E91E78}
 .hero-tab figcaption{padding:10px 8px 12px;font-size:.78rem;color:#8a5a70;text-align:center}
 @media(max-width:860px){.hero-tab{max-width:360px;margin:16px auto 0}}
+
+/* ===== v23: imagem real da tabela (a que a calculadora gera) + beneficios embaixo ===== */
+.hero-tab{max-width:340px;padding:8px 8px 0;border-radius:22px;transform:rotate(-1.5deg);margin:22px 0 0}
+.hero-tab img{display:block;width:100%;height:auto;border-radius:16px}
+.hero-tab figcaption{padding:10px 8px 12px;font-size:.76rem;color:#8a5a70;text-align:center}
+.gains{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px;max-width:520px}
+.gains li{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.7);border:1px solid rgba(233,30,120,.2);border-radius:16px;padding:12px 16px;color:#5a1236;font-size:.92rem;line-height:1.35;box-shadow:0 6px 16px rgba(138,26,80,.08)}
+.gains li svg{flex:none;width:40px;height:40px;padding:9px;border-radius:50%;background:linear-gradient(180deg,#FF74BA,#E01B7C);fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;box-shadow:0 3px 0 #A3125D}
+.gains li b{display:block;color:#C2185B;font-size:1rem;margin-bottom:1px}
+@media(max-width:860px){.hero-tab{max-width:300px;margin:16px auto 0}.gains{max-width:none}}
+@media(min-width:861px){.top .hero{align-items:start}}
