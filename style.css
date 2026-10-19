@@ -469,3 +469,6 @@ body>.wrap{position:relative}
 .top + .wrap{padding-top:28px}
 .top + .wrap h2{font-size:clamp(1.25rem,4.6vw,1.5rem)}
 .top + .wrap .card h2{font-size:1.5rem}
+
+/* frase de apoio do titulo (mais longa): menor e balanceada em 2 linhas */
+.top h1 em{font-size:.74em;line-height:1.12;text-wrap:balance;max-width:20em;margin-left:auto;margin-right:auto}
