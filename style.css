@@ -534,3 +534,12 @@ body::after{opacity:.1}
 .top .card{box-shadow:0 18px 44px rgba(138,26,80,.22),0 0 0 6px rgba(255,255,255,.55)}
 .top .hero:before{background:#fff;opacity:.5}.top .hero:after{background:#fde9b8;opacity:.5}
 .top .try b{color:#c2185b;border-bottom-color:#c2185b}
+
+/* ===== v17: titulo com as cores de antes (branco/rosa cromado + dourado) sobre o fundo claro, com extrusao vinho para dar contraste ===== */
+.top h1 .tt{background:linear-gradient(180deg,#fff 0,#fff 44%,#FFE1EF 60%,#FFB3D6 82%,#FF8CC4 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 2px 0 #C2185B) drop-shadow(0 4px 0 #8a1a50) drop-shadow(0 7px 0 #5a1236) drop-shadow(0 14px 14px rgba(90,18,54,.45))}
+.top h1 em{color:#f6d27a;-webkit-text-fill-color:#f6d27a;
+  text-shadow:-2px -2px 0 #5a1236,2px -2px 0 #5a1236,-2px 2px 0 #5a1236,2px 2px 0 #5a1236,0 3px 0 #5a1236,0 6px 10px rgba(90,18,54,.4);paint-order:stroke fill}
+.top h1 .tt{filter:drop-shadow(0 1.5px 0 #b3185f) drop-shadow(0 3.5px 0 #7d1148) drop-shadow(0 10px 10px rgba(90,18,54,.35))}
+.top h1 em{text-shadow:-1px -1px 0 #7d1148,1px -1px 0 #7d1148,-1px 1px 0 #7d1148,1px 1px 0 #7d1148,0 2px 0 #7d1148,0 5px 8px rgba(90,18,54,.35)}
+.top h1 .tt{-webkit-text-stroke:1.5px #9c1a5c;paint-order:stroke fill}
