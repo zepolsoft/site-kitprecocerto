@@ -201,18 +201,18 @@ footer a{color:#fff}
 .tease-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;margin-top:22px;align-items:start}
 .tz{margin:0}.tz-img{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(194,24,91,.14)}
 .tz-img img{display:block;width:100%;height:auto}
-.tz-img img.b{filter:blur(5px);transform:scale(1.02)}
-.tz-img img.s{position:absolute;inset:0;-webkit-mask-image:linear-gradient(#000 0,#000 22%,transparent 52%);mask-image:linear-gradient(#000 0,#000 22%,transparent 52%)}
+.tz-img img.b{filter:blur(2px);transform:scale(1.02)}
+.tz-img img.s{position:absolute;inset:0;-webkit-mask-image:linear-gradient(#000 0,#000 45%,transparent 82%);mask-image:linear-gradient(#000 0,#000 45%,transparent 82%)}
 .tz figcaption{margin-top:10px;text-align:center;font-size:.92rem;color:var(--muted,#7a5668)}
 @media(max-width:860px){.tease-grid{grid-template-columns:1fr;gap:18px}.tease{padding-top:24px}}
 
 /* prévia "curiosidade": parte de baixo das imagens levemente borrada (duas camadas) */
 .bz{position:relative;display:block;overflow:hidden}
 .bz>img{display:block;width:100%}
-.bz>img.bu{filter:blur(4px);transform:scale(1.02)}
-.bz>img.bs{position:absolute;left:0;top:0;height:100%;-webkit-mask-image:linear-gradient(#000 0,#000 28%,transparent 62%);mask-image:linear-gradient(#000 0,#000 28%,transparent 62%)}
+.bz>img.bu{filter:blur(1.6px);transform:scale(1.02)}
+.bz>img.bs{position:absolute;left:0;top:0;height:100%;-webkit-mask-image:linear-gradient(#000 0,#000 50%,transparent 88%);mask-image:linear-gradient(#000 0,#000 50%,transparent 88%)}
 .peek-scroll .bz{min-width:760px}
-@media(max-width:860px){.hero-win .bz>img.bs{-webkit-mask-image:linear-gradient(#000 0,#000 58%,transparent 94%);mask-image:linear-gradient(#000 0,#000 58%,transparent 94%)}}
+@media(max-width:860px){.hero-win .bz>img.bs{-webkit-mask-image:linear-gradient(#000 0,#000 75%,transparent 100%);mask-image:linear-gradient(#000 0,#000 75%,transparent 100%)}}
 .bz.narrow{max-width:420px;margin:0 auto}.peek-pane .bz.narrow>img{max-width:none;margin:0;width:100%}
 .sim-steps{text-align:left;margin:14px 0 12px;font-size:.92rem;color:#fff}
 .sim-steps div{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px dashed rgba(255,255,255,.28)}
