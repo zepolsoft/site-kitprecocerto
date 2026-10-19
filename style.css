@@ -289,3 +289,13 @@ footer{background:#14040d}
 .card h2,.card h3{margin-bottom:6px}
 .card{border-top-color:var(--hot)}
 h1{color:var(--ink)}.top h1{color:#fff}h1 em{color:var(--hot2);text-shadow:none}.top h1 em{color:var(--hot);text-shadow:0 0 22px rgba(255,79,163,.55)}
+
+/* ===== titulo estilo "MEGA HAIR": fonte condensada, degrade rosa claro, brilho ===== */
+:root{--disp:Anton,"Bebas Neue",Impact,"Arial Narrow",sans-serif}
+h1,h2{font-family:var(--disp);font-weight:400;letter-spacing:.02em;line-height:1.04}
+h1{font-size:clamp(2.5rem,13vw,4.4rem)}
+h2{font-size:clamp(1.7rem,6.6vw,2.6rem)}
+.top h1{background:linear-gradient(180deg,#fff 8%,#FFD3E8 48%,#FF7DBB 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 2px 0 #B0135E) drop-shadow(0 0 18px rgba(255,79,163,.65));padding-bottom:4px}
+.top h1 em{display:block;font-family:var(--script);font-weight:700;font-size:.62em;line-height:1.1;letter-spacing:0;text-transform:none;margin-top:8px;-webkit-text-fill-color:#fff;color:#fff;background:none;text-shadow:0 0 18px rgba(255,79,163,.7)}
+.top h1 em:before,.top h1 em:after{content:"";display:inline-block;vertical-align:middle;width:28px;height:2px;background:rgba(255,255,255,.55);margin:0 10px}
+.pain h2,.final h2{text-shadow:0 0 22px rgba(255,79,163,.45)}
