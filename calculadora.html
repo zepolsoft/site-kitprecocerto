@@ -68,6 +68,11 @@ details p{margin:8px 0 0;font-size:.9rem;color:var(--mut)}
 .nav button.on{color:var(--magenta)}.nav button.on b{background:var(--magenta);color:#fff}
 .toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:999px;padding:10px 18px;font-size:.88rem;opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
 .toast.show{opacity:1}
+#imgmodal{position:fixed;inset:0;z-index:60;background:rgba(58,10,38,.88);overflow:auto;padding:16px;display:flex;justify-content:center}
+#imgmodal .mbox{max-width:420px;width:100%;margin:auto;text-align:center;color:#fff}
+#imgmodal .mt{margin:0 0 10px;font-size:.92rem}
+#imgmodal img{width:100%;border-radius:14px;margin:0 0 12px;-webkit-touch-callout:default;-webkit-user-select:auto;user-select:auto}
+#imgmodal .btn.g{color:#fff}
 @media(min-width:700px){.nav{max-width:600px;margin:0 auto;border:1px solid var(--line);border-radius:18px 18px 0 0}}
 </style></head><body>
 <div class="top"><img src="favicon.png" alt=""><b>Kit Preço Certo</b><span>Calculadora de preço</span></div>
@@ -300,13 +305,27 @@ function draw(l){
   g.textAlign='center';g.fillStyle='#9A2A5E';g.font='600 32px Poppins, sans-serif';g.fillText('Kit Preço Certo · kitprecocerto.com.br',W/2,H-90);
   return cv;
 }
+
+/* Janela com a imagem: funciona até no navegador interno do Instagram, onde download direto costuma falhar */
+function showImg(cv,b){
+  var old=$('imgmodal');if(old)old.remove();
+  var url=cv.toDataURL('image/png');
+  var m=document.createElement('div');m.id='imgmodal';
+  m.innerHTML='<div class="mbox"><p class="mt"><b>Sua tabela está pronta</b><br>Toque e segure na imagem para salvar na galeria.</p><img alt="Tabela de preços" src="'+url+'"><button class="btn" type="button" id="mshare">Compartilhar / baixar</button><button class="btn g" type="button" id="mclose">Fechar</button></div>';
+  document.body.appendChild(m);
+  $('mclose').onclick=function(){m.remove();};
+  $('mshare').onclick=function(){
+    var f; try{f=new File([b],'tabela-de-precos.png',{type:'image/png'});}catch(e){}
+    if(f&&navigator.canShare&&navigator.share&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:'Tabela de preços'}).catch(function(){});return;}
+    var a=document.createElement('a');a.href=url;a.download='tabela-de-precos.png';document.body.appendChild(a);a.click();a.remove();
+    toast('Se não baixar, toque e segure na imagem');
+  };
+}
 $('img').addEventListener('click',function(){
   var l=lista(); if(!l.length){toast('Cadastre seus serviços primeiro');return;}
   var go1=function(){var cv=draw(l);cv.toBlob(function(b){
     if(!b){toast('Não consegui gerar a imagem');return;}
-    var f; try{f=new File([b],'tabela-de-precos.png',{type:'image/png'});}catch(e){}
-    if(f&&navigator.canShare&&navigator.canShare({files:[f]})&&navigator.share){navigator.share({files:[f],title:'Tabela de preços'}).catch(function(){});return;}
-    var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='tabela-de-precos.png';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},1500);toast('Imagem salva');
+    showImg(cv,b);
   },'image/png');};
   if(document.fonts&&document.fonts.load){Promise.all([document.fonts.load('700 40px Poppins'),document.fonts.load('500 40px Poppins'),document.fonts.load('600 40px Poppins')]).then(go1,go1);}else go1();
 });
