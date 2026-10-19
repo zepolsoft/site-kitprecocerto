@@ -221,7 +221,7 @@ footer a{color:#fff}
 .sim-out p{min-height:0}
 
 /* ========== TEMA V2 (visual moderno: ameixa + rosa, titulos fortes, letra cursiva) ========== */
-:root{--plum:#240818;--plum2:#4B1238;--hot:#FF4FA3;--hot2:#E91E78;--script:"Dancing Script","Segoe Script","Brush Script MT",cursive}
+:root{--plum:#5a1236;--plum2:#8a1a50;--hot:#FF4FA3;--hot2:#E91E78;--script:"Dancing Script","Segoe Script","Brush Script MT",cursive}
 h1,h2,h3{font-family:Poppins,system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:1.1}
 h1{font-size:clamp(1.75rem,7.4vw,3rem);line-height:1.06;letter-spacing:.005em;color:#fff}
 h1 em{display:block;margin-top:6px;font-family:var(--script);font-weight:700;text-transform:none;letter-spacing:0;font-size:1.35em;line-height:1.05;color:var(--hot);background:none;text-shadow:0 0 22px rgba(255,79,163,.55)}
@@ -230,7 +230,7 @@ h3{font-size:1.15rem}
 .center>h2:after{content:"";display:block;width:64px;height:6px;border-radius:99px;margin:12px auto 0;background:linear-gradient(90deg,var(--hot),var(--hot2))}
 .lead{font-size:1rem}
 /* topo escuro */
-.top{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:radial-gradient(circle at 85% 8%,rgba(255,79,163,.38),transparent 46%),radial-gradient(circle at 5% 70%,rgba(233,30,120,.22),transparent 50%),linear-gradient(165deg,var(--plum2),var(--plum))}
+.top{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:radial-gradient(circle at 85% 8%,rgba(255,79,163,.38),transparent 46%),radial-gradient(circle at 5% 70%,rgba(233,30,120,.22),transparent 50%),linear-gradient(160deg,var(--plum),var(--plum2) 62%,#c2185b 135%)}
 .top header{padding:16px 0 4px}
 .top .brand{color:#fff}
 .top .hero:before{background:var(--hot2);opacity:.28}.top .hero:after{background:#7a2a62;opacity:.5}
@@ -255,7 +255,7 @@ button:hover,.btn:hover{background:linear-gradient(135deg,var(--hot2),var(--mage
 .tile{padding:18px 18px 18px 16px;gap:16px;align-items:center;border-radius:22px}
 .tile b{text-transform:uppercase;letter-spacing:.03em;font-size:.86rem;font-weight:800;color:var(--ink);margin-bottom:3px}
 /* secao escura (dor) */
-section.pain{background:radial-gradient(circle at 90% 0,rgba(255,79,163,.28),transparent 45%),linear-gradient(170deg,var(--plum2),var(--plum))}
+section.pain{background:radial-gradient(circle at 90% 0,rgba(255,79,163,.28),transparent 45%),linear-gradient(160deg,var(--plum),var(--plum2) 62%,#c2185b 135%)}
 .pain h2{color:#fff}
 .pain .tile{background:rgba(255,255,255,.07);border:1px solid rgba(255,140,196,.28);border-left:1px solid rgba(255,140,196,.28);backdrop-filter:blur(4px)}
 .pain .tile b{color:#fff}.pain .tile span{color:#EBCBDB}
@@ -268,7 +268,7 @@ section.pain{background:radial-gradient(circle at 90% 0,rgba(255,79,163,.28),tra
 .step b{text-transform:uppercase;letter-spacing:.03em;font-size:.9rem;font-weight:800}
 .chips span{border-color:var(--rose);font-weight:600;color:var(--magenta)}
 .demo-txt h3{font-size:1.25rem}
-.sim-out{background:linear-gradient(160deg,var(--plum2),var(--plum));box-shadow:0 22px 46px rgba(36,8,24,.4);border:1px solid rgba(255,140,196,.3)}
+.sim-out{background:linear-gradient(160deg,var(--plum),var(--plum2) 62%,#c2185b 135%);box-shadow:0 22px 46px rgba(36,8,24,.4);border:1px solid rgba(255,140,196,.3)}
 .sim-out small{color:var(--hot);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
 .sim-out strong{font-family:Poppins,sans-serif;font-weight:800;color:#fff;text-shadow:0 0 24px rgba(255,79,163,.6)}
 .sim-out .btn{background:linear-gradient(135deg,var(--hot),var(--hot2));color:#fff}
@@ -279,13 +279,13 @@ section.pain{background:radial-gradient(circle at 90% 0,rgba(255,79,163,.28),tra
 details{border-radius:18px;border-color:var(--rose)}
 summary{font-weight:700}
 /* final e rodape */
-.final{background:radial-gradient(circle at 15% 0,rgba(255,79,163,.4),transparent 48%),radial-gradient(circle at 95% 100%,rgba(233,30,120,.3),transparent 45%),linear-gradient(165deg,var(--plum2),var(--plum))}
+.final{background:radial-gradient(circle at 15% 0,rgba(255,79,163,.4),transparent 48%),radial-gradient(circle at 95% 100%,rgba(233,30,120,.3),transparent 45%),linear-gradient(160deg,var(--plum),var(--plum2) 62%,#c2185b 135%)}
 .final h2{font-size:clamp(1.4rem,5.6vw,2.2rem)}
 .final .card{border-top:0;box-shadow:0 26px 60px rgba(0,0,0,.4),0 0 0 6px rgba(255,255,255,.08)}
 .final .card h3{text-transform:none;font-family:var(--script);font-size:1.9rem;font-weight:700;color:var(--magenta)}
 .final .card h2:after,.final h2:after{margin-left:auto}
-footer{background:#14040d}
-.sticky{background:rgba(36,8,24,.94);border-top:1px solid rgba(255,140,196,.3)}
+footer{background:#3a0a26}
+.sticky{background:rgba(90,18,54,.96);border-top:1px solid rgba(255,140,196,.3)}
 .card h2,.card h3{margin-bottom:6px}
 .card{border-top-color:var(--hot)}
 h1{color:var(--ink)}.top h1{color:#fff}h1 em{color:var(--hot2);text-shadow:none}.top h1 em{color:var(--hot);text-shadow:0 0 22px rgba(255,79,163,.55)}
@@ -299,3 +299,17 @@ h2{font-size:clamp(1.7rem,6.6vw,2.6rem)}
 .top h1 em{display:block;font-family:var(--script);font-weight:700;font-size:.62em;line-height:1.1;letter-spacing:0;text-transform:none;margin-top:8px;-webkit-text-fill-color:#fff;color:#fff;background:none;text-shadow:0 0 18px rgba(255,79,163,.7)}
 .top h1 em:before,.top h1 em:after{content:"";display:inline-block;vertical-align:middle;width:28px;height:2px;background:rgba(255,255,255,.55);margin:0 10px}
 .pain h2,.final h2{text-shadow:0 0 22px rgba(255,79,163,.45)}
+
+/* ===== ajuste de harmonia com o Instagram (vinho #5a1236 -> #8a1a50, dourado #f6d27a, creme #fff6dc) ===== */
+.top h1 em{-webkit-text-fill-color:#f6d27a;color:#f6d27a;text-shadow:0 0 18px rgba(246,210,122,.45)}
+.top h1 em:before,.top h1 em:after{background:rgba(246,210,122,.6)}
+.top .hero:after{background:#c2185b;opacity:.35}
+.pain .bridge{color:#f6d27a;text-shadow:0 0 22px rgba(246,210,122,.35)}
+section.nude{background:linear-gradient(160deg,#fff6dc,#f9e8b4)}
+h2{font-family:Poppins,system-ui,sans-serif;font-weight:800;text-transform:none;letter-spacing:-.01em;line-height:1.15;font-size:clamp(1.5rem,5.6vw,2.2rem)}
+.center>h2:after{background:linear-gradient(90deg,#f6d27a,var(--hot))}
+.pain h2,.final h2{text-shadow:none}
+.final h2{font-size:clamp(1.5rem,5.8vw,2.3rem)}
+.ico{color:var(--plum)}
+.sim-out small{color:#f6d27a}
+.sim-out strong{text-shadow:0 0 24px rgba(246,210,122,.35)}
