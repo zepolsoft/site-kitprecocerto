@@ -7,32 +7,27 @@
 <header><div class="wrap"><a class="brand" href="./"><img src="favicon.png" alt="">Kit Preço Certo</a></div></header>
 <div class="wrap" style="max-width:640px;padding-bottom:60px">
 <h1>Pronto! Sua calculadora está liberada 💅</h1>
-<p class="sub">Baixe a planilha e siga os 3 passos da primeira aba.</p>
+<p class="sub">Use direto no celular ou baixe a planilha para o computador.</p>
 <div class="dl-box" id="dlbox">
 <a class="btn" id="dl" href="Calculadora-Preco-Certo.xlsx" download>Baixar a calculadora (Excel)</a>
-<a class="btn ig" id="gs" href="#" target="_blank" rel="noopener" hidden>Abrir no Google Planilhas (celular)</a>
+<a class="btn ig" id="gs" href="calculadora.html" target="_blank" rel="noopener">Usar agora no celular (sem baixar)</a>
 </div>
-<p class="note-s" id="dlhint" style="margin-top:10px">Funciona melhor no computador ou notebook (Excel ou Google Planilhas). No celular dá para usar, mas é mais trabalhoso de editar.</p>
+<p class="note-s" id="dlhint" style="margin-top:10px">A versão do celular abre no navegador, não precisa instalar nada. A planilha Excel é melhor para o computador ou notebook.</p>
 <div class="card" style="margin-top:22px">
 <h2>Como usar</h2>
 <ul class="ok"><li>Preencha só as células <b>amarelas</b>. Os números que já estão lá são exemplos.</li>
 <li>Comece pela aba <b>Meu custo por hora</b>, depois a aba <b>Meus serviços</b>.</li>
-<li><b>No celular:</b> abra o arquivo no app Planilhas (Google) ou Excel. A planilha é larga, então fica mais confortável de preencher no computador ou notebook.</li>
-<li><b>Google Planilhas:</b> Arquivo → Importar → Fazer upload.</li></ul>
+<li><b>No celular:</b> toque em “Usar agora no celular”. Seus números ficam salvos no próprio aparelho e você pode salvar a tabela de preços como imagem.</li>
+<li><b>No computador:</b> baixe a planilha Excel e preencha as células amarelas.</li></ul>
 </div>
 <p class="note">Cuide do seu preço: ele precisa pagar o seu tempo, o material, a maquininha e o seu salário.</p>
 </div>
 <footer><div class="wrap"><p><a href="privacidade.html">Política de privacidade</a></p><p>Kit Preço Certo · CNPJ 39.680.100/0001-41</p></div></footer>
 <script>
-// Link "Fazer uma cópia" do Google Planilhas (termina em /copy). Enquanto vazio, o botão fica escondido.
-var GSHEET_URL="";
 var dl=document.getElementById("dl"), gs=document.getElementById("gs"), box=document.getElementById("dlbox");
 function go(){setTimeout(function(){location.href="valeu.html";},900);}
-dl.addEventListener("click",go);
-if(GSHEET_URL){
-  gs.href=GSHEET_URL; gs.hidden=false; gs.addEventListener("click",go);
-  var mobile=window.matchMedia("(pointer:coarse)").matches||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  if(mobile){ box.insertBefore(gs,dl); gs.classList.remove("ig"); dl.classList.add("ig"); }
-}
+dl.addEventListener("click",go); gs.addEventListener("click",go);
+var mobile=window.matchMedia("(pointer:coarse)").matches||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+if(mobile){ box.insertBefore(gs,dl); gs.classList.remove("ig"); dl.classList.add("ig"); }
 </script>
 </body></html>

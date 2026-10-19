@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Calculadora de preço · Kit Preço Certo</title>
+<meta name="theme-color" content="#C2185B">
+<link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--magenta:#C2185B;--magenta-d:#9C1049;--pink:#E91E78;--rose:#F4B6CC;--blush:#FCE9F0;--nude:#F8EDE6;--cream:#FFFAF7;--gold:#C9A24B;--gold-l:#F3E3B6;--ink:#3A0A26;--mut:#7A4A62;--line:#F0CFDB;--ok:#1b7a4a;--bad:#B00020;--yellow:#FFF3C4}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Poppins,system-ui,sans-serif;font-size:16px;line-height:1.5;padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);padding:10px 16px;display:flex;align-items:center;gap:10px}
+.top img{width:32px;height:32px;border-radius:50%}
+.top b{color:var(--magenta);font-size:1rem}
+.top span{margin-left:auto;font-size:.78rem;color:var(--mut)}
+main{max-width:600px;margin:0 auto;padding:18px 16px 24px}
+h1{font-family:"Playfair Display",Georgia,serif;font-size:1.65rem;line-height:1.15;margin:4px 0 6px}
+h2{font-family:"Playfair Display",Georgia,serif;font-size:1.3rem;margin:0 0 4px}
+.lead{color:var(--mut);margin:0 0 16px;font-size:.95rem}
+.step{display:none}.step.on{display:block}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px;box-shadow:0 10px 24px rgba(194,24,91,.06)}
+.card h3{margin:0 0 10px;font-size:1rem;color:var(--magenta)}
+label{display:block;font-weight:600;font-size:.9rem;margin:12px 0 4px}
+label small{font-weight:400;color:var(--mut)}
+.in{width:100%;font:500 1.05rem Poppins,sans-serif;color:var(--ink);background:var(--yellow);border:1.5px solid #E8D48A;border-radius:12px;padding:12px 14px;min-height:48px;outline:none}
+.in:focus{border-color:var(--magenta);box-shadow:0 0 0 3px rgba(194,24,91,.15)}
+.in.txt{background:#fff;border-color:var(--line)}
+.pre{position:relative}.pre i{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-style:normal;color:var(--mut);font-weight:600;pointer-events:none}.pre .in{padding-left:44px}
+.pc{position:relative}.pc i{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-style:normal;color:var(--mut);font-weight:600;pointer-events:none}.pc .in{padding-right:36px}
+.tot{display:flex;justify-content:space-between;align-items:baseline;border-top:2px dashed var(--line);margin-top:14px;padding-top:12px;font-weight:700}
+.hero{background:linear-gradient(135deg,var(--magenta),var(--magenta-d));color:#fff;border-radius:20px;padding:20px 18px;text-align:center;margin:0 0 14px}
+.hero small{color:var(--gold-l);font-weight:600;display:block}
+.hero strong{display:block;font-family:"Playfair Display",Georgia,serif;font-size:2.6rem;line-height:1.1;margin:4px 0}
+.hero p{margin:6px 0 0;font-size:.88rem;color:#FCE9F0}
+.banner{background:var(--gold-l);border-radius:14px;padding:12px 14px;margin:0 0 14px;font-size:.9rem}
+.banner button{margin-top:8px}
+.btn{display:block;width:100%;border:0;border-radius:999px;padding:14px 18px;min-height:50px;font:700 1rem Poppins,sans-serif;color:#fff;background:linear-gradient(135deg,var(--pink),var(--magenta));box-shadow:0 8px 18px rgba(194,24,91,.25);cursor:pointer}
+.btn.o{background:#fff;color:var(--magenta);border:2px solid var(--rose);box-shadow:none}
+.btn.s{display:inline-block;width:auto;min-height:40px;padding:8px 16px;font-size:.85rem}
+.btn.g{background:none;border:0;box-shadow:none;color:var(--mut);text-decoration:underline;font-weight:500;min-height:40px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
+.stat{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:14px;padding:10px 12px;text-align:center}
+.stat small{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+.stat b{font-family:"Playfair Display",Georgia,serif;font-size:1.6rem;color:var(--magenta);line-height:1.2}
+.svc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;margin:0 0 12px;box-shadow:0 10px 24px rgba(194,24,91,.06)}
+.svc .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.svc label{margin:10px 0 3px;font-size:.78rem}
+.svc .in{padding:10px 10px;font-size:1rem}
+.svc .pre .in{padding-left:34px}.svc .pre i{left:10px}
+.res{margin-top:12px;background:var(--blush);border-radius:14px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.res small{display:block;color:var(--mut);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+.res strong{font-family:"Playfair Display",Georgia,serif;font-size:1.8rem;color:var(--magenta);line-height:1.1}
+.badge{display:inline-block;border-radius:999px;padding:5px 12px;font-size:.78rem;font-weight:700}
+.b-ok{background:#d9f3e3;color:var(--ok)}.b-at{background:#fff0c2;color:#8a6208}.b-pr{background:#ffd9e6;color:var(--bad)}.b-no{background:#eee;color:#666}
+.lucro{margin-top:8px;font-size:.88rem;color:var(--mut)}.lucro b.neg{color:var(--bad)}
+.rm{float:right;font-size:.8rem}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 14px}
+summary{font-weight:600;cursor:pointer}
+details p{margin:8px 0 0;font-size:.9rem;color:var(--mut)}
+.tbl{width:100%;border-collapse:collapse}.tbl td{padding:11px 4px;border-bottom:1px solid var(--line)}.tbl td:last-child{text-align:right;font-weight:700;color:var(--magenta)}
+.note{font-size:.8rem;color:var(--mut)}
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
+.nav button{background:none;border:0;border-radius:12px;padding:8px 4px;font:600 .78rem Poppins,sans-serif;color:var(--mut);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;min-height:54px}
+.nav button b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--blush);color:var(--magenta);font-size:.85rem}
+.nav button.on{color:var(--magenta)}.nav button.on b{background:var(--magenta);color:#fff}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:999px;padding:10px 18px;font-size:.88rem;opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
+.toast.show{opacity:1}
+@media(min-width:700px){.nav{max-width:600px;margin:0 auto;border:1px solid var(--line);border-radius:18px 18px 0 0}}
+</style></head><body>
+<div class="top"><img src="favicon.png" alt=""><b>Kit Preço Certo</b><span>Calculadora de preço</span></div>
+<main>
+
+<!-- PASSO 1 -->
+<section class="step on" id="s1">
+  <h1>Quanto custa a sua hora</h1>
+  <p class="lead">Preencha os campos amarelos. O resultado aparece na hora, aqui embaixo.</p>
+  <div class="banner" id="exban">Os números abaixo são <b>exemplos</b>, só para você ver a conta funcionando.
+    <button class="btn s" id="clear" type="button">Começar com os meus números</button></div>
+
+  <div class="card"><h3>Gastos fixos do mês</h3><div id="fixos"></div>
+    <div class="tot"><span>Total de gastos fixos</span><span id="totfix">R$ 0,00</span></div></div>
+
+  <div class="card"><h3>Quanto você quer tirar para você</h3>
+    <label for="ret">Retirada mensal desejada <small>(seu salário, além dos gastos)</small></label>
+    <div class="pre"><i>R$</i><input class="in" id="ret" inputmode="decimal" autocomplete="off"></div></div>
+
+  <div class="card"><h3>Seu tempo de trabalho</h3>
+    <label for="hd">Horas de atendimento por dia</label><input class="in" id="hd" inputmode="decimal" autocomplete="off">
+    <label for="dias">Dias trabalhados por semana</label><input class="in" id="dias" inputmode="numeric" autocomplete="off">
+    <label for="ocup">Agenda ocupada <small>(parte das horas com cliente; seja realista, 50 a 80%)</small></label>
+    <div class="pc"><input class="in" id="ocup" inputmode="decimal" autocomplete="off"><i>%</i></div></div>
+
+  <div class="card"><h3>Taxas e margem <small style="font-weight:400;color:var(--mut)">(valem para todos os serviços)</small></h3>
+    <label for="card">Taxa da maquininha / cartão</label><div class="pc"><input class="in" id="card" inputmode="decimal" autocomplete="off"><i>%</i></div>
+    <label for="res">Reserva de segurança <small>(imprevistos e crescer; 0% se não quiser)</small></label><div class="pc"><input class="in" id="res" inputmode="decimal" autocomplete="off"><i>%</i></div></div>
+
+  <div class="hero"><small>O custo da sua hora</small><strong id="ch">R$ 0,00</strong>
+    <p id="chd"></p></div>
+  <button class="btn" type="button" data-go="2">Próximo: meus serviços</button>
+</section>
+
+<!-- PASSO 2 -->
+<section class="step" id="s2">
+  <h1>Preço sugerido por serviço</h1>
+  <p class="lead">Escreva o serviço, o tempo, o material gasto e o que você cobra hoje.</p>
+  <div class="banner" id="exban2">Os serviços abaixo são <b>exemplos</b>. Troque pelos seus ou toque em
+    <button class="btn s" id="clear2" type="button">Começar com os meus serviços</button></div>
+  <div class="stats">
+    <div class="stat"><small>Custo da sua hora</small><b id="p-ch">R$ 0</b></div>
+    <div class="stat"><small>Serviços</small><b id="p-n">0</b></div>
+    <div class="stat"><small>Pedem reajuste</small><b id="p-r">0</b></div>
+    <div class="stat"><small>Dando prejuízo</small><b id="p-p">0</b></div>
+  </div>
+  <div id="svcs"></div>
+  <button class="btn o" type="button" id="add">+ Adicionar serviço</button>
+  <details style="margin-top:14px"><summary>Como o preço é calculado</summary>
+    <p>Custo do tempo = minutos ÷ 60 × custo da sua hora.<br>
+    Custo total = custo do tempo + material.<br>
+    Preço sugerido = custo total ÷ (1 − taxa da maquininha − reserva), arredondado para cima ao real.<br>
+    Lucro hoje = o que você cobra, menos a taxa da maquininha, menos o custo total. Negativo significa que você paga para fazer esse serviço.</p></details>
+  <button class="btn" type="button" data-go="3" style="margin-top:6px">Próximo: tabela para postar</button>
+</section>
+
+<!-- PASSO 3 -->
+<section class="step" id="s3">
+  <h1>Tabela de preços pronta</h1>
+  <p class="lead">Usa o maior valor entre o que você cobra hoje e o preço sugerido. Salve a imagem ou copie o texto.</p>
+  <div class="card">
+    <label for="studio" style="margin-top:0">Nome do seu studio <small>(opcional, aparece na imagem)</small></label>
+    <input class="in txt" id="studio" maxlength="40" autocomplete="off" placeholder="Ex.: Studio da Ana">
+    <table class="tbl" id="tbl" style="margin-top:10px"></table>
+  </div>
+  <button class="btn" type="button" id="img">Salvar imagem para postar</button>
+  <div style="height:10px"></div>
+  <button class="btn o" type="button" id="copy">Copiar texto para o WhatsApp</button>
+  <p class="note" style="margin-top:12px">Seus números ficam salvos só neste aparelho. Os valores iniciais da calculadora eram exemplos: confira os seus antes de divulgar.</p>
+  <button class="btn g" type="button" id="reset">Voltar aos exemplos</button>
+</section>
+</main>
+
+<nav class="nav" aria-label="Passos">
+  <button type="button" data-go="1" class="on"><b>1</b>Minha hora</button>
+  <button type="button" data-go="2"><b>2</b>Serviços</button>
+  <button type="button" data-go="3"><b>3</b>Tabela</button>
+</nav>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+var KEY='kpc_calc_v1';
+function ex(){return {ex:true,
+ fixos:[['Aluguel / cadeira / espaço',600],['Luz, água, internet',150],['Imposto (ex.: DAS do MEI)',80],['Telefone / aplicativos / agenda',60],['Divulgação (anúncios, cartões etc.)',50],['Reposição de equipamentos',70],['Outros gastos fixos',0]].map(function(x){return {l:x[0],v:x[1]};}),
+ ret:3000,hd:8,dias:5,ocup:65,card:4,res:10,studio:'',
+ sv:[['Esmaltação simples (mão)',45,4,35],['Esmaltação simples (pé)',50,4,35],['Mão + pé',90,8,60],['Esmaltação em gel (mão)',75,12,70],['Blindagem',90,18,90],['Alongamento em gel',150,35,180],['Manutenção de alongamento',120,22,120],['Remoção',30,3,25]].map(function(x){return {n:x[0],t:x[1],m:x[2],p:x[3]};})};}
+var S; try{S=JSON.parse(localStorage.getItem(KEY));}catch(e){} if(!S||!S.fixos||!S.sv)S=ex();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function num(v){if(v===''||v==null)return NaN; if(typeof v==='number')return v; v=String(v).trim().replace(/[^\d,.\-]/g,''); if(v.indexOf(',')>-1)v=v.replace(/\./g,'').replace(',','.'); return parseFloat(v);}
+function n0(v){var x=num(v);return isNaN(x)?0:x;}
+function brl(x,d){d=d==null?2:d;return 'R$ '+x.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function fmt(v){return (v===''||v==null||isNaN(num(v)))?'':String(num(v)).replace('.',',');}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function toast(t){var e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){e.classList.remove('show');},2200);}
+
+function calc(){
+  var tf=S.fixos.reduce(function(a,f){return a+n0(f.v);},0);
+  var hv=n0(S.hd)*n0(S.dias)*4.33*n0(S.ocup)/100;
+  var ch=hv>0?(tf+n0(S.ret))/hv:0;
+  var den=1-(n0(S.card)+n0(S.res))/100;
+  var rows=S.sv.map(function(s){
+    var t=n0(s.t); if(!(t>0)) return {ok:false};
+    var custo=t/60*ch+n0(s.m);
+    var sug=den>0.05?Math.ceil(custo/den-1e-9):NaN;
+    var p=num(s.p), has=!isNaN(p)&&p>0;
+    var lucro=has?p*(1-n0(S.card)/100)-custo:NaN;
+    var st=!has?'no':(p>=sug?'ok':(lucro>=0?'at':'pr'));
+    return {ok:true,custo:custo,sug:sug,p:has?p:NaN,lucro:lucro,st:st,price:has?Math.max(p,sug):sug};
+  });
+  return {tf:tf,hv:hv,ch:ch,rows:rows};
+}
+
+/* Passo 1 */
+var FIX_IDS=[];
+function buildFixos(){
+  var h='';
+  S.fixos.forEach(function(f,i){h+='<label for="f'+i+'">'+esc(f.l)+'</label><div class="pre"><i>R$</i><input class="in" id="f'+i+'" data-i="'+i+'" inputmode="decimal" autocomplete="off" value="'+esc(fmt(f.v))+'"></div>';});
+  $('fixos').innerHTML=h;
+}
+function fillTop(){
+  $('ret').value=fmt(S.ret);$('hd').value=fmt(S.hd);$('dias').value=fmt(S.dias);$('ocup').value=fmt(S.ocup);$('card').value=fmt(S.card);$('res').value=fmt(S.res);$('studio').value=S.studio||'';
+}
+$('fixos').addEventListener('input',function(e){var i=e.target.getAttribute('data-i');if(i==null)return;S.fixos[+i].v=e.target.value;update();});
+[['ret','ret'],['hd','hd'],['dias','dias'],['ocup','ocup'],['card','card'],['res','res']].forEach(function(p){$(p[0]).addEventListener('input',function(){S[p[1]]=this.value;update();});});
+$('studio').addEventListener('input',function(){S.studio=this.value;save();});
+
+/* Passo 2 */
+function badge(st){return {ok:['b-ok','OK: cobre custos e margem'],at:['b-at','Atenção: pouca folga'],pr:['b-pr','PREJUÍZO: abaixo do custo'],no:['b-no','Informe o que cobra hoje']}[st];}
+function buildSvcs(){
+  var h='';
+  S.sv.forEach(function(s,i){
+    h+='<div class="svc" data-i="'+i+'"><button class="btn g s rm" type="button" data-rm="'+i+'">Remover</button>'
+     +'<label style="margin-top:0">Serviço</label><input class="in txt" data-f="n" placeholder="Ex.: Esmaltação em gel" maxlength="60" value="'+esc(s.n||'')+'">'
+     +'<div class="g3"><div><label>Tempo (min)</label><input class="in" data-f="t" inputmode="numeric" value="'+esc(fmt(s.t))+'"></div>'
+     +'<div><label>Material</label><div class="pre"><i>R$</i><input class="in" data-f="m" inputmode="decimal" value="'+esc(fmt(s.m))+'"></div></div>'
+     +'<div><label>Cobro hoje</label><div class="pre"><i>R$</i><input class="in" data-f="p" inputmode="decimal" value="'+esc(fmt(s.p))+'"></div></div></div>'
+     +'<div class="res"><div><small>Preço sugerido</small><strong data-o="sug">R$ 0</strong></div><span class="badge" data-o="bd"></span></div>'
+     +'<div class="lucro" data-o="lc"></div></div>';
+  });
+  $('svcs').innerHTML=h;
+}
+$('svcs').addEventListener('input',function(e){
+  var card=e.target.closest('.svc'); if(!card)return; var f=e.target.getAttribute('data-f'); if(!f)return;
+  S.sv[+card.getAttribute('data-i')][f]=e.target.value; update();
+});
+$('svcs').addEventListener('click',function(e){
+  var r=e.target.getAttribute('data-rm'); if(r==null)return;
+  S.sv.splice(+r,1); if(!S.sv.length)S.sv.push({n:'',t:'',m:'',p:''}); buildSvcs(); update();
+});
+$('add').addEventListener('click',function(){
+  if(S.sv.length>=30){toast('Limite de 30 serviços');return;}
+  S.sv.push({n:'',t:'',m:'',p:''}); buildSvcs(); update();
+  var cards=document.querySelectorAll('.svc'); var last=cards[cards.length-1]; if(last){last.scrollIntoView({behavior:'smooth',block:'center'});last.querySelector('input').focus({preventScroll:true});}
+});
+
+function clearAll(){
+  S.ex=false; S.fixos.forEach(function(f){f.v='';}); S.ret='';S.hd=8;S.dias=5;S.ocup=65;S.card=4;S.res=10;
+  S.sv=[{n:'',t:'',m:'',p:''}]; buildFixos();fillTop();buildSvcs();update();window.scrollTo(0,0);
+}
+$('clear').addEventListener('click',clearAll);
+$('clear2').addEventListener('click',function(){clearAll();go(1);toast('Comece pelos seus gastos fixos');});
+$('reset').addEventListener('click',function(){if(confirm('Voltar aos exemplos? Seus números atuais serão apagados deste aparelho.')){S=ex();buildFixos();fillTop();buildSvcs();update();go(1);}});
+
+/* Atualiza tudo */
+function update(){
+  var c=calc();
+  $('totfix').textContent=brl(c.tf);
+  $('ch').textContent=brl(c.ch);
+  $('chd').textContent=c.hv>0?('Você tem cerca de '+c.hv.toLocaleString('pt-BR',{maximumFractionDigits:1})+' horas vendáveis por mês. Cada hora precisa render isso para cobrir seus gastos e a sua retirada.'):'Preencha as horas, os dias e a agenda ocupada para calcular.';
+  $('exban').style.display=S.ex?'block':'none'; $('exban2').style.display=S.ex?'block':'none';
+  $('p-ch').textContent=brl(c.ch,2);
+  var n=0,rj=0,pr=0;
+  document.querySelectorAll('.svc').forEach(function(card,i){
+    var r=c.rows[i]; var q=function(k){return card.querySelector('[data-o='+k+']');};
+    if(!r||!r.ok){q('sug').textContent='R$ --';q('bd').className='badge b-no';q('bd').textContent='Informe o tempo do serviço';q('lc').textContent='';return;}
+    n++; q('sug').textContent=isNaN(r.sug)?'R$ --':brl(r.sug,0);
+    var b=badge(r.st); q('bd').className='badge '+b[0]; q('bd').textContent=b[1];
+    if(r.st==='at'||r.st==='pr')rj++; if(r.st==='pr')pr++;
+    q('lc').innerHTML=isNaN(r.lucro)?'Custo do serviço: '+brl(r.custo):'Custo do serviço: '+brl(r.custo)+'. Lucro hoje: <b class="'+(r.lucro<0?'neg':'')+'">'+brl(r.lucro)+'</b>';
+  });
+  $('p-n').textContent=n;$('p-r').textContent=rj;$('p-p').textContent=pr;
+  // tabela
+  var h='',any=false;
+  S.sv.forEach(function(s,i){var r=c.rows[i]; if(!r.ok||isNaN(r.price))return; any=true; h+='<tr><td>'+esc(s.n||('Serviço '+(i+1)))+'</td><td>'+brl(r.price)+'</td></tr>';});
+  $('tbl').innerHTML=any?h:'<tr><td style="border:0;color:#7A4A62">Cadastre seus serviços no passo 2 para ver a tabela aqui.</td></tr>';
+  save();
+}
+
+/* Navegação */
+function go(k){
+  document.querySelectorAll('.step').forEach(function(s){s.classList.toggle('on',s.id==='s'+k);});
+  document.querySelectorAll('.nav button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-go')==k);});
+  window.scrollTo(0,0);
+}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-go]');if(b)go(b.getAttribute('data-go'));});
+
+/* Texto e imagem da tabela */
+function lista(){
+  var c=calc(),out=[];
+  S.sv.forEach(function(s,i){var r=c.rows[i]; if(r.ok&&!isNaN(r.price))out.push({n:(s.n||('Serviço '+(i+1))).trim(),p:r.price});});
+  return out;
+}
+$('copy').addEventListener('click',function(){
+  var l=lista(); if(!l.length){toast('Cadastre seus serviços primeiro');return;}
+  var t='*'+(S.studio?S.studio+' · ':'')+'Tabela de preços*\n\n'+l.map(function(x){return x.n+': '+brl(x.p);}).join('\n');
+  function ok(){toast('Texto copiado');}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){fallback(t);});}else fallback(t);
+  function fallback(t){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok();}catch(e){toast('Não consegui copiar');}a.remove();}
+});
+function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function draw(l){
+  var W=1080,H=1350,cv=document.createElement('canvas');cv.width=W;cv.height=H;var g=cv.getContext('2d');
+  var bg=g.createLinearGradient(0,0,W,H);bg.addColorStop(0,'#FFF4F8');bg.addColorStop(.6,'#FBD3E2');bg.addColorStop(1,'#F4A7C3');g.fillStyle=bg;g.fillRect(0,0,W,H);
+  g.fillStyle='#C2185B';rr(g,60,60,W-120,170,36);g.fill();
+  g.fillStyle='#fff';g.textAlign='center';g.textBaseline='middle';
+  g.font='700 64px Poppins, sans-serif';g.fillText('Tabela de preços',W/2,S.studio?125:145);
+  if(S.studio){g.font='500 38px Poppins, sans-serif';g.fillText(S.studio,W/2,190);}
+  var top=270,bottom=H-170,avail=bottom-top,rh=Math.min(92,avail/l.length),fs=Math.max(26,Math.min(44,rh*.5));
+  g.fillStyle='#fff';rr(g,60,top-20,W-120,rh*l.length+40,30);g.fill();
+  l.forEach(function(x,i){
+    var y=top+i*rh+rh/2;
+    if(i>0){g.strokeStyle='#F0CFDB';g.lineWidth=2;g.beginPath();g.moveTo(100,top+i*rh);g.lineTo(W-100,top+i*rh);g.stroke();}
+    g.textAlign='left';g.fillStyle='#3A0A26';g.font='500 '+fs+'px Poppins, sans-serif';
+    var name=x.n; while(g.measureText(name).width>560&&name.length>3)name=name.slice(0,-2); if(name!==x.n)name=name.trim()+'…';
+    g.fillText(name,100,y);
+    g.textAlign='right';g.fillStyle='#C2185B';g.font='700 '+fs+'px Poppins, sans-serif';g.fillText(brl(x.p),W-100,y);
+  });
+  g.textAlign='center';g.fillStyle='#9A2A5E';g.font='600 32px Poppins, sans-serif';g.fillText('Kit Preço Certo · kitprecocerto.com.br',W/2,H-90);
+  return cv;
+}
+$('img').addEventListener('click',function(){
+  var l=lista(); if(!l.length){toast('Cadastre seus serviços primeiro');return;}
+  var go1=function(){var cv=draw(l);cv.toBlob(function(b){
+    if(!b){toast('Não consegui gerar a imagem');return;}
+    var f; try{f=new File([b],'tabela-de-precos.png',{type:'image/png'});}catch(e){}
+    if(f&&navigator.canShare&&navigator.canShare({files:[f]})&&navigator.share){navigator.share({files:[f],title:'Tabela de preços'}).catch(function(){});return;}
+    var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='tabela-de-precos.png';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},1500);toast('Imagem salva');
+  },'image/png');};
+  if(document.fonts&&document.fonts.load){Promise.all([document.fonts.load('700 40px Poppins'),document.fonts.load('500 40px Poppins'),document.fonts.load('600 40px Poppins')]).then(go1,go1);}else go1();
+});
+
+/* Seleciona o conteúdo ao focar (facilita trocar o valor no celular) */
+document.addEventListener('focusin',function(e){var t=e.target;if(t.classList&&t.classList.contains('in')&&!t.classList.contains('txt')){setTimeout(function(){try{t.select();}catch(x){}},0);}});
+
+buildFixos();fillTop();buildSvcs();update();
+})();
+</script>
+</body></html>
