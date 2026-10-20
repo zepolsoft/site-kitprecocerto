@@ -880,3 +880,11 @@ body:has(.count) .count{text-align:center}
 .ob-bonus h2{margin:0 0 6px;font-size:1.15rem}
 @media(min-width:700px){.ob-strip{justify-content:center;overflow:visible;flex-wrap:wrap}}
 body:has(.count) a.btn.btn.btn.ig{background:#fff!important;color:#C2185B!important;border:1.5px solid #C2185B!important;box-shadow:none!important}
+/* v45: tabela de preços em primeiro plano; bônus em destaque secundário */
+.duo-thumbs{display:flex;align-items:center;gap:0;margin:4px 0 16px}
+.duo-thumbs img{width:64px;height:auto;aspect-ratio:720/1100;border-radius:10px;box-shadow:0 8px 16px -8px rgba(90,18,54,.6);border:2px solid #fff;margin-right:-14px;background:#fff}
+.duo-thumbs img:nth-child(1){transform:rotate(-6deg)}.duo-thumbs img:nth-child(3){transform:rotate(6deg)}
+.duo-thumbs span{margin-left:28px;font-size:.8rem;font-weight:700;color:#C2185B}
+.bonus-tag{display:inline-block;margin-bottom:10px;padding:4px 14px;border-radius:999px;background:linear-gradient(180deg,#fff8e6,#f7e2ac);border:1px solid #e8c775;color:#5a1236;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.dentro-note{margin:0 auto 12px;max-width:34em;font-size:.88rem;color:#8a1a50;font-weight:600}
+.dentro-note{margin-top:10px!important}
