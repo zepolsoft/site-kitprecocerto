@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=73">
+<link rel="stylesheet" href="style.css?v=74">
 <script>document.documentElement.className+=' js';</script></head><body>
 
 <!-- ícones -->
@@ -46,9 +46,11 @@
       <span><svg viewBox="0 0 24 24"><use href="#i-sheet"/></svg>No celular + bônus Excel</span>
       <span><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg>Acesso na hora</span>
     </div>
-    <figure class="hero-tab" aria-label="Exemplo da imagem da tabela de preços que a calculadora gera (valores de exemplo)">
-      <img src="exemplo-tabela.jpg" width="720" height="900" alt="Imagem da tabela de preços gerada pela calculadora, com serviços e valores de exemplo, pronta para postar">
-      <figcaption>Esta é a imagem que a calculadora gera para você postar. Valores de exemplo.</figcaption>
+    <figure class="hero-tab" id="tp" aria-label="Exemplos da imagem da tabela de preços que a calculadora gera (valores de exemplo)">
+      <div class="tp-stage"><img src="tab-rosa.jpg" width="720" height="1100" alt="Tabela de preços no estilo Rosa, com serviços e valores de exemplo" class="on"><img src="tab-vinho.jpg" width="720" height="1100" alt="Tabela de preços no estilo Vinho e dourado, com serviços e valores de exemplo" class="" loading="lazy"><img src="tab-preto.jpg" width="720" height="1100" alt="Tabela de preços no estilo Preto e dourado, com serviços e valores de exemplo" class="" loading="lazy"><img src="tab-lilas.jpg" width="720" height="1100" alt="Tabela de preços no estilo Lilás, com serviços e valores de exemplo" class="" loading="lazy"><img src="tab-verde.jpg" width="720" height="1100" alt="Tabela de preços no estilo Verde sálvia, com serviços e valores de exemplo" class="" loading="lazy"><img src="tab-nude.jpg" width="720" height="1100" alt="Tabela de preços no estilo Nude, com serviços e valores de exemplo" class="" loading="lazy"></div>
+      <div class="tp-dots" role="radiogroup" aria-label="Escolha o estilo da tabela"><span class="tp-d on" role="radio" tabindex="0" aria-checked="true" aria-label="Estilo Rosa" data-i="0" style="background:linear-gradient(135deg,#FBD3E2,#E91E78)"></span><span class="tp-d" role="radio" tabindex="0" aria-checked="false" aria-label="Estilo Vinho e dourado" data-i="1" style="background:linear-gradient(135deg,#8a1a50,#f6d27a)"></span><span class="tp-d" role="radio" tabindex="0" aria-checked="false" aria-label="Estilo Preto e dourado" data-i="2" style="background:linear-gradient(135deg,#211a1f,#e7c27d)"></span><span class="tp-d" role="radio" tabindex="0" aria-checked="false" aria-label="Estilo Lilás" data-i="3" style="background:linear-gradient(135deg,#E5CBF2,#8e44ad)"></span><span class="tp-d" role="radio" tabindex="0" aria-checked="false" aria-label="Estilo Verde sálvia" data-i="4" style="background:linear-gradient(135deg,#D8E7D4,#4f8a5b)"></span><span class="tp-d" role="radio" tabindex="0" aria-checked="false" aria-label="Estilo Nude" data-i="5" style="background:linear-gradient(135deg,#F1DEC8,#b0693f)"></span></div>
+      <p class="tp-name" id="tpn">Estilo: Rosa</p>
+      <figcaption>Você escolhe entre 6 estilos de cor. Valores de exemplo.</figcaption>
     </figure>
     <ul class="gains">
       <li><svg viewBox="0 0 24 24"><use href="#i-tag"/></svg><span><b>Tabela pronta para postar</b>escolha o modelo, coloque o seu nome e salve a imagem no celular</span></li>
@@ -458,5 +460,13 @@ document.querySelectorAll('.peek-tabs button').forEach(function(b){
   },{threshold:.35}).observe(ph);
 })();
 </script>
-<script>(function(){var r=document.documentElement,t=0;function u(){t=0;var m=r.scrollHeight-innerHeight;var q=m>0?Math.min(1,Math.max(0,scrollY/m)):0;r.style.setProperty('--p',q.toFixed(4));r.style.setProperty('--hl',(355+32*Math.sin(q*Math.PI*3)).toFixed(1))}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});addEventListener('resize',u);u()})();</script>
+<script>(function(){var r=document.documentElement,t=0;function u(){t=0;var m=r.scrollHeight-innerHeight;var q=m>0?Math.min(1,Math.max(0,scrollY/m)):0;r.style.setProperty('--p',q.toFixed(4));r.style.setProperty('--hl',(355+32*Math.sin(q*Math.PI*3)).toFixed(1))}addEventListener('scroll',function(){if(!t)t=requestAnimationFrame(u)},{passive:true});addEventListener('resize',u);u()})();
+/* Carrossel dos estilos da tabela */
+(function(){var w=document.getElementById('tp');if(!w)return;var im=w.querySelectorAll('.tp-stage img'),ds=w.querySelectorAll('.tp-d'),nm=document.getElementById('tpn'),N=['Rosa','Vinho e dourado','Preto e dourado','Lilás','Verde sálvia','Nude'],i=0,t=null;
+function go(k){i=k;[].forEach.call(im,function(e,j){e.classList.toggle('on',j===k);});[].forEach.call(ds,function(e,j){e.classList.toggle('on',j===k);e.setAttribute('aria-checked',j===k);});nm.textContent='Estilo: '+N[k];}
+function stop(){clearInterval(t);t=null;}
+function play(){if(t||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))return;t=setInterval(function(){go((i+1)%im.length);},2800);}
+[].forEach.call(ds,function(e){var f=function(){stop();go(+e.getAttribute('data-i'));};e.addEventListener('click',f);e.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();f();}});});
+play();})();
+</script>
 </body></html>
