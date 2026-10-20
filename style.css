@@ -782,3 +782,24 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 @keyframes kpcshine{0%,62%{left:-60%}100%{left:135%}}
 @media(prefers-reduced-motion:reduce){.btn:before,button:after{animation:none!important;display:none}}
 .top h1{font-size:clamp(1.7rem,7.9vw,3.2rem)}
+
+/* ===== v34: pente fino ===== */
+/* selo do topo vira etiqueta discreta */
+.top a.badge.pillbar{width:auto;max-width:none;display:inline-flex;margin:8px auto 10px;padding:5px 14px;font-size:.72rem;letter-spacing:.08em;background:rgba(255,255,255,.55);border:1px solid rgba(194,24,91,.35);box-shadow:none;color:#8a1a50;animation:none;text-shadow:none;border-radius:999px;gap:6px}
+.top a.badge.pillbar:before{display:none}
+.top a.badge.pillbar svg{width:14px;height:14px;stroke:#C2185B;animation:none}
+.top a.badge.pillbar .gr{animation:none;box-shadow:none;padding:0 8px}
+.top a.badge.pillbar .go{display:none}
+.top a.badge.pillbar .pp{display:inline}
+.top a.badge.pillbar:hover{transform:none}
+.top .badge.pillbar{text-align:center}
+/* o link "Teste a conta" fica pequeno */
+.try{font-size:.85rem;margin:10px 0 2px}
+/* fita do titulo mais compacta no celular */
+@media(max-width:560px){.top h1 em{padding:8px 18px 10px;margin-top:12px;font-size:clamp(1.3rem,6vw,1.7rem)}}
+/* icones planos, combinando com os botoes finos */
+.ico,.pain .ico{width:44px;height:44px;background:linear-gradient(180deg,#FF74BA,#E91E78);box-shadow:none;color:#fff}
+.ico svg{width:22px;height:22px;stroke-width:2}
+.gains li svg{box-shadow:none!important;background:#E91E78}
+/* formulario fixo no desktop */
+@media(min-width:861px){.top .hero{align-items:start}.top .hero>.card#baixar,.top .hero>div:last-child{position:sticky;top:16px;align-self:start}}
