@@ -803,3 +803,6 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 .gains li svg{box-shadow:none!important;background:#E91E78}
 /* formulario fixo no desktop */
 @media(min-width:861px){.top .hero{align-items:start}.top .hero>.card#baixar,.top .hero>div:last-child{position:sticky;top:16px;align-self:start}}
+/* v35: resultado ao vivo junto dos campos do simulador */
+.sim-live{position:sticky;top:0;z-index:5;margin:-4px 0 14px;padding:10px 14px;border-radius:14px;background:#5a1236;color:#fff;text-align:center;font-size:.95rem;box-shadow:0 6px 16px rgba(90,18,54,.25)}
+.sim-live b{color:#f6d27a;font-size:1.25rem;margin-left:6px}

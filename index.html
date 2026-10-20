@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=82">
+<link rel="stylesheet" href="style.css?v=83">
 <script>document.documentElement.className+=' js';</script></head><body>
 
 <!-- ícones -->
@@ -188,6 +188,7 @@
   <div class="center rv"><h2>Teste agora: quanto cobrar em um serviço?</h2><p class="lead">Mexa nos números e veja a conta acontecer. A calculadora faz isso para <b>todos</b> os seus serviços de uma vez.</p></div>
   <div class="sim rv">
     <div class="sim-in">
+      <div class="sim-live" aria-live="polite">Preço sugerido: <b id="s-live">R$ --</b></div>
       <label for="s-t">Tempo do serviço (minutos)</label><input id="s-t" type="text" inputmode="numeric" value="60" autocomplete="off">
       <label for="s-m">Material gasto (R$)</label><input id="s-m" type="text" inputmode="decimal" value="8" autocomplete="off">
       <label for="s-h">Custo da sua hora (R$)</label><input id="s-h" type="text" inputmode="decimal" value="35,62" autocomplete="off">
@@ -351,10 +352,10 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
   function brl(x,d){return 'R$ '+x.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});}
   function run(){
     var T=num(el['s-t'].value),M=num(el['s-m'].value),H=num(el['s-h'].value),P=num(el['s-p'].value);
-    var r=document.getElementById('s-r'),m=document.getElementById('s-msg');
-    if(!(T>0&&T<=720)||isNaN(M)||M<0||!(H>0)||H>100000||M>100000){r.textContent='R$ --';m.textContent='Preencha tempo, material e custo da hora.';return;}
+    var r=document.getElementById('s-r'),m=document.getElementById('s-msg'),lv=document.getElementById('s-live');
+    if(!(T>0&&T<=720)||isNaN(M)||M<0||!(H>0)||H>100000||M>100000){r.textContent='R$ --';lv.textContent='R$ --';m.textContent='Preencha tempo, material e custo da hora.';return;}
     var tempo=T/60*H, cost=tempo+M, price=Math.ceil(cost/(1-0.04-0.10));
-    r.textContent=brl(price,0);
+    r.textContent=brl(price,0);lv.textContent=brl(price,0);
     var st=document.getElementById('s-steps');
     st.innerHTML='<div><span>Seu tempo ('+T+' min)</span><b>'+brl(tempo,2)+'</b></div>'
       +'<div><span>+ Material</span><b>'+brl(M,2)+'</b></div>'
@@ -366,7 +367,10 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     else if(lucro<0)m.textContent='Cobrando '+brl(P,2)+', a maquininha leva '+brl(taxa,2)+' e sobram '+brl(liq,2)+'. Como o serviço custa '+brl(cost,2)+', você perde '+brl(-lucro,2)+' a cada atendimento.';
     else m.textContent='Cobrando '+brl(P,2)+', sobram só '+brl(lucro,2)+' depois da maquininha e dos custos. Pouca folga.';
   }
-  ids.forEach(function(i){el[i].addEventListener('input',run);}); run();
+  var stk=document.getElementById('sticky');
+  ids.forEach(function(i){['input','keyup','change'].forEach(function(ev){el[i].addEventListener(ev,run);});
+    el[i].addEventListener('focus',function(){if(stk)stk.style.display='none';});
+    el[i].addEventListener('blur',function(){if(stk)stk.style.display='';});}); run();
 })();
 /* Abas da planilha: troca sozinha e para quando a pessoa interage */
 (function(){
