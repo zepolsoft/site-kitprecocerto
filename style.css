@@ -818,3 +818,13 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 .sim-out .sim-btn:after{display:none}
 .sim-out .sim-det,.sim-out details.sim-det{background:none!important;border:0!important;box-shadow:none!important;padding:0!important}
 .sim-out .sim-det summary{background:none!important;border:0!important;box-shadow:none!important;padding:4px!important}
+/* v37: botao da barra fixa (rosa, fino) e do simulador (contorno dourado) */
+.sticky{padding:8px 14px calc(8px + env(safe-area-inset-bottom))}
+.sticky .btn.btn.btn{background:linear-gradient(180deg,#FF5FAE,#E91E78);color:#fff;border:0;min-height:44px;padding:10px 20px;font-size:.82rem;letter-spacing:.06em;box-shadow:0 6px 16px -6px rgba(233,30,120,.7);justify-content:center;text-align:center}
+.sticky .btn.btn.btn:hover{background:linear-gradient(180deg,#ff74ba,#ef2a84)}
+.sticky .btn.btn.btn:before{background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent)}
+.sticky .btn:after{color:#fff;opacity:1}
+.sim-out .btn.btn.btn.sim-btn{display:flex;width:fit-content;margin:0 auto;justify-content:center;text-align:center;background:transparent;color:#f6d27a;border:1.5px solid rgba(246,210,122,.75);box-shadow:none;padding:10px 22px;min-height:42px;font-size:.8rem;letter-spacing:.05em}
+.sim-out .btn.btn.btn.sim-btn:hover{background:rgba(246,210,122,.16)}
+.sim-out .btn.sim-btn:before{display:none}
+.sim-out .btn.sim-btn:after{display:inline;content:"→";margin-left:8px;position:static;background:none;width:auto;height:auto;transform:none;animation:none;color:#f6d27a}
