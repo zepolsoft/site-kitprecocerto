@@ -160,7 +160,7 @@ input[type=file].in{background:#fff;padding:10px}
 </style></head><body>
 <div class="top"><img src="favicon.png" alt=""><b>Kit Preço Certo</b><span>Calculadora de preço</span></div>
 <main>
-<div class="banner" id="inapp" style="display:none;background:#FFF3C4;border:1px solid #E8D48A"><b>✨ Truque de 5 segundos</b><br>Toque nos <b>3 pontinhos ⋮</b> lá em cima e escolha <b>“Abrir no navegador”</b>. Assim você consegue salvar a tabela na galeria e seus números ficam guardados. 💅
+<div class="banner" id="inapp" style="display:none;background:#FFF3C4;border:1px solid #E8D48A"><b>✨ Truque de 5 segundos</b><br>Toque nos <b>3 pontinhos ⋮</b> lá em cima e escolha <b>“Abrir no navegador”</b>. Assim você consegue salvar a tabela na galeria e seus números ficam guardados. 
 <button class="btn s" id="openchrome" type="button" style="display:none;margin-top:8px">Abrir no Chrome</button>
 <p class="note" style="margin:8px 0 0">Sem pressa: também dá para tirar um print da tabela pronta.</p></div>
 
@@ -270,7 +270,7 @@ var KEY='kpc_calc_v1';
 function ex(){return {ex:true,
  fixos:[['Aluguel / cadeira / espaço',600],['Luz, água, internet',150],['Imposto (ex.: DAS do MEI)',80],['Telefone / aplicativos / agenda',60],['Divulgação (anúncios, cartões etc.)',50],['Reposição de equipamentos',70],['Outros gastos fixos',0]].map(function(x){return {l:x[0],v:x[1]};}),
  ret:3000,hd:8,dias:5,ocup:65,card:4,res:10,studio:'',
- sv:[['Esmaltação simples (mão)',45,4,35],['Esmaltação simples (pé)',50,4,35],['Mão + pé',90,8,60],['Esmaltação em gel (mão)',75,12,70],['Blindagem',90,18,90],['Alongamento em gel',150,35,180],['Manutenção de alongamento',120,22,120],['Remoção',30,3,25]].map(function(x){return {n:x[0],t:x[1],m:x[2],p:x[3]};})};}
+ sv:[['Corte feminino',60,6,80],['Escova',45,6,35],['Manicure (mão)',45,4,30],['Design de sobrancelha',30,3,40],['Limpeza de pele',75,15,120],['Massagem relaxante',60,8,100],['Extensão de cílios',120,35,180],['Depilação (perna)',40,8,55]].map(function(x){return {n:x[0],t:x[1],m:x[2],p:x[3]};})};}
 var S; try{S=JSON.parse(localStorage.getItem(KEY));}catch(e){} if(!S||!S.fixos||!S.sv)S=ex();
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
 function num(v){if(v===''||v==null)return NaN; if(typeof v==='number')return v; v=String(v).trim().replace(/[^\d,.\-]/g,''); if(v.indexOf(',')>-1)v=v.replace(/\./g,'').replace(',','.'); return parseFloat(v);}
