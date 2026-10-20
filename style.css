@@ -698,3 +698,9 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 .tp-d:focus-visible{outline:2px solid #5a1236;outline-offset:3px}
 .tp-name{margin:6px 0 0;text-align:center;font-weight:700;font-size:.85rem;color:#8a1a50}
 @media(max-width:860px){.hero-tab{max-width:300px}}
+
+/* ===== v29: abas da planilha com imagens reais, sem borrado ===== */
+.peek-pane img.narrow{max-width:640px;margin:0 auto}
+.peek-pane.on{animation:kpcfade .5s ease}
+@keyframes kpcfade{from{opacity:0}to{opacity:1}}
+.peek-scroll img.wide{min-width:820px}

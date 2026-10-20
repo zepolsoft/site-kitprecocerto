@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=74">
+<link rel="stylesheet" href="style.css?v=75">
 <script>document.documentElement.className+=' js';</script></head><body>
 
 <!-- ícones -->
@@ -131,21 +131,21 @@
 <!-- 3b. VEJA POR DENTRO -->
 <section class="nude" id="dentro"><div class="wrap">
   <div class="center rv"><h2>Seu bônus: a planilha Excel com indicadores e gráficos</h2><p class="lead">Além da calculadora do celular, você recebe a planilha profissional para o computador, com fórmulas prontas. Os números abaixo são <b>exemplos</b>: você troca pelos seus.</p></div>
-  <div class="peek rv">
-    <div class="peek-tabs" role="tablist" aria-label="Telas da calculadora">
-      <button type="button" role="tab" aria-selected="true" data-p="p1">Painel</button>
-      <button type="button" role="tab" aria-selected="false" data-p="p2">Seus serviços</button>
-      <button type="button" role="tab" aria-selected="false" data-p="p3">Tabela para postar</button>
+  <div class="peek rv" id="peek">
+    <div class="peek-tabs" role="tablist" aria-label="Abas da planilha">
+      <button type="button" role="tab" aria-selected="true" data-p="p1">Meu custo por hora</button>
+      <button type="button" role="tab" aria-selected="false" data-p="p2">Meus serviços</button>
+      <button type="button" role="tab" aria-selected="false" data-p="p3">Meu Painel</button>
     </div>
     <div class="peek-win">
       <div class="peek-bar"><i></i><i></i><i></i><span>Calculadora-Preco-Certo.xlsx</span></div>
-      <div class="peek-view">
-        <div class="peek-pane on" id="p1"><img src="prev-painel.jpg" width="1400" height="966" loading="lazy" alt="Painel da calculadora com o custo da hora, quantos serviços dão prejuízo e um gráfico do preço de hoje contra o preço sugerido"></div>
-        <div class="peek-pane" id="p2"><div class="peek-scroll"><img class="wide" src="prev-servicos.jpg" width="1400" height="457" loading="lazy" alt="Tabela com preço sugerido, lucro e situação de cada serviço, com aviso de prejuízo"></div><p class="peek-hint">Arraste para o lado para ver tudo</p></div>
-        <div class="peek-pane" id="p3"><img class="narrow" src="prev-tabela.jpg" width="528" height="460" loading="lazy" alt="Tabela de preços pronta para postar no Instagram e WhatsApp"></div>
+      <div class="peek-view" id="pview">
+        <div class="peek-pane on" id="p1"><img class="narrow" src="xl-custo.jpg" width="1100" height="976" alt="Aba Meu custo por hora da planilha: gastos fixos, retirada desejada, horas de trabalho e o custo da sua hora calculado"></div>
+        <div class="peek-pane" id="p2"><div class="peek-scroll"><img class="wide" src="xl-servicos.jpg" width="1500" height="782" loading="lazy" alt="Aba Meus serviços: preço sugerido, situação e lucro de cada serviço, com aviso de prejuízo"></div><p class="peek-hint">Arraste para o lado para ver tudo</p></div>
+        <div class="peek-pane" id="p3"><img src="xl-painel.jpg" width="1300" height="854" loading="lazy" alt="Aba Meu Painel: indicadores do custo da hora, serviços cadastrados e quantos dão prejuízo, mais um gráfico do preço de hoje contra o preço sugerido"></div>
       </div>
     </div>
-    <p class="peek-note">Imagens da calculadora com dados de exemplo. Seus números aparecem depois que você preencher as células amarelas.</p>
+    <p class="peek-note">Imagens da planilha com dados de exemplo. Os seus números aparecem depois que você preencher as células amarelas.</p>
   </div>
   <div class="center rv" style="margin-top:40px"><h3 class="h3c">O que vem na planilha</h3><p class="lead">Para quem quer acompanhar tudo com mais detalhe.</p></div>
   <div class="grid g3">
@@ -382,13 +382,23 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
   }
   ids.forEach(function(i){el[i].addEventListener('input',run);}); run();
 })();
-/* Abas da prévia */
-document.querySelectorAll('.peek-tabs button').forEach(function(b){
-  b.addEventListener('click',function(){
-    document.querySelectorAll('.peek-tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');});
-    document.querySelectorAll('.peek-pane').forEach(function(p){p.classList.toggle('on',p.id===b.getAttribute('data-p'));});
-  });
-});
+/* Abas da planilha: troca sozinha e para quando a pessoa interage */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.peek-tabs button')),panes=[].slice.call(document.querySelectorAll('.peek-pane')),view=document.getElementById('pview'),wrap=document.getElementById('peek'),k=0,t=null,vis=false;
+  function show(n,anim){
+    var oldH=view.offsetHeight;k=n;
+    tabs.forEach(function(x,j){x.setAttribute('aria-selected',j===n?'true':'false');});
+    panes.forEach(function(p,j){p.classList.toggle('on',j===n);});
+    if(anim===false)return;
+    var newH=panes[n].offsetHeight;view.style.height=oldH+'px';view.style.overflow='hidden';void view.offsetHeight;view.style.transition='height .45s ease';view.style.height=newH+'px';
+    setTimeout(function(){view.style.height='';view.style.transition='';view.style.overflow='';},480);
+  }
+  function stop(){clearInterval(t);t=null;}
+  function play(){if(t||!vis||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))return;t=setInterval(function(){show((k+1)%tabs.length);},4500);}
+  tabs.forEach(function(b,j){b.addEventListener('click',function(){stop();show(j);});});
+  ['touchstart','wheel','mouseenter'].forEach(function(ev){wrap.addEventListener(ev,stop,{passive:true});});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){vis=en[0].isIntersecting;vis?play():stop();},{threshold:.35}).observe(wrap);}
+})();
 /* Celular: formulário logo depois do "Veja por dentro" */
 (function(){
   var card=document.getElementById('baixar'), slot=document.getElementById('form-slot'), hero=document.querySelector('.hero');
@@ -400,7 +410,7 @@ document.querySelectorAll('.peek-tabs button').forEach(function(b){
 
 /* Prévia com parte de baixo borrada (curiosidade) */
 (function(){
-  document.querySelectorAll('.hero-win img, .peek-pane img').forEach(function(img){
+  document.querySelectorAll('.hero-win img').forEach(function(img){
     var w=document.createElement('span'); w.className='bz'+(img.classList.contains('narrow')?' narrow':'');
     var under=img.cloneNode(false); under.className=(img.className?img.className+' ':'')+'bu'; under.alt=''; under.setAttribute('aria-hidden','true'); under.removeAttribute('loading');
     img.parentNode.insertBefore(w,img); w.appendChild(under); w.appendChild(img); img.classList.add('bs');
