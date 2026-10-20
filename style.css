@@ -641,3 +641,17 @@ button:not(.peek-tabs button):not(.peek-tabs *):hover,.btn:not(.s):not(.o):not(.
 button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(.ig):active{transform:translateY(4px);box-shadow:inset 0 2px 0 rgba(255,255,255,.6),0 1px 0 #b8861f,0 8px 14px rgba(184,134,31,.35)}
 @keyframes kpcpulseg{0%,100%{box-shadow:inset 0 2px 0 rgba(255,255,255,.7),inset 0 -3px 0 rgba(150,95,0,.18),0 5px 0 #b8861f,0 14px 24px rgba(184,134,31,.32)}50%{box-shadow:inset 0 2px 0 rgba(255,255,255,.7),inset 0 -3px 0 rgba(150,95,0,.18),0 5px 0 #b8861f,0 18px 36px rgba(246,201,90,.6)}}
 .sticky .btn,.cta-row .btn{color:#4a0f2e}
+
+/* ===== v26: botoes mais leves e finos (sobre claro = vinho; sobre escuro = champanhe) ===== */
+button:not(.peek-tabs button):not(.peek-tabs *),.btn:not(.s):not(.o):not(.ig){
+  min-height:46px;padding:11px 20px;font-size:.84rem;letter-spacing:.07em;font-weight:600;
+  background:linear-gradient(180deg,#8a1a50 0%,#5a1236 100%);color:#fff3d6;border:1px solid rgba(246,210,122,.55);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 8px 18px -6px rgba(90,18,54,.45);animation:none}
+button:not(.peek-tabs button):not(.peek-tabs *):hover,.btn:not(.s):not(.o):not(.ig):hover{background:linear-gradient(180deg,#9a2058,#6a1740);filter:none;transform:translateY(-1px)}
+button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(.ig):active{transform:translateY(1px);box-shadow:0 3px 8px -4px rgba(90,18,54,.5)}
+.sticky .btn.btn.btn,.final .btn.btn.btn,.sim-out .btn.btn.btn,.pain .btn.btn.btn{
+  background:linear-gradient(180deg,#fff8e6 0%,#f7e2ac 100%);color:#5a1236;border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 8px 20px -8px rgba(0,0,0,.45),inset 0 -2px 0 rgba(200,150,40,.18)}
+.sticky .btn.btn.btn:hover,.final .btn.btn.btn:hover,.sim-out .btn.btn.btn:hover,.pain .btn.btn.btn:hover{background:linear-gradient(180deg,#fffdf4,#fbe9b8)}
+.sticky .btn.btn.btn{min-height:44px;padding:10px 18px}
+.sticky .btn:after,.cta-row .btn:after{opacity:.8}
