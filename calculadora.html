@@ -401,6 +401,7 @@ var THEMES={
  vinho:{n:'Vinho e dourado',bg:['#5a1236','#8a1a50','#a61b5f'],title:'#f6d27a',sub:'#ffd1e6',accent:'#f6d27a',price:'#f6d27a',text:'#ffffff',card:'rgba(255,255,255,.10)',pill:'#f6d27a',pillText:'#4a0f2e',foot:'#ffd1e6',glow:'rgba(255,120,180,.25)'},
  preto:{n:'Preto e dourado',bg:['#141114','#211a1f','#2d2229'],title:'#e7c27d',sub:'#e7c27d',accent:'#e7c27d',price:'#e7c27d',text:'#f4ece6',card:'rgba(255,255,255,.07)',pill:'#e7c27d',pillText:'#201519',foot:'#e7c27d',glow:'rgba(231,194,125,.14)'},
  lilas:{n:'Lilás',bg:['#F7EEFB','#E5CBF2','#CFA6E6'],title:'#5b2a86',sub:'#5b2a86',accent:'#8e44ad',price:'#7b2fa0',text:'#2c1240',card:'#ffffff',pill:'#5b2a86',pillText:'#ffffff',foot:'#5b2a86',glow:'rgba(255,255,255,.7)'},
+ verde:{n:'Verde sálvia',bg:['#F4F8F2','#D8E7D4','#B3CFAE'],title:'#2f5d3a',sub:'#2f5d3a',accent:'#4f8a5b',price:'#2b7a42',text:'#1f3324',card:'#ffffff',pill:'#2f5d3a',pillText:'#ffffff',foot:'#2f5d3a',glow:'rgba(255,255,255,.7)'},
  nude:{n:'Nude',bg:['#FFF9F1','#F1DEC8','#E2C2A3'],title:'#7a4a2e',sub:'#7a4a2e',accent:'#b0693f',price:'#a9552c',text:'#3b2416',card:'#ffffff',pill:'#7a4a2e',pillText:'#ffffff',foot:'#7a4a2e',glow:'rgba(255,255,255,.7)'}
 };
 var LOGO=null;
@@ -428,7 +429,7 @@ function draw(l){
   var fh=44;if(c.frase)fh+=84;if(pills.length)fh+=(pills.length===2?160:90);if(c.pag)fh+=48;if(c.obs)fh+=44;
   var bottom=H-fh-30,top=y+10,avail=bottom-top;
   var n=l.length,cols=n>12?2:1,rpc=Math.ceil(n/cols),gap=36,colW=(W-2*PAD-(cols-1)*gap)/cols;
-  var rh=Math.min(cols===2?86:100,(avail-40)/rpc),fs=Math.max(22,Math.min(cols===2?36:46,rh*.46));
+  var big=H>1500,rh=Math.min(cols===2?(big?110:86):(big?132:100),(avail-40)/rpc),fs=Math.max(22,Math.min(cols===2?(big?42:36):(big?54:46),rh*.46));
   var cardH=rh*rpc+40;g.fillStyle=T.card;rr(g,PAD-20,top-8,W-2*PAD+40,cardH,34);g.fill();
   for(var i=0;i<n;i++){
     var col=Math.floor(i/rpc),row=i%rpc,x0=PAD+col*(colW+gap)+(cols===1?20:6),x1=PAD+col*(colW+gap)+colW-(cols===1?20:6),yy=top+12+row*rh+rh/2;
