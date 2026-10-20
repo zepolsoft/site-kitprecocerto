@@ -806,3 +806,15 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 /* v35: resultado ao vivo junto dos campos do simulador */
 .sim-live{position:sticky;top:0;z-index:5;margin:-4px 0 14px;padding:10px 14px;border-radius:14px;background:#5a1236;color:#fff;text-align:center;font-size:.95rem;box-shadow:0 6px 16px rgba(90,18,54,.25)}
 .sim-live b{color:#f6d27a;font-size:1.25rem;margin-left:6px}
+/* v36: resultado do simulador mais simples */
+.sim-out strong{font-size:clamp(3.6rem,20vw,5rem);line-height:1;display:block;margin:6px 0 10px}
+.sim-out p#s-msg{font-size:1rem;font-weight:600;line-height:1.4;margin:0 0 12px}
+.sim-det{margin:0 0 16px;text-align:center}
+.sim-det summary{cursor:pointer;color:#f6d27a;font-size:.85rem;font-weight:600;list-style:none;text-decoration:underline;text-underline-offset:3px}
+.sim-det summary::-webkit-details-marker{display:none}
+.sim-det .sim-steps{margin-top:12px;text-align:left;font-size:.9rem}
+.sim-det .why{font-size:.8rem;opacity:.85}
+.sim-out .btn.btn.btn.sim-btn{display:inline-flex;width:auto;min-height:40px;padding:9px 20px;font-size:.78rem;letter-spacing:.04em}
+.sim-out .sim-btn:after{display:none}
+.sim-out .sim-det,.sim-out details.sim-det{background:none!important;border:0!important;box-shadow:none!important;padding:0!important}
+.sim-out .sim-det summary{background:none!important;border:0!important;box-shadow:none!important;padding:4px!important}

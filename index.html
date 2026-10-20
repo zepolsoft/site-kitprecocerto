@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=83">
+<link rel="stylesheet" href="style.css?v=85">
 <script>document.documentElement.className+=' js';</script></head><body>
 
 <!-- ícones -->
@@ -198,9 +198,9 @@
     <div class="sim-out" aria-live="polite">
       <small>Preço sugerido para este serviço</small>
       <strong id="s-r">R$ 51</strong>
-      <div class="sim-steps" id="s-steps"></div>
       <p id="s-msg"></p>
-      <a class="btn" href="#baixar">Quero isso para todos os meus serviços</a>
+      <details class="sim-det"><summary>Ver a conta</summary><div class="sim-steps" id="s-steps"></div></details>
+      <a class="btn sim-btn" href="#baixar">Quero calcular todos os preços</a>
     </div>
   </div>
   <p class="sim-note">Conta ilustrativa: considera 4% de taxa de maquininha e 10% de reserva. Na calculadora você usa os seus valores.</p>
@@ -363,9 +363,9 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
       +'<div class="why">Para pagar a maquininha (4%) e ainda guardar uma reserva (10%), o preço precisa ficar acima do custo: '+brl(cost,2)+' ÷ 0,86 = '+brl(cost/0.86,2)+', arredondado para '+brl(price,0)+'.</div>';
     if(isNaN(P)||P<=0){m.textContent='Informe quanto você cobra hoje para comparar.';return;}
     var taxa=P*0.04, liq=P-taxa, lucro=liq-cost;
-    if(P>=price)m.textContent='Cobrando '+brl(P,2)+', o preço cobre os custos e a margem.';
-    else if(lucro<0)m.textContent='Cobrando '+brl(P,2)+', a maquininha leva '+brl(taxa,2)+' e sobram '+brl(liq,2)+'. Como o serviço custa '+brl(cost,2)+', você perde '+brl(-lucro,2)+' a cada atendimento.';
-    else m.textContent='Cobrando '+brl(P,2)+', sobram só '+brl(lucro,2)+' depois da maquininha e dos custos. Pouca folga.';
+    if(P>=price)m.textContent='Cobrando '+brl(P,2)+', você cobre os custos e ainda sobra lucro.';
+    else if(lucro<0)m.textContent='Cobrando '+brl(P,2)+', você perde '+brl(-lucro,2)+' a cada atendimento.';
+    else m.textContent='Cobrando '+brl(P,2)+', sobram só '+brl(lucro,2)+'. Pouca folga.';
   }
   var stk=document.getElementById('sticky');
   ids.forEach(function(i){['input','keyup','change'].forEach(function(ev){el[i].addEventListener(ev,run);});
