@@ -864,3 +864,19 @@ body:has(.count) .count{text-align:center}
 @media(max-width:430px){.top a.badge.pillbar svg{display:none}.top a.badge.pillbar{font-size:.74rem}}
 /* v43: selo desce para depois do titulo */
 .top a.badge.pillbar{margin:16px auto 14px}
+/* v44: tela "liberada" priorizando o celular */
+.ob-k{margin:0;text-align:center;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#C2185B}
+.ob-h{margin:6px 0 14px;text-align:center;font-size:1.35rem;line-height:1.2;color:#5a1236}
+.ob-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 12px;margin:0 -20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.ob-strip::-webkit-scrollbar{display:none}
+.ob-strip figure{flex:none;width:128px;margin:0;scroll-snap-align:center;text-align:center}
+.ob-strip img{width:128px;height:auto;aspect-ratio:720/1100;border-radius:14px;box-shadow:0 10px 22px -10px rgba(90,18,54,.55);background:#fff;display:block}
+.ob-strip figcaption{margin-top:6px;font-size:.78rem;font-weight:700;color:#5a1236}
+.ob-hint{margin:0 0 14px;text-align:center;font-size:.78rem;color:#8a1a50}
+.ob-steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 8px;padding:0}
+.ob-steps li{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;font-size:.78rem;font-weight:600;color:#5a1236;line-height:1.2}
+.ob-steps b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#E91E78;color:#fff;font-size:.8rem}
+.ob-tag{display:inline-block;margin-bottom:6px;padding:3px 10px;border-radius:999px;background:#fff3c4;border:1px solid #e8d48a;color:#5a1236;font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.ob-bonus h2{margin:0 0 6px;font-size:1.15rem}
+@media(min-width:700px){.ob-strip{justify-content:center;overflow:visible;flex-wrap:wrap}}
+body:has(.count) a.btn.btn.btn.ig{background:#fff!important;color:#C2185B!important;border:1.5px solid #C2185B!important;box-shadow:none!important}
