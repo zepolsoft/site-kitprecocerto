@@ -836,3 +836,9 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 .tp-dots{gap:10px}
 .peek-tabs button{min-height:52px;display:flex;align-items:center;justify-content:center;text-align:center}
 .top a.badge.pillbar{background:none;border:0;padding:2px 0;color:#8a1a50;pointer-events:none;cursor:default}
+/* v39: tela "liberada" mais compacta */
+body:has(#dlbox) .ornt,body:has(#dlbox) .ph .sub{display:none}
+body:has(#dlbox) .top h1{font-size:clamp(1.45rem,7vw,2rem)!important;line-height:1.08;margin:6px 0 0}
+body:has(#dlbox) .top h1 em{font-size:clamp(1rem,4.6vw,1.2rem)!important;padding:6px 16px 8px!important;margin-top:10px!important}
+body:has(#dlbox) .top{padding-bottom:14px}
+body:has(#dlbox) .dl-box .btn{background:linear-gradient(180deg,#FF5FAE,#E91E78);color:#fff;border:0;box-shadow:0 8px 18px -8px rgba(233,30,120,.75)}
