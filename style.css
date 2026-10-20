@@ -842,3 +842,10 @@ body:has(#dlbox) .top h1{font-size:clamp(1.45rem,7vw,2rem)!important;line-height
 body:has(#dlbox) .top h1 em{font-size:clamp(1rem,4.6vw,1.2rem)!important;padding:6px 16px 8px!important;margin-top:10px!important}
 body:has(#dlbox) .top{padding-bottom:14px}
 body:has(#dlbox) .dl-box .btn{background:linear-gradient(180deg,#FF5FAE,#E91E78);color:#fff;border:0;box-shadow:0 8px 18px -8px rgba(233,30,120,.75)}
+/* v40: valeu e obrigado no mesmo padrao */
+body:has(.count) .top h1{font-size:clamp(1.45rem,7vw,2rem)!important;margin:6px 0 0}
+body:has(.count) .top h1 em{font-size:clamp(1rem,4.6vw,1.2rem)!important;padding:6px 16px 8px!important;margin-top:10px!important}
+body:has(.count) .ornt{display:none}
+body:has(.count) .btn{background:linear-gradient(180deg,#FF5FAE,#E91E78);color:#fff;border:0;box-shadow:0 8px 18px -8px rgba(233,30,120,.75)}
+body:has(.count) a.btn.btn.btn{background:linear-gradient(180deg,#FF5FAE,#E91E78)!important;color:#fff!important;border:0!important}
+body:has(.count) .count{text-align:center}
