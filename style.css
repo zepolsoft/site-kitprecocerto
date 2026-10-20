@@ -849,3 +849,7 @@ body:has(.count) .ornt{display:none}
 body:has(.count) .btn{background:linear-gradient(180deg,#FF5FAE,#E91E78);color:#fff;border:0;box-shadow:0 8px 18px -8px rgba(233,30,120,.75)}
 body:has(.count) a.btn.btn.btn{background:linear-gradient(180deg,#FF5FAE,#E91E78)!important;color:#fff!important;border:0!important}
 body:has(.count) .count{text-align:center}
+/* v41: destaque "nao sabe o custo da hora" */
+.sim-help{display:flex;align-items:center;gap:10px;margin:10px 0 4px;padding:10px 12px;border-radius:14px;background:#FFE3F0;border:1px solid #F4A9CC;color:#5a1236;font-size:.85rem;line-height:1.35}
+.sim-help svg{flex:none;width:26px;height:26px;padding:5px;border-radius:50%;background:#E91E78;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sim-help b{color:#C2185B}
