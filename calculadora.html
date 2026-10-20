@@ -143,6 +143,20 @@ main{padding-top:0}
 
 h2,h3.title{font-family:var(--disp);font-weight:700;font-size:1.4rem;text-transform:none}
 .card h3{font-family:Poppins,sans-serif}
+
+.pvbox{max-width:360px;margin:0 auto 14px;border-radius:16px;overflow:hidden;box-shadow:0 14px 34px rgba(90,18,54,.25);background:#fff}
+.pvbox canvas{display:block;width:100%;height:auto}
+.sec{margin:0 0 8px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px}
+.sec b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(180deg,#FF74BA,#E01B7C);color:#fff;font-size:.8rem}
+.sec small{font-weight:400;color:var(--mut)}
+.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.themes button{border:2px solid #F0CFDB;background:#fff;border-radius:14px;padding:8px 6px 6px;cursor:pointer;font:600 .78rem Poppins,sans-serif;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:6px}
+.themes button i{display:block;width:100%;height:34px;border-radius:9px}
+.themes button.on{border-color:#E91E78;box-shadow:0 0 0 3px rgba(233,30,120,.18)}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg button{border:2px solid #F0CFDB;background:#fff;border-radius:999px;padding:10px;font:600 .88rem Poppins,sans-serif;color:var(--ink);cursor:pointer}
+.seg button.on{background:#E91E78;border-color:#E91E78;color:#fff}
+input[type=file].in{background:#fff;padding:10px}
 </style></head><body>
 <div class="top"><img src="favicon.png" alt=""><b>Kit Preço Certo</b><span>Calculadora de preço</span></div>
 <main>
@@ -204,15 +218,40 @@ h2,h3.title{font-family:var(--disp);font-weight:700;font-size:1.4rem;text-transf
 <!-- PASSO 3 -->
 <section class="step" id="s3">
   <h1>Tabela de preços pronta</h1>
-  <p class="lead">Usa o maior valor entre o que você cobra hoje e o preço sugerido. Salve a imagem ou copie o texto.</p>
+  <p class="lead">Escolha o modelo, preencha o que quiser e salve a imagem para postar. Tudo é opcional.</p>
+  <div class="pvbox"><canvas id="pv" width="540" height="675" aria-label="Prévia da sua tabela de preços"></canvas></div>
+
   <div class="card">
-    <label for="studio" style="margin-top:0">Nome do seu studio <small>(opcional, aparece na imagem)</small></label>
-    <input class="in txt" id="studio" maxlength="40" autocomplete="off" placeholder="Ex.: Studio da Ana">
-    <table class="tbl" id="tbl" style="margin-top:10px"></table>
+    <p class="sec"><b>1</b> Escolha o modelo</p>
+    <div class="themes" id="themes" role="radiogroup" aria-label="Modelo da tabela"></div>
+    <p class="sec" style="margin-top:16px"><b>2</b> Formato</p>
+    <div class="seg" id="fmts"><button type="button" data-f="f" class="on">Feed (4:5)</button><button type="button" data-f="s">Stories (9:16)</button></div>
   </div>
+
+  <div class="card">
+    <p class="sec"><b>3</b> Seus dados <small>(opcional, aparecem na imagem)</small></p>
+    <label for="studio" style="margin-top:6px">Nome do seu studio</label>
+    <input class="in txt" id="studio" maxlength="40" autocomplete="off" placeholder="Ex.: Studio da Ana">
+    <label for="ig">Instagram</label>
+    <input class="in txt" id="ig" maxlength="30" autocomplete="off" autocapitalize="none" placeholder="@seuperfil">
+    <label for="zap">WhatsApp</label>
+    <input class="in txt" id="zap" maxlength="20" inputmode="tel" autocomplete="off" placeholder="(11) 90000-0000">
+    <label for="frase">Frase de chamada</label>
+    <input class="in txt" id="frase" maxlength="34" autocomplete="off" placeholder="Ex.: Agende seu horário">
+    <label for="pag">Formas de pagamento</label>
+    <input class="in txt" id="pag" maxlength="60" autocomplete="off" placeholder="Ex.: Pix e cartão em até 3x">
+    <label for="obs">Observação</label>
+    <input class="in txt" id="obs" maxlength="70" autocomplete="off" placeholder="Ex.: Valores sujeitos a alteração">
+    <label for="logo">Sua logo ou foto</label>
+    <input class="in txt" id="logo" type="file" accept="image/*">
+    <p class="note" style="margin:6px 0 0">A imagem escolhida fica só no seu celular e não é enviada para lugar nenhum.</p>
+  </div>
+
   <button class="btn" type="button" id="img">Salvar imagem para postar</button>
   <div style="height:10px"></div>
   <button class="btn o" type="button" id="copy">Copiar texto para o WhatsApp</button>
+
+  <div class="card" style="margin-top:14px"><p class="sec" style="margin-top:0">Serviços na tabela</p><table class="tbl" id="tbl"></table></div>
   <p class="note" style="margin-top:12px">Seus números ficam salvos só neste aparelho. Os valores iniciais da calculadora eram exemplos: confira os seus antes de divulgar.</p>
   <button class="btn g" type="button" id="reset">Voltar aos exemplos</button>
 </section>
@@ -308,7 +347,7 @@ function clearAll(){
 }
 $('clear').addEventListener('click',clearAll);
 $('clear2').addEventListener('click',function(){clearAll();go(1);toast('Comece pelos seus gastos fixos');});
-$('reset').addEventListener('click',function(){if(confirm('Voltar aos exemplos? Seus números atuais serão apagados deste aparelho.')){S=ex();buildFixos();fillTop();buildSvcs();update();go(1);}});
+$('reset').addEventListener('click',function(){if(confirm('Voltar aos exemplos? Seus números atuais serão apagados deste aparelho.')){S=ex();LOGO=null;buildFixos();fillTop();buildSvcs();buildThemes();update();go(1);}});
 
 /* Atualiza tudo */
 function update(){
@@ -336,7 +375,7 @@ function update(){
 }
 
 /* Navegação */
-function go(k){
+function go(k){if(k==3)setTimeout(pv,0);
   document.querySelectorAll('.step').forEach(function(s){s.classList.toggle('on',s.id==='s'+k);});
   document.querySelectorAll('.nav button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-go')==k);});
   window.scrollTo(0,0);
@@ -351,49 +390,80 @@ function lista(){
 }
 $('copy').addEventListener('click',function(){
   var l=lista(); if(!l.length){toast('Cadastre seus serviços primeiro');return;}
-  var t='*'+(S.studio?S.studio+' · ':'')+'Tabela de preços*\n\n'+l.map(function(x){return x.n+': '+brl(x.p);}).join('\n');
+  var c=CFG(),t='*'+(S.studio?S.studio+' · ':'')+'Tabela de preços*\n\n'+l.map(function(x){return x.n+': '+brl(x.p);}).join('\n');if(c.pag)t+='\n\n'+c.pag;if(c.obs)t+='\n'+c.obs;if(c.frase)t+='\n\n'+c.frase;if(c.zap)t+='\nWhatsApp: '+c.zap;if(c.ig)t+='\nInstagram: '+c.ig;
   function ok(){toast('Texto copiado');}
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){fallback(t);});}else fallback(t);
   function fallback(t){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok();}catch(e){toast('Não consegui copiar');}a.remove();}
 });
 function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+var THEMES={
+ rosa:{n:'Rosa',bg:['#FFF4F8','#FBD3E2','#F4A7C3'],title:'#8a1a50',sub:'#8a1a50',accent:'#E91E78',price:'#E91E78',text:'#3A0A26',card:'#ffffff',pill:'#8a1a50',pillText:'#ffffff',foot:'#8a1a50',glow:'rgba(255,255,255,.7)'},
+ vinho:{n:'Vinho e dourado',bg:['#5a1236','#8a1a50','#a61b5f'],title:'#f6d27a',sub:'#ffd1e6',accent:'#f6d27a',price:'#f6d27a',text:'#ffffff',card:'rgba(255,255,255,.10)',pill:'#f6d27a',pillText:'#4a0f2e',foot:'#ffd1e6',glow:'rgba(255,120,180,.25)'},
+ preto:{n:'Preto e dourado',bg:['#141114','#211a1f','#2d2229'],title:'#e7c27d',sub:'#e7c27d',accent:'#e7c27d',price:'#e7c27d',text:'#f4ece6',card:'rgba(255,255,255,.07)',pill:'#e7c27d',pillText:'#201519',foot:'#e7c27d',glow:'rgba(231,194,125,.14)'},
+ lilas:{n:'Lilás',bg:['#F7EEFB','#E5CBF2','#CFA6E6'],title:'#5b2a86',sub:'#5b2a86',accent:'#8e44ad',price:'#7b2fa0',text:'#2c1240',card:'#ffffff',pill:'#5b2a86',pillText:'#ffffff',foot:'#5b2a86',glow:'rgba(255,255,255,.7)'},
+ nude:{n:'Nude',bg:['#FFF9F1','#F1DEC8','#E2C2A3'],title:'#7a4a2e',sub:'#7a4a2e',accent:'#b0693f',price:'#a9552c',text:'#3b2416',card:'#ffffff',pill:'#7a4a2e',pillText:'#ffffff',foot:'#7a4a2e',glow:'rgba(255,255,255,.7)'}
+};
+var LOGO=null;
+function CFG(){if(!S.cfg)S.cfg={t:'rosa',f:'f',ig:'',zap:'',frase:'',pag:'',obs:''};return S.cfg;}
+function fitFont(g,txt,weight,size,maxW,min,fam){var f=size;g.font=weight+' '+f+'px '+fam;while(f>min&&g.measureText(txt).width>maxW){f-=2;g.font=weight+' '+f+'px '+fam;}return f;}
+function ellip(g,txt,maxW){if(g.measureText(txt).width<=maxW)return txt;while(txt.length>3&&g.measureText(txt+'…').width>maxW)txt=txt.slice(0,-1);return txt.trim()+'…';}
 function draw(l){
-  var W=1080,H=1350,cv=document.createElement('canvas');cv.width=W;cv.height=H;var g=cv.getContext('2d');
-  var bg=g.createLinearGradient(0,0,W,H);bg.addColorStop(0,'#FFF4F8');bg.addColorStop(.6,'#FBD3E2');bg.addColorStop(1,'#F4A7C3');g.fillStyle=bg;g.fillRect(0,0,W,H);
-  var hg=g.createLinearGradient(60,60,W-60,230);hg.addColorStop(0,'#5a1236');hg.addColorStop(1,'#8a1a50');g.fillStyle=hg;rr(g,60,60,W-120,170,36);g.fill();g.strokeStyle='#FF4FA3';g.lineWidth=5;rr(g,60,60,W-120,170,36);g.stroke();
-  g.fillStyle='#fff';g.textAlign='center';g.textBaseline='middle';
-  g.font='700 64px Poppins, sans-serif';g.fillText('Tabela de preços',W/2,S.studio?125:145);
-  if(S.studio){g.font='500 38px Poppins, sans-serif';g.fillText(S.studio,W/2,190);}
-  var top=270,bottom=H-170,avail=bottom-top,rh=Math.min(92,avail/l.length),fs=Math.max(26,Math.min(44,rh*.5));
-  g.fillStyle='#fff';rr(g,60,top-20,W-120,rh*l.length+40,30);g.fill();
-  l.forEach(function(x,i){
-    var y=top+i*rh+rh/2;
-    if(i>0){g.strokeStyle='#F0CFDB';g.lineWidth=2;g.beginPath();g.moveTo(100,top+i*rh);g.lineTo(W-100,top+i*rh);g.stroke();}
-    g.textAlign='right';g.fillStyle='#E91E78';g.font='700 '+fs+'px Poppins, sans-serif';
-    var pw=g.measureText(brl(x.p)).width, maxW=W-200-pw-30;
-    g.textAlign='left';g.fillStyle='#3A0A26';
-    var f2=fs, lines=[x.n];
-    g.font='500 '+f2+'px Poppins, sans-serif';
-    if(g.measureText(x.n).width>maxW){
-      f2=Math.max(24,Math.round(fs*.8)); g.font='500 '+f2+'px Poppins, sans-serif';
-      if(g.measureText(x.n).width>maxW){
-        var words=x.n.split(/\s+/),l1='',i2=0;
-        while(i2<words.length&&g.measureText((l1?l1+' ':'')+words[i2]).width<=maxW){l1+=(l1?' ':'')+words[i2];i2++;}
-        var l2=words.slice(i2).join(' ');
-        if(!l1){l1=x.n;l2='';}
-        while(g.measureText(l2).width>maxW&&l2.length>3)l2=l2.slice(0,-2).trim()+'…'.slice(0,0);
-        if(l2&&words.slice(i2).join(' ')!==l2)l2+='…';
-        lines=l2?[l1,l2]:[l1];
-      }
-    }
-    if(lines.length===2){g.fillText(lines[0],100,y-f2*.58);g.fillText(lines[1],100,y+f2*.58);}
-    else g.fillText(lines[0],100,y);
-    g.textAlign='right';g.fillStyle='#E91E78';g.font='700 '+fs+'px Poppins, sans-serif';g.fillText(brl(x.p),W-100,y);
-  });
-  g.textAlign='center';g.fillStyle='#9A2A5E';g.font='600 32px Poppins, sans-serif';g.fillText('Kit Preço Certo · kitprecocerto.com.br',W/2,H-90);
+  var c=CFG(),T=THEMES[c.t]||THEMES.rosa,W=1080,H=c.f==='s'?1920:1350,PAD=64;
+  var cv=document.createElement('canvas');cv.width=W;cv.height=H;var g=cv.getContext('2d');
+  var P='Poppins, sans-serif',SC='"Dancing Script", cursive';
+  var bg=g.createLinearGradient(0,0,W*.6,H);bg.addColorStop(0,T.bg[0]);bg.addColorStop(.55,T.bg[1]);bg.addColorStop(1,T.bg[2]);g.fillStyle=bg;g.fillRect(0,0,W,H);
+  var gl=g.createRadialGradient(W*.85,H*.08,0,W*.85,H*.08,W*.7);gl.addColorStop(0,T.glow);gl.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=gl;g.fillRect(0,0,W,H);
+  g.textBaseline='middle';g.textAlign='center';
+  var y=H>1500?120:80;
+  if(LOGO){var r=H>1500?100:84,cx=W/2,cy=y+r;g.save();g.beginPath();g.arc(cx,cy,r,0,6.2832);g.closePath();g.clip();
+    var sc=Math.max(2*r/LOGO.width,2*r/LOGO.height),iw=LOGO.width*sc,ih=LOGO.height*sc;g.drawImage(LOGO,cx-iw/2,cy-ih/2,iw,ih);g.restore();
+    g.strokeStyle=T.accent;g.lineWidth=6;g.beginPath();g.arc(cx,cy,r,0,6.2832);g.stroke();y+=2*r+26;}
+  if(S.studio){g.fillStyle=T.sub;var st=S.studio.toUpperCase(),fs0=fitFont(g,st,'600',40,W-2*PAD,24,P);g.font='600 '+fs0+'px '+P;g.fillText(st,W/2,y+24);y+=64;}
+  g.fillStyle=T.title;var tf=fitFont(g,'Tabela de preços','700',H>1500?150:128,W-2*PAD,70,SC);g.font='700 '+tf+'px '+SC;g.fillText('Tabela de preços',W/2,y+tf*.5);y+=tf+6;
+  // enfeite
+  g.strokeStyle=T.accent;g.lineWidth=3;g.beginPath();g.moveTo(W/2-190,y+8);g.lineTo(W/2-34,y+8);g.moveTo(W/2+34,y+8);g.lineTo(W/2+190,y+8);g.stroke();
+  g.fillStyle=T.accent;g.font='700 34px '+P;g.fillText('♥',W/2,y+9);y+=48;
+  // rodape (altura)
+  var pills=[];if(c.zap)pills.push('WhatsApp '+c.zap);if(c.ig)pills.push(c.ig);
+  var fh=44;if(c.frase)fh+=84;if(pills.length)fh+=(pills.length===2?160:90);if(c.pag)fh+=48;if(c.obs)fh+=44;
+  var bottom=H-fh-30,top=y+10,avail=bottom-top;
+  var n=l.length,cols=n>12?2:1,rpc=Math.ceil(n/cols),gap=36,colW=(W-2*PAD-(cols-1)*gap)/cols;
+  var rh=Math.min(cols===2?86:100,(avail-40)/rpc),fs=Math.max(22,Math.min(cols===2?36:46,rh*.46));
+  var cardH=rh*rpc+40;g.fillStyle=T.card;rr(g,PAD-20,top-8,W-2*PAD+40,cardH,34);g.fill();
+  for(var i=0;i<n;i++){
+    var col=Math.floor(i/rpc),row=i%rpc,x0=PAD+col*(colW+gap)+(cols===1?20:6),x1=PAD+col*(colW+gap)+colW-(cols===1?20:6),yy=top+12+row*rh+rh/2;
+    var price=brl(l[i].p);g.font='700 '+fs+'px '+P;var pw=g.measureText(price).width;
+    g.textAlign='right';g.fillStyle=T.price;g.fillText(price,x1,yy);
+    var maxW=x1-x0-pw-50;g.textAlign='left';g.fillStyle=T.text;var nm=l[i].n,f2=fitFont(g,nm,'500',fs,maxW,Math.max(20,fs*.72),P);nm=ellip(g,nm,maxW);g.font='500 '+f2+'px '+P;g.fillText(nm,x0,yy);
+    var nw=g.measureText(nm).width,lx0=x0+nw+14,lx1=x1-pw-14;
+    if(lx1-lx0>24){g.save();g.strokeStyle=T.accent;g.globalAlpha=.55;g.lineWidth=3;g.lineCap='round';g.setLineDash([1,9]);g.beginPath();g.moveTo(lx0,yy+fs*.3);g.lineTo(lx1,yy+fs*.3);g.stroke();g.restore();}
+  }
+  // rodape
+  var fy=bottom+24;g.textAlign='center';
+  if(c.frase){g.fillStyle=T.title;var ff=fitFont(g,c.frase,'700',66,W-2*PAD,40,SC);g.font='700 '+ff+'px '+SC;g.fillText(c.frase,W/2,fy+34);fy+=84;}
+  if(pills.length){g.font='600 32px '+P;var ws=pills.map(function(t){return g.measureText(t).width+70;}),tot=ws.reduce(function(a,b){return a+b;},0)+(pills.length-1)*20;
+    if(tot<=W-2*PAD){var px=(W-tot)/2;pills.forEach(function(t,k){g.fillStyle=T.pill;rr(g,px,fy,ws[k],64,32);g.fill();g.fillStyle=T.pillText;g.textAlign='center';g.fillText(t,px+ws[k]/2,fy+33);px+=ws[k]+20;});fy+=90;}
+    else{var w=Math.min(W-2*PAD,Math.max.apply(null,ws));pills.forEach(function(t){g.fillStyle=T.pill;rr(g,(W-w)/2,fy,w,64,32);g.fill();g.fillStyle=T.pillText;g.textAlign='center';g.fillText(ellip(g,t,w-40),W/2,fy+33);fy+=76;});fy+=14;}}
+  if(c.pag){g.fillStyle=T.foot;g.font='500 30px '+P;g.fillText(ellip(g,c.pag,W-2*PAD),W/2,fy+22);fy+=48;}
+  if(c.obs){g.fillStyle=T.foot;g.globalAlpha=.8;g.font='italic 400 26px '+P;g.fillText(ellip(g,c.obs,W-2*PAD),W/2,fy+20);g.globalAlpha=1;fy+=44;}
+  g.fillStyle=T.foot;g.globalAlpha=.55;g.font='500 22px '+P;g.fillText('Feito com Kit Preço Certo · kitprecocerto.com.br',W/2,H-34);g.globalAlpha=1;
   return cv;
 }
-
+function pv(){
+  var l=lista(),el=$('pv');if(!el)return;var c=CFG(),W=540,H=c.f==='s'?960:675;el.width=W;el.height=H;var g=el.getContext('2d');
+  if(!l.length){g.fillStyle='#fff';g.fillRect(0,0,W,H);g.fillStyle='#7A4A62';g.font='500 18px Poppins, sans-serif';g.textAlign='center';g.fillText('Cadastre seus serviços no passo 2',W/2,H/2);return;}
+  g.drawImage(draw(l),0,0,W,H);
+}
+var pvT=null;function pvSoon(){clearTimeout(pvT);pvT=setTimeout(pv,120);}
+function fontsReady(cb){var f=function(){cb();};if(document.fonts&&document.fonts.load){Promise.all([document.fonts.load('700 40px Poppins'),document.fonts.load('500 40px Poppins'),document.fonts.load('600 40px Poppins'),document.fonts.load('700 60px "Dancing Script"')]).then(f,f);}else f();}
+function buildThemes(){var c=CFG(),h='';Object.keys(THEMES).forEach(function(k){var T=THEMES[k];h+='<button type="button" role="radio" data-t="'+k+'" aria-checked="'+(c.t===k)+'" class="'+(c.t===k?'on':'')+'"><i style="background:linear-gradient(135deg,'+T.bg[0]+','+T.bg[2]+');box-shadow:inset 0 0 0 3px '+T.accent+'"></i>'+T.n+'</button>';});$('themes').innerHTML=h;
+  [].forEach.call($('fmts').children,function(b){b.classList.toggle('on',b.getAttribute('data-f')===c.f);});
+  $('ig').value=c.ig||'';$('zap').value=c.zap||'';$('frase').value=c.frase||'';$('pag').value=c.pag||'';$('obs').value=c.obs||'';}
+$('themes').addEventListener('click',function(e){var b=e.target.closest('[data-t]');if(!b)return;CFG().t=b.getAttribute('data-t');save();buildThemes();pv();});
+$('fmts').addEventListener('click',function(e){var b=e.target.closest('[data-f]');if(!b)return;CFG().f=b.getAttribute('data-f');save();buildThemes();pv();});
+[['ig','ig'],['zap','zap'],['frase','frase'],['pag','pag'],['obs','obs']].forEach(function(p){$(p[0]).addEventListener('input',function(){var v=this.value;if(p[0]==='ig'){v=v.replace(/\s/g,'');if(v&&v.charAt(0)!=='@')v='@'+v;}CFG()[p[1]]=v;save();pvSoon();});});
+$('studio').addEventListener('input',pvSoon);
+$('logo').addEventListener('change',function(){var f=this.files&&this.files[0];if(!f)return;var u=URL.createObjectURL(f),im=new Image();im.onload=function(){LOGO=im;pv();};im.src=u;});
 /* Janela com a imagem: funciona até no navegador interno do Instagram, onde download direto costuma falhar */
 function showImg(cv,b){
   var old=$('imgmodal');if(old)old.remove();
@@ -415,7 +485,7 @@ $('img').addEventListener('click',function(){
     if(!b){toast('Não consegui gerar a imagem');return;}
     showImg(cv,b);
   },'image/png');};
-  if(document.fonts&&document.fonts.load){Promise.all([document.fonts.load('700 40px Poppins'),document.fonts.load('500 40px Poppins'),document.fonts.load('600 40px Poppins')]).then(go1,go1);}else go1();
+  if(document.fonts&&document.fonts.load){Promise.all([document.fonts.load('700 40px Poppins'),document.fonts.load('500 40px Poppins'),document.fonts.load('600 40px Poppins'),document.fonts.load('700 60px "Dancing Script"')]).then(go1,go1);}else go1();
 });
 
 /* Seleciona o conteúdo ao focar (facilita trocar o valor no celular) */
@@ -430,7 +500,7 @@ document.addEventListener('focusin',function(e){var t=e.target;if(t.classList&&t
   if(/Android/i.test(ua)){var b=$('openchrome');b.style.display='inline-block';
     b.onclick=function(){var u=location.host+location.pathname;location.href='intent://'+u+'#Intent;scheme=https;package=com.android.chrome;end';};}
 })();
-buildFixos();fillTop();buildSvcs();update();
+buildFixos();fillTop();buildSvcs();buildThemes();update();fontsReady(pv);
 })();
 </script>
 </body></html>
