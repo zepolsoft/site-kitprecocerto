@@ -768,3 +768,9 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 .xs-leg{display:flex;justify-content:center;gap:16px;margin-top:8px;font-size:.74rem;color:#5a1236;font-weight:600}
 .xs-leg i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:5px}
 .peek-pane .xs-h img{width:28px;height:28px;max-width:28px;flex:none}
+
+/* v32: "A planilha calcula" em rosa (distinto do amarelo de preenchimento) */
+.xs-key .out{background:#ffdceb;border:1px solid #E91E78;box-shadow:inset 0 0 0 2px #fff}
+.xs-res{background:linear-gradient(180deg,#ffe9f2,#ffdceb);border:2px solid #E91E78}
+.xs-sp b{background:#ffdceb;border-radius:8px;padding:1px 8px;display:inline-block}
+.xs-k div{border-top-color:#E91E78}
