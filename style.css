@@ -828,3 +828,11 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 .sim-out .btn.btn.btn.sim-btn:hover{background:rgba(246,210,122,.16)}
 .sim-out .btn.sim-btn:before{display:none}
 .sim-out .btn.sim-btn:after{display:inline;content:"→";margin-left:8px;position:static;background:none;width:auto;height:auto;transform:none;animation:none;color:#f6d27a}
+/* v38: botao principal unico (rosa), bolinhas maiores, abas iguais, selo em texto */
+.lead-form button[type=submit],.lead-form button[type=submit]:not(.x){background:linear-gradient(180deg,#FF5FAE,#E91E78);color:#fff;border:0;min-height:48px;box-shadow:0 8px 18px -8px rgba(233,30,120,.75)}
+.lead-form button[type=submit]:hover:not(:disabled){background:linear-gradient(180deg,#ff74ba,#ef2a84)}
+.lead-form button[type=submit]:disabled{opacity:.7}
+.tp-d{width:36px;height:36px}
+.tp-dots{gap:10px}
+.peek-tabs button{min-height:52px;display:flex;align-items:center;justify-content:center;text-align:center}
+.top a.badge.pillbar{background:none;border:0;padding:2px 0;color:#8a1a50;pointer-events:none;cursor:default}
