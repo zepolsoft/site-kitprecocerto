@@ -682,3 +682,7 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 .duo-plus{margin:12px 0 20px}
 .duo .cta-row .btn{max-width:420px;margin:0 auto}
 @media(min-width:820px){.duo-plus{margin:0}}
+.gains li.bonus{background:linear-gradient(135deg,#fff8e6,#fdeec0);border:1.5px dashed #e3ad3a;position:relative}
+.gains li.bonus svg{background:linear-gradient(180deg,#8a1a50,#5a1236);stroke:#f6d27a}
+.gains li.bonus b{color:#5a1236}
+.gains li.bonus em{display:inline-block;font-style:normal;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff3d6;background:linear-gradient(180deg,#8a1a50,#5a1236);padding:2px 9px;border-radius:999px;margin-bottom:3px}
