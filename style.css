@@ -862,3 +862,5 @@ body:has(.count) .count{text-align:center}
 .top a.badge.pillbar>span{white-space:normal!important;text-align:center;line-height:1.5}
 .top a.badge.pillbar .pp{display:block;white-space:normal}
 @media(max-width:430px){.top a.badge.pillbar svg{display:none}.top a.badge.pillbar{font-size:.74rem}}
+/* v43: selo desce para depois do titulo */
+.top a.badge.pillbar{margin:16px auto 14px}
