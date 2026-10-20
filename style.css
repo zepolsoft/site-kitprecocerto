@@ -774,3 +774,11 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 .xs-res{background:linear-gradient(180deg,#ffe9f2,#ffdceb);border:2px solid #E91E78}
 .xs-sp b{background:#ffdceb;border-radius:8px;padding:1px 8px;display:inline-block}
 .xs-k div{border-top-color:#E91E78}
+
+/* ===== v33: brilho que passa nos botoes principais ===== */
+.btn:not(.s):not(.o):not(.ig),button[type=submit]{position:relative;overflow:hidden}
+.btn:not(.s):not(.o):not(.ig):before{content:"";position:absolute;top:0;left:-60%;width:35%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:kpcshine 4.2s ease-in-out infinite;pointer-events:none}
+.sticky .btn:before,.final .btn:before,.sim-out .btn:before,.pain .btn:before{background:linear-gradient(100deg,transparent,rgba(240,190,70,.55),transparent)}
+@keyframes kpcshine{0%,62%{left:-60%}100%{left:135%}}
+@media(prefers-reduced-motion:reduce){.btn:before,button:after{animation:none!important;display:none}}
+.top h1{font-size:clamp(1.7rem,7.9vw,3.2rem)}
