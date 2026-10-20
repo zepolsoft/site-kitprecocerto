@@ -419,8 +419,8 @@ function draw(l){
   if(LOGO){var r=H>1500?100:84,cx=W/2,cy=y+r;g.save();g.beginPath();g.arc(cx,cy,r,0,6.2832);g.closePath();g.clip();
     var sc=Math.max(2*r/LOGO.width,2*r/LOGO.height),iw=LOGO.width*sc,ih=LOGO.height*sc;g.drawImage(LOGO,cx-iw/2,cy-ih/2,iw,ih);g.restore();
     g.strokeStyle=T.accent;g.lineWidth=6;g.beginPath();g.arc(cx,cy,r,0,6.2832);g.stroke();y+=2*r+26;}
-  if(S.studio){g.fillStyle=T.sub;var st=S.studio.toUpperCase(),fs0=fitFont(g,st,'600',40,W-2*PAD,24,P);g.font='600 '+fs0+'px '+P;g.fillText(st,W/2,y+24);y+=64;}
-  g.fillStyle=T.title;var tf=fitFont(g,'Tabela de preços','700',H>1500?150:128,W-2*PAD,70,SC);g.font='700 '+tf+'px '+SC;g.fillText('Tabela de preços',W/2,y+tf*.5);y+=tf+6;
+  if(S.studio){g.fillStyle=T.title;var st=S.studio.toUpperCase(),fs0=fitFont(g,st,'700',H>1500?72:64,W-2*PAD,34,P);g.font='700 '+fs0+'px '+P;g.fillText(st,W/2,y+fs0*.55);y+=fs0+22;}
+  g.fillStyle=T.title;var tf=fitFont(g,'Tabela de preços','700',S.studio?(H>1500?112:96):(H>1500?150:128),W-2*PAD,60,SC);g.font='700 '+tf+'px '+SC;g.fillText('Tabela de preços',W/2,y+tf*.5);y+=tf+6;
   // enfeite
   g.strokeStyle=T.accent;g.lineWidth=3;g.beginPath();g.moveTo(W/2-190,y+8);g.lineTo(W/2-34,y+8);g.moveTo(W/2+34,y+8);g.lineTo(W/2+190,y+8);g.stroke();
   g.fillStyle=T.accent;g.font='700 34px '+P;g.fillText('♥',W/2,y+9);y+=48;
