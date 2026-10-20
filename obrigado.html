@@ -3,37 +3,37 @@
 <title>Sua calculadora · Kit Preço Certo</title><meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=64"></head><body>
+<link rel="stylesheet" href="style.css?v=65"></head><body>
 <div class="top">
 <header><div class="wrap"><a class="brand" href="./"><img src="favicon.png" alt="">Kit Preço Certo</a></div></header>
 <div class="wrap ph"><div class="ornt" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><path d="M12 20.5S3.5 15 3.5 8.9A4.6 4.6 0 0 1 12 6.6a4.6 4.6 0 0 1 8.5 2.3C20.5 15 12 20.5 12 20.5z"/></svg><i></i></div>
 <h1><span class="tt">Pronto! Sua calculadora está liberada</span> <em>Bora acertar os seus preços 💅</em></h1>
-<p class="sub">Use direto no celular ou baixe a planilha para o computador.</p></div></div>
+<p class="sub">Use agora no celular, monte a sua tabela de preços e salve como imagem para postar. A planilha Excel é o seu bônus.</p></div></div>
 <div class="wrap" style="max-width:640px;padding-bottom:60px">
 <div id="inapp" style="display:none;background:#FFF3C4;border:1px solid #E8D48A;border-radius:16px;padding:14px 16px;margin:0 0 16px;text-align:left">
 <b>✨ Truque de 5 segundos</b><br>Você está no Instagram. Para a calculadora ficar 100% completa (e você poder salvar a tabela de preços na galeria), toque nos <b>3 pontinhos ⋮</b> lá em cima e depois em <b>“Abrir no navegador”</b>. Pronto, é só isso! 💅</div>
 <div class="dl-box" id="dlbox">
-<a class="btn" id="dl" href="Calculadora-Preco-Certo.xlsx" download>Baixar a calculadora (Excel)</a>
-<a class="btn ig" id="gs" href="calculadora.html" target="_blank" rel="noopener">Usar agora no celular (sem baixar)</a>
+<a class="btn" id="gs" href="calculadora.html" target="_blank" rel="noopener">Usar agora no celular</a>
+<p class="note-s" style="margin:10px 0 0;text-align:center">Sem baixar nada. Monte a tabela de preços, personalize e salve a imagem para postar.</p>
 </div>
-<p class="note-s" id="dlhint" style="margin-top:10px">A versão do celular abre no navegador, não precisa instalar nada. A planilha Excel é melhor para o computador ou notebook.</p>
+<div class="card" style="margin-top:22px">
+<h2>🎁 Bônus: planilha Excel para o computador</h2>
+<p style="margin:0 0 14px">Versão completa com painel, indicadores e gráficos para você acompanhar o seu preço com calma no notebook.</p>
+<a class="btn ig" id="dl" href="Calculadora-Preco-Certo.xlsx" download>Baixar a planilha (Excel)</a>
+</div>
 <div class="card" style="margin-top:22px">
 <h2>Como usar</h2>
-<ul class="ok"><li>Preencha só as células <b>amarelas</b>. Os números que já estão lá são exemplos.</li>
-<li>Comece pela aba <b>Meu custo por hora</b>, depois a aba <b>Meus serviços</b>.</li>
-<li><b>No celular:</b> toque em “Usar agora no celular”. Seus números ficam salvos no próprio aparelho e você pode salvar a tabela de preços como imagem.</li>
-<li><b>No computador:</b> baixe a planilha Excel e preencha as células amarelas.</li></ul>
+<ul class="ok"><li><b>No celular:</b> toque em “Usar agora no celular”, preencha o passo 1 e o passo 2 e, no passo 3, escolha o modelo e salve a tabela de preços como imagem. Seus números ficam salvos no próprio aparelho.</li>
+<li>Os números que já estão lá são <b>exemplos</b>. Troque pelos seus antes de postar.</li>
+<li><b>No computador:</b> baixe a planilha Excel e preencha só as células <b>amarelas</b>, começando pela aba <b>Meu custo por hora</b>.</li></ul>
 </div>
 <p class="note">Cuide do seu preço: ele precisa pagar o seu tempo, o material, a maquininha e o seu salário.</p>
 </div>
 <footer><div class="wrap"><p><a href="privacidade.html">Política de privacidade</a></p><p>Kit Preço Certo · CNPJ 39.680.100/0001-41</p></div></footer>
 <script>
 if(/Instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent)){document.getElementById("inapp").style.display="block";}
-var dl=document.getElementById("dl"), gs=document.getElementById("gs"), box=document.getElementById("dlbox");
-function go(){setTimeout(function(){location.href="valeu.html";},900);}
-dl.addEventListener("click",go); gs.addEventListener("click",go);
-var mobile=window.matchMedia("(pointer:coarse)").matches||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-if(mobile){ box.insertBefore(gs,dl); gs.classList.remove("ig"); dl.classList.add("ig"); }
+var dl=document.getElementById("dl");
+dl.addEventListener("click",function(){setTimeout(function(){location.href="valeu.html";},900);});
 </script>
 <script>(function(){var r=document.documentElement,t=0;function u(){t=0;var m=r.scrollHeight-innerHeight,q=m>0?Math.min(1,Math.max(0,scrollY/m)):0;r.style.setProperty("--p",q.toFixed(4));r.style.setProperty("--hl",(355+32*Math.sin(q*Math.PI*3)).toFixed(1))}addEventListener("scroll",function(){if(!t)t=requestAnimationFrame(u)},{passive:true});u()})();</script>
 </body></html>
