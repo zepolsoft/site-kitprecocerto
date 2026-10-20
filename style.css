@@ -655,3 +655,30 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 .sticky .btn.btn.btn:hover,.final .btn.btn.btn:hover,.sim-out .btn.btn.btn:hover,.pain .btn.btn.btn:hover{background:linear-gradient(180deg,#fffdf4,#fbe9b8)}
 .sticky .btn.btn.btn{min-height:44px;padding:10px 18px}
 .sticky .btn:after,.cta-row .btn:after{opacity:.8}
+
+/* ===== v27: secao "duas ferramentas" ===== */
+.duo{background:linear-gradient(180deg,#fff6dc 0%,#fff 100%)}
+.duo-g{display:grid;gap:0;margin-top:22px}
+.duo-c{position:relative;background:#fff;border:1px solid #f3cfdd;border-radius:22px;padding:26px 20px 22px;box-shadow:0 14px 30px -18px rgba(90,18,54,.35)}
+.duo-c.main{border:1.5px solid #E91E78;box-shadow:0 18px 36px -18px rgba(233,30,120,.5)}
+.duo-tag{position:absolute;top:-12px;left:20px;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:linear-gradient(180deg,#8a1a50,#5a1236);color:#fff3d6}
+.duo-c.bonus .duo-tag{background:linear-gradient(180deg,#fff8e6,#f7e2ac);color:#5a1236;border:1px solid #e8c775}
+.duo-ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:#fde7f0;color:#c2185b;margin-bottom:10px}
+.duo-ic svg{width:26px;height:26px}
+.duo-c h3{margin:0 0 6px;font-size:1.25rem;color:#5a1236}
+.duo-c p{margin:0 0 12px;color:#7a4a60}
+.duo-c ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.duo-c li{position:relative;padding-left:26px;font-size:.95rem;color:#4a1a36}
+.duo-c li:before{content:"✓";position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;background:#fde7f0;color:#c2185b;font-size:.7rem;font-weight:700;display:grid;place-items:center;margin-top:2px}
+.duo-plus{justify-self:center;width:38px;height:38px;margin:-6px 0;position:relative;z-index:2;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;font-weight:600;line-height:1;background:#fff;color:#c2185b;border:1.5px solid #f3cfdd;box-shadow:0 6px 14px -6px rgba(90,18,54,.4)}
+.duo-flow{list-style:none;margin:26px 0 24px;padding:0;display:grid;gap:10px}
+.duo-flow li{display:flex;align-items:center;gap:12px;background:#fff;border:1px dashed #e9b6cb;border-radius:14px;padding:10px 14px;color:#5a1236;font-weight:600}
+.duo-flow b{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#8a1a50,#5a1236);color:#fff3d6;font-size:.85rem}
+@media(min-width:820px){
+  .duo-g{grid-template-columns:1fr auto 1fr;align-items:stretch;gap:0 6px}
+  .duo-plus{margin:0;align-self:center}
+  .duo-flow{grid-template-columns:repeat(3,1fr)}
+}
+.duo-plus{margin:12px 0 20px}
+.duo .cta-row .btn{max-width:420px;margin:0 auto}
+@media(min-width:820px){.duo-plus{margin:0}}
