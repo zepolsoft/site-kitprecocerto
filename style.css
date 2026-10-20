@@ -630,3 +630,14 @@ a.badge.pillbar:before{display:none;animation:none}
 .top h1 em{font-family:var(--script);font-weight:700;font-size:clamp(1.5rem,6.6vw,2.05rem);line-height:1.18;letter-spacing:0;padding:12px 26px 14px;
   color:#f6d27a;-webkit-text-fill-color:#f6d27a;text-shadow:0 0 22px rgba(246,210,122,.4),0 1px 0 rgba(0,0,0,.2)}
 .top .eyebrow{font-size:clamp(1.05rem,4.6vw,1.3rem);font-weight:700;color:#8a1a50;margin-bottom:12px}
+
+/* ===== v25: botoes principais em dourado (contraste com o fundo rosa) ===== */
+button:not(.peek-tabs button):not(.peek-tabs *),.btn:not(.s):not(.o):not(.ig){
+  background:linear-gradient(180deg,#ffe7a6 0%,#f6c95a 55%,#e8ae34 100%);
+  border:1.5px solid #e3ad3a;color:#4a0f2e;text-shadow:none;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.7),inset 0 -3px 0 rgba(150,95,0,.18),0 5px 0 #b8861f,0 16px 28px rgba(184,134,31,.38);
+  animation:kpcpulseg 3.2s ease-in-out infinite}
+button:not(.peek-tabs button):not(.peek-tabs *):hover,.btn:not(.s):not(.o):not(.ig):hover{background:linear-gradient(180deg,#fff0c2,#fad06a 55%,#efb742);filter:none}
+button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(.ig):active{transform:translateY(4px);box-shadow:inset 0 2px 0 rgba(255,255,255,.6),0 1px 0 #b8861f,0 8px 14px rgba(184,134,31,.35)}
+@keyframes kpcpulseg{0%,100%{box-shadow:inset 0 2px 0 rgba(255,255,255,.7),inset 0 -3px 0 rgba(150,95,0,.18),0 5px 0 #b8861f,0 14px 24px rgba(184,134,31,.32)}50%{box-shadow:inset 0 2px 0 rgba(255,255,255,.7),inset 0 -3px 0 rgba(150,95,0,.18),0 5px 0 #b8861f,0 18px 36px rgba(246,201,90,.6)}}
+.sticky .btn,.cta-row .btn{color:#4a0f2e}
