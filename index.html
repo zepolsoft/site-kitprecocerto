@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=76">
+<link rel="stylesheet" href="style.css?v=78">
 <script>document.documentElement.className+=' js';</script></head><body>
 
 <!-- ícones -->
@@ -136,23 +136,42 @@
   </ul>
   <div class="peek rv" id="peek">
     <div class="peek-tabs" role="tablist" aria-label="Abas da planilha">
-      <button type="button" role="tab" aria-selected="true">Leia primeiro</button>
-      <button type="button" role="tab" aria-selected="false">Meu custo por hora</button>
+      <button type="button" role="tab" aria-selected="true">Meu custo por hora</button>
       <button type="button" role="tab" aria-selected="false">Meus serviços</button>
       <button type="button" role="tab" aria-selected="false">Meu Painel</button>
     </div>
     <div class="peek-win">
       <div class="peek-bar"><i></i><i></i><i></i><span>Calculadora-Preco-Certo.xlsx</span></div>
+      <div class="xs-key"><span><i class="in"></i>Você preenche</span><span><i class="out"></i>A planilha calcula</span></div>
       <div class="peek-view" id="pview">
-        <div class="peek-pane on"><img class="narrow" src="xl-leia.jpg" width="900" height="1013" alt="Aba Leia primeiro: guia de 3 passos e explicação das cores da planilha"></div>
-        <div class="peek-pane"><img class="narrow" src="xl-custo.jpg" width="1000" height="1010" loading="lazy" alt="Aba Meu custo por hora: gastos fixos, retirada desejada e horas de trabalho, com o custo da hora calculado sozinho"></div>
-        <div class="peek-pane"><div class="peek-scroll"><img class="wide" src="xl-servicos.jpg" width="1500" height="753" loading="lazy" alt="Aba Meus serviços: preço sugerido, situação e lucro de cada serviço, com aviso de prejuízo"></div><p class="peek-hint">Arraste para o lado para ver tudo</p></div>
-        <div class="peek-pane"><img src="xl-painel.jpg" width="1200" height="994" loading="lazy" alt="Aba Meu Painel: indicadores de custo da hora, lucro médio, serviço mais lucrativo e um gráfico do preço de hoje contra o preço sugerido"></div>
+        <div class="peek-pane on xs">
+          <div class="xs-h"><img src="favicon.png" alt="" width="28" height="28">Passo 1 · Quanto custa a sua hora</div>
+          <div class="xs-b">
+            <div class="xs-r"><span>Aluguel / cadeira / espaço</span><b class="xs-in">R$ 600,00</b></div><div class="xs-r"><span>Luz, água, internet</span><b class="xs-in">R$ 150,00</b></div><div class="xs-r"><span>Imposto (DAS do MEI)</span><b class="xs-in">R$ 80,00</b></div>
+            <div class="xs-more">+ mais 4 gastos fixos</div>
+            <div class="xs-r"><span>Quanto você quer tirar por mês</span><b class="xs-in">R$ 3.000,00</b></div>
+            <div class="xs-chips"><span>8 h por dia</span><span>5 dias por semana</span><span>65% de ocupação</span></div>
+            <div class="xs-res"><small>Custo da sua hora</small><b>R$ 35,62</b><span>Aparece sozinho e entra direto no passo 2</span></div>
+          </div>
+        </div>
+        <div class="peek-pane xs">
+          <div class="xs-h"><img src="favicon.png" alt="" width="28" height="28">Passo 2 · Preço sugerido por serviço</div>
+          <div class="xs-b xs-list"><div class="xs-s"><div class="xs-sn"><b>Corte feminino</b><small>60 min · material R$ 6 · cobro R$ 80</small></div><div class="xs-sp"><small>Preço sugerido</small><b>R$ 49</b><em class="ok">OK: cobre custos e margem</em></div></div><div class="xs-s"><div class="xs-sn"><b>Escova</b><small>45 min · material R$ 6 · cobro R$ 35</small></div><div class="xs-sp"><small>Preço sugerido</small><b>R$ 39</b><em class="warn">Atenção: pouca folga</em></div></div><div class="xs-s"><div class="xs-sn"><b>Manicure (mão)</b><small>45 min · material R$ 4 · cobro R$ 30</small></div><div class="xs-sp"><small>Preço sugerido</small><b>R$ 36</b><em class="bad">PREJUÍZO: abaixo do custo</em></div></div><div class="xs-s"><div class="xs-sn"><b>Design de sobrancelha</b><small>30 min · material R$ 3 · cobro R$ 40</small></div><div class="xs-sp"><small>Preço sugerido</small><b>R$ 25</b><em class="ok">OK: cobre custos e margem</em></div></div><div class="xs-s"><div class="xs-sn"><b>Limpeza de pele</b><small>75 min · material R$ 15 · cobro R$ 120</small></div><div class="xs-sp"><small>Preço sugerido</small><b>R$ 70</b><em class="ok">OK: cobre custos e margem</em></div></div><div class="xs-s"><div class="xs-sn"><b>Massagem relaxante</b><small>60 min · material R$ 8 · cobro R$ 100</small></div><div class="xs-sp"><small>Preço sugerido</small><b>R$ 51</b><em class="ok">OK: cobre custos e margem</em></div></div><div class="xs-fade"><div class="xs-s xs-g" aria-hidden="true"><div class="xs-sn"><b>Extensão de cílios</b><small>120 min · material R$ 35 · cobro R$ 180</small></div><div class="xs-sp"><small>Preço sugerido</small><b>R$ 124</b><em class="ok">OK</em></div></div><div class="xs-s xs-g" aria-hidden="true"><div class="xs-sn"><b>Depilação (perna)</b><small>40 min · material R$ 8 · cobro R$ 55</small></div><div class="xs-sp"><small>Preço sugerido</small><b>R$ 37</b><em class="ok">OK</em></div></div></div></div>
+        </div>
+        <div class="peek-pane xs">
+          <div class="xs-h"><img src="favicon.png" alt="" width="28" height="28">Seu painel de preços</div>
+          <div class="xs-b">
+            <div class="xs-k"><div><small>Custo da sua hora</small><b>R$ 35,62</b></div><div><small>Serviços cadastrados</small><b>8</b></div><div><small>Lucro médio hoje</small><b class="gr">R$ 30,93</b></div><div><small>Dando prejuízo</small><b class="rd">1</b></div></div>
+            <div class="xs-alert">Atenção: 1 serviço está com preço abaixo do custo. Veja o preço sugerido em Meus serviços.</div>
+            <div class="xs-ct">Quanto você cobra hoje × preço sugerido</div>
+            <div class="xs-chart"><div class="xs-bc"><div class="xs-bp"><i class="g" style="height:44%"></i><i class="m" style="height:27%"></i></div><small>Corte</small></div><div class="xs-bc"><div class="xs-bp"><i class="g" style="height:19%"></i><i class="m" style="height:22%"></i></div><small>Escova</small></div><div class="xs-bc"><div class="xs-bp"><i class="g" style="height:17%"></i><i class="m" style="height:20%"></i></div><small>Mani</small></div><div class="xs-bc"><div class="xs-bp"><i class="g" style="height:22%"></i><i class="m" style="height:14%"></i></div><small>Sobr.</small></div><div class="xs-bc"><div class="xs-bp"><i class="g" style="height:67%"></i><i class="m" style="height:39%"></i></div><small>Limpeza</small></div><div class="xs-bc"><div class="xs-bp"><i class="g" style="height:56%"></i><i class="m" style="height:28%"></i></div><small>Massag.</small></div><div class="xs-bc"><div class="xs-bp"><i class="g" style="height:100%"></i><i class="m" style="height:69%"></i></div><small>Cílios</small></div><div class="xs-bc"><div class="xs-bp"><i class="g" style="height:31%"></i><i class="m" style="height:21%"></i></div><small>Depil.</small></div></div>
+            <div class="xs-leg"><span><i class="g"></i>Cobro hoje</span><span><i class="m"></i>Preço sugerido</span></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="peek-base" aria-hidden="true"></div>
-    <p class="peek-cap" id="pcap">Um guia de 3 passos abre a planilha e explica as cores. É só seguir.</p>
-    <p class="peek-note">Imagens da planilha com dados de exemplo. Os seus números aparecem depois que você preencher as células amarelas.</p>
+    <p class="peek-cap" id="pcap">Você preenche as células amarelas com seus gastos. O custo da sua hora aparece sozinho.</p>
+    <p class="peek-note">Visual ilustrativo da planilha, com os mesmos valores de exemplo dela. Os seus números aparecem quando você preenche as células amarelas.</p>
   </div>
   <div class="center rv" style="margin-top:40px"><h3 class="h3c">O que vem na planilha</h3><p class="lead">Para quem quer acompanhar tudo com mais detalhe.</p></div>
   <div class="grid g3">
@@ -392,7 +411,7 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
 /* Abas da planilha: troca sozinha e para quando a pessoa interage */
 (function(){
   var tabs=[].slice.call(document.querySelectorAll('.peek-tabs button')),panes=[].slice.call(document.querySelectorAll('.peek-pane')),view=document.getElementById('pview'),wrap=document.getElementById('peek'),k=0,t=null,vis=false;
-  var CAP=['Um guia de 3 passos abre a planilha e explica as cores. É só seguir.','Você preenche as células amarelas com seus gastos. O custo da sua hora aparece sozinho.','Cadastre os serviços e veja na hora o preço sugerido, o lucro e o aviso de prejuízo.','Indicadores e gráfico automáticos: você vê onde ajustar, sem montar nada.'],cap=document.getElementById('pcap');
+  var CAP=['Você preenche as células amarelas com seus gastos. O custo da sua hora aparece sozinho.','Cadastre os serviços e veja na hora o preço sugerido, o lucro e o aviso de prejuízo.','Indicadores e gráfico automáticos: você vê onde ajustar, sem montar nada.'],cap=document.getElementById('pcap');
   function show(n,anim){
     var oldH=view.offsetHeight;k=n;cap.textContent=CAP[n];
     tabs.forEach(function(x,j){x.setAttribute('aria-selected',j===n?'true':'false');});
