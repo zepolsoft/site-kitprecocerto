@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=75">
+<link rel="stylesheet" href="style.css?v=76">
 <script>document.documentElement.className+=' js';</script></head><body>
 
 <!-- ícones -->
@@ -130,21 +130,28 @@
 
 <!-- 3b. VEJA POR DENTRO -->
 <section class="nude" id="dentro"><div class="wrap">
-  <div class="center rv"><h2>Seu bônus: a planilha Excel com indicadores e gráficos</h2><p class="lead">Além da calculadora do celular, você recebe a planilha profissional para o computador, com fórmulas prontas. Os números abaixo são <b>exemplos</b>: você troca pelos seus.</p></div>
+  <div class="center rv"><h2>Seu bônus: planilha Excel profissional, fácil de usar</h2><p class="lead">Você só preenche as <b>células amarelas</b>. As fórmulas já estão prontas e os indicadores e gráficos se atualizam sozinhos. <b>Não precisa saber Excel.</b></p></div>
+  <ul class="xl-badges rv">
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Não precisa saber Excel</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Fórmulas já prontas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Indicadores e gráficos automáticos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Só preencher as células amarelas</li>
+  </ul>
   <div class="peek rv" id="peek">
     <div class="peek-tabs" role="tablist" aria-label="Abas da planilha">
-      <button type="button" role="tab" aria-selected="true" data-p="p1">Meu custo por hora</button>
-      <button type="button" role="tab" aria-selected="false" data-p="p2">Meus serviços</button>
-      <button type="button" role="tab" aria-selected="false" data-p="p3">Meu Painel</button>
+      <button type="button" role="tab" aria-selected="true">Leia primeiro</button>
+      <button type="button" role="tab" aria-selected="false">Meu custo por hora</button>
+      <button type="button" role="tab" aria-selected="false">Meus serviços</button>
+      <button type="button" role="tab" aria-selected="false">Meu Painel</button>
     </div>
     <div class="peek-win">
       <div class="peek-bar"><i></i><i></i><i></i><span>Calculadora-Preco-Certo.xlsx</span></div>
       <div class="peek-view" id="pview">
-        <div class="peek-pane on" id="p1"><img class="narrow" src="xl-custo.jpg" width="1100" height="976" alt="Aba Meu custo por hora da planilha: gastos fixos, retirada desejada, horas de trabalho e o custo da sua hora calculado"></div>
-        <div class="peek-pane" id="p2"><div class="peek-scroll"><img class="wide" src="xl-servicos.jpg" width="1500" height="782" loading="lazy" alt="Aba Meus serviços: preço sugerido, situação e lucro de cada serviço, com aviso de prejuízo"></div><p class="peek-hint">Arraste para o lado para ver tudo</p></div>
-        <div class="peek-pane" id="p3"><img src="xl-painel.jpg" width="1300" height="854" loading="lazy" alt="Aba Meu Painel: indicadores do custo da hora, serviços cadastrados e quantos dão prejuízo, mais um gráfico do preço de hoje contra o preço sugerido"></div>
+        <div class="peek-pane on"><img class="narrow" src="xl-leia.jpg" width="900" height="1013" alt="Aba Leia primeiro: guia de 3 passos e explicação das cores da planilha"></div>
+        <div class="peek-pane"><img class="narrow" src="xl-custo.jpg" width="1000" height="1010" loading="lazy" alt="Aba Meu custo por hora: gastos fixos, retirada desejada e horas de trabalho, com o custo da hora calculado sozinho"></div>
+        <div class="peek-pane"><div class="peek-scroll"><img class="wide" src="xl-servicos.jpg" width="1500" height="753" loading="lazy" alt="Aba Meus serviços: preço sugerido, situação e lucro de cada serviço, com aviso de prejuízo"></div><p class="peek-hint">Arraste para o lado para ver tudo</p></div>
+        <div class="peek-pane"><img src="xl-painel.jpg" width="1200" height="994" loading="lazy" alt="Aba Meu Painel: indicadores de custo da hora, lucro médio, serviço mais lucrativo e um gráfico do preço de hoje contra o preço sugerido"></div>
       </div>
     </div>
+    <div class="peek-base" aria-hidden="true"></div>
+    <p class="peek-cap" id="pcap">Um guia de 3 passos abre a planilha e explica as cores. É só seguir.</p>
     <p class="peek-note">Imagens da planilha com dados de exemplo. Os seus números aparecem depois que você preencher as células amarelas.</p>
   </div>
   <div class="center rv" style="margin-top:40px"><h3 class="h3c">O que vem na planilha</h3><p class="lead">Para quem quer acompanhar tudo com mais detalhe.</p></div>
@@ -152,7 +159,7 @@
     <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-bulb"/></svg></div><div><b>Leia primeiro</b><span>3 passos e as cores explicadas</span></div></div>
     <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg></div><div><b>Meu custo por hora</b><span>descubra quanto custa o seu tempo</span></div></div>
     <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-list"/></svg></div><div><b>Meus serviços</b><span>preço sugerido e lucro de cada um</span></div></div>
-    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-coin"/></svg></div><div><b>Painel</b><span>resumo e gráfico para ver onde ajustar</span></div></div>
+    <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-coin"/></svg></div><div><b>Meu Painel</b><span>indicadores e gráfico para ver onde ajustar</span></div></div>
     <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-tag"/></svg></div><div><b>Tabela para divulgar</b><span>pronta para tirar print e postar</span></div></div>
     <div class="tile rv"><div class="ico"><svg viewBox="0 0 24 24"><use href="#i-sheet"/></svg></div><div><b>Fórmulas já prontas</b><span>você só preenche as células amarelas</span></div></div>
   </div>
@@ -385,8 +392,9 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
 /* Abas da planilha: troca sozinha e para quando a pessoa interage */
 (function(){
   var tabs=[].slice.call(document.querySelectorAll('.peek-tabs button')),panes=[].slice.call(document.querySelectorAll('.peek-pane')),view=document.getElementById('pview'),wrap=document.getElementById('peek'),k=0,t=null,vis=false;
+  var CAP=['Um guia de 3 passos abre a planilha e explica as cores. É só seguir.','Você preenche as células amarelas com seus gastos. O custo da sua hora aparece sozinho.','Cadastre os serviços e veja na hora o preço sugerido, o lucro e o aviso de prejuízo.','Indicadores e gráfico automáticos: você vê onde ajustar, sem montar nada.'],cap=document.getElementById('pcap');
   function show(n,anim){
-    var oldH=view.offsetHeight;k=n;
+    var oldH=view.offsetHeight;k=n;cap.textContent=CAP[n];
     tabs.forEach(function(x,j){x.setAttribute('aria-selected',j===n?'true':'false');});
     panes.forEach(function(p,j){p.classList.toggle('on',j===n);});
     if(anim===false)return;

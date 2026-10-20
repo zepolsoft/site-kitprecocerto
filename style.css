@@ -704,3 +704,15 @@ button:not(.peek-tabs button):not(.peek-tabs *):active,.btn:not(.s):not(.o):not(
 .peek-pane.on{animation:kpcfade .5s ease}
 @keyframes kpcfade{from{opacity:0}to{opacity:1}}
 .peek-scroll img.wide{min-width:820px}
+
+/* ===== v30: planilha em moldura de notebook + selos de facilidade ===== */
+.xl-badges{list-style:none;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px auto 6px;padding:0;max-width:820px}
+.xl-badges li{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid #f3cfdd;border-radius:999px;padding:7px 14px;font-weight:600;font-size:.86rem;color:#5a1236;box-shadow:0 6px 14px -8px rgba(90,18,54,.35)}
+.xl-badges svg{width:16px;height:16px;flex:none;padding:2px;border-radius:50%;background:#1b8a4b;color:#fff}
+.peek-win{border:9px solid #2a1220;border-bottom-width:12px;border-radius:18px 18px 4px 4px;box-shadow:0 30px 50px -24px rgba(42,18,32,.55)}
+.peek-bar{background:#3a1c2e;border-bottom:0}
+.peek-bar span{color:#e9c9d8}
+.peek-base{height:12px;width:112%;margin:0 -6%;border-radius:0 0 18px 18px;background:linear-gradient(180deg,#d9c8d0,#b9a3ae);box-shadow:0 14px 20px -12px rgba(42,18,32,.5)}
+.peek-cap{margin:16px auto 0;max-width:620px;text-align:center;font-weight:600;color:#5a1236;min-height:2.6em}
+.peek-pane img.narrow{max-width:520px}
+.peek-tabs button{font-size:.84rem}
