@@ -924,3 +924,11 @@ box-shadow:0 0 0 2px #fff,0 0 0 4px #d9a441,0 12px 26px rgba(185,125,20,.35);tex
 @keyframes goldsh{0%,100%{background-position:0 0}50%{background-position:100% 0}}
 @media(max-width:430px){.top a.badge.pillbar.gold{padding:10px 16px;gap:8px}.top a.badge.pillbar.gold .gt{font-size:.72rem;letter-spacing:.05em}}
 @media(prefers-reduced-motion:reduce){.top a.badge.pillbar.gold{animation:none}}
+
+/* ===== v50: formularios mais leves (campos menores, iguais em todos) ===== */
+input[type=text],input[type=tel],select.area{padding:10px 12px;font-size:.95rem;border-radius:10px;min-height:44px;line-height:1.25}
+select.area{width:100%;border:1.5px solid #E7B5CB;background:#fff;color:var(--mut);font-family:inherit;margin-top:10px;appearance:auto}
+select.area:focus{outline:3px solid var(--rose);border-color:var(--magenta)}
+.lead-form label{margin:9px 0 3px}
+.chk{margin:12px 0 10px}
+select.area{height:44px;padding-top:0;padding-bottom:0}
