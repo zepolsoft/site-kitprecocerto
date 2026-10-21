@@ -909,3 +909,7 @@ body:has(.count) a.btn.btn.btn.ig{background:#fff!important;color:#C2185B!import
 
 /* ===== v47: titulo do formulario final igual ao do topo ===== */
 .final .card h3{font-family:var(--disp);font-weight:700;font-size:1.5rem;color:var(--ink);letter-spacing:0;line-height:1.12}
+
+/* ===== v48: pilula do topo com 2 linhas centralizadas ===== */
+.top a.badge.pillbar>span{flex:1;display:block;text-align:center}
+.top a.badge.pillbar .pp{display:block;text-align:center;margin-top:2px;padding:0}
