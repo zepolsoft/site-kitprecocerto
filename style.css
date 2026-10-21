@@ -914,33 +914,26 @@ body:has(.count) a.btn.btn.btn.ig{background:#fff!important;color:#C2185B!import
 .top a.badge.pillbar>span{flex:1;display:block;text-align:center}
 .top a.badge.pillbar .pp{display:block;text-align:center;margin-top:2px;padding:0}
 
-/* ===== v49: pilula dourada premium em uma linha ===== */
-.top a.badge.pillbar.gold{display:flex;align-items:center;justify-content:center;gap:10px;width:max-content;max-width:100%;margin:18px auto 16px;padding:11px 22px;border-radius:999px;border:0;position:relative;overflow:hidden;
-background:linear-gradient(115deg,#fff1b8 0%,#f6d27a 28%,#e2a93b 55%,#f6d27a 78%,#fff1b8 100%);background-size:220% 100%;
-box-shadow:0 0 0 2px #fff,0 0 0 4px #d9a441,0 12px 26px rgba(185,125,20,.35);text-decoration:none;animation:goldsh 4.5s ease-in-out infinite}
-.top a.badge.pillbar.gold .gt{font-family:Poppins,system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.07em;font-size:.8rem;line-height:1.2;color:#4a0f2e;white-space:nowrap;display:inline;flex:none;text-align:center}
-.top a.badge.pillbar.gold .gt b{color:#8a1a50;margin:0 2px}
-.top a.badge.pillbar.gold .gs{color:#8a1a50;font-size:.8rem;display:inline;flex:none}
-@keyframes goldsh{0%,100%{background-position:0 0}50%{background-position:100% 0}}
-@media(max-width:430px){.top a.badge.pillbar.gold{padding:10px 16px;gap:8px}.top a.badge.pillbar.gold .gt{font-size:.72rem;letter-spacing:.05em}}
-@media(prefers-reduced-motion:reduce){.top a.badge.pillbar.gold{animation:none}}
-
-/* ===== v50: formularios mais leves (campos menores, iguais em todos) ===== */
-input[type=text],input[type=tel],select.area{padding:10px 12px;font-size:.95rem;border-radius:10px;min-height:44px;line-height:1.25}
-select.area{width:100%;border:1.5px solid #E7B5CB;background:#fff;color:var(--mut);font-family:inherit;margin-top:10px;appearance:auto}
-select.area:focus{outline:3px solid var(--rose);border-color:var(--magenta)}
-.lead-form label{margin:9px 0 3px}
-.chk{margin:12px 0 10px}
-select.area{height:44px;padding-top:0;padding-bottom:0}
-
 /* ===== v51: pilula dourada com selo GRATIS + brilho; botoes da obrigado do mesmo tamanho; nomes em negrito ===== */
-.top a.badge.pillbar.gold{gap:12px;padding:6px 6px 6px 20px;overflow:hidden;box-shadow:0 0 0 2px #fff,0 0 0 4px #d9a441,0 14px 28px rgba(185,125,20,.38),inset 0 2px 0 rgba(255,255,255,.75)}
-.top a.badge.pillbar.gold .gt{font-size:.74rem;letter-spacing:.06em}
-.top a.badge.pillbar.gold .gf{display:inline-flex;align-items:center;background:linear-gradient(180deg,#8a1a50,#5a1236);color:#f6d27a;font-family:Poppins,system-ui,sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:8px 14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 3px 8px rgba(90,18,54,.35);white-space:nowrap}
-.top a.badge.pillbar.gold:after{content:"";position:absolute;top:0;bottom:0;width:38%;left:-50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:goldsw 3.8s ease-in-out infinite}
-@keyframes goldsw{0%,55%{left:-50%}100%{left:130%}}
-@media(max-width:430px){.top a.badge.pillbar.gold{padding:5px 5px 5px 16px;gap:9px}.top a.badge.pillbar.gold .gt{font-size:.68rem;letter-spacing:.04em}.top a.badge.pillbar.gold .gf{font-size:.66rem;padding:7px 11px}}
-@media(prefers-reduced-motion:reduce){.top a.badge.pillbar.gold:after{animation:none;display:none}}
 a#gs.btn.btn,a#dl.btn.btn{display:flex!important;align-items:center;justify-content:center;width:100%;max-width:300px;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box;min-height:48px!important;height:48px!important;padding:0 18px!important;font-size:.84rem!important;font-weight:700!important;letter-spacing:.06em!important;text-align:center;border-radius:999px!important;line-height:1!important;margin-left:0;margin-right:0}
 a.btn.btn.btn.btn#dl{background:linear-gradient(180deg,#8a1a50,#5a1236)!important;color:#f6d27a!important;border:0!important;box-shadow:0 8px 18px -8px rgba(90,18,54,.75)!important}
 a.btn.btn.btn.btn#dl:before{content:"↓";margin-right:8px;font-weight:800}
+
+/* ===== v52: laco dourado premium (faixa fina com pontas) ===== */
+.top a.badge.pillbar.gold{position:relative;isolation:isolate;display:block;width:max-content;max-width:calc(100% - 44px);margin:24px auto 22px;padding:11px 20px;border:0;border-radius:3px;text-decoration:none;
+background:linear-gradient(180deg,#fff0b3 0%,#f6d27a 32%,#e2a93b 70%,#f3cf74 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 0 rgba(150,100,10,.35),0 8px 16px -6px rgba(150,100,10,.45)}
+.top a.badge.pillbar.gold:before,.top a.badge.pillbar.gold:after{content:"";position:absolute;z-index:-1;top:7px;bottom:-7px;width:28px;background:linear-gradient(180deg,#c9922c,#a8761a)}
+.top a.badge.pillbar.gold:before{left:-18px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,8px 50%)}
+.top a.badge.pillbar.gold:after{right:-18px;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 50%,100% 100%,0 100%)}
+.top a.badge.pillbar.gold .shn{position:absolute;inset:0;overflow:hidden;border-radius:3px;pointer-events:none}
+.top a.badge.pillbar.gold .shn:after{content:"";position:absolute;top:0;bottom:0;left:-45%;width:30%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:goldsw 4s ease-in-out infinite}
+@keyframes goldsw{0%,50%{left:-45%}100%{left:125%}}
+.top a.badge.pillbar.gold .gt{display:block;font-family:Poppins,system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.07em;font-size:.7rem;line-height:1.2;color:#4a0f2e;white-space:nowrap;text-align:center;text-shadow:0 1px 0 rgba(255,255,255,.65)}
+.top a.badge.pillbar.gold .gt b{color:#8a1a50;font-weight:800}
+@media(max-width:430px){.top a.badge.pillbar.gold{padding:10px 14px}.top a.badge.pillbar.gold .gt{font-size:.68rem;letter-spacing:.055em}}
+@media(prefers-reduced-motion:reduce){.top a.badge.pillbar.gold .shn:after{animation:none;display:none}}
+.top a.badge.pillbar.gold:before,.top a.badge.pillbar.gold:after{display:block!important;animation:none!important;left:auto;right:auto;top:7px;bottom:-7px;opacity:1}
+.top a.badge.pillbar.gold:before{left:-18px!important;width:18px}
+.top a.badge.pillbar.gold:after{right:-18px!important;width:18px}
+.top a.badge.pillbar.gold .gt{white-space:nowrap!important}
+.top a.badge.pillbar.gold{overflow:visible!important}
