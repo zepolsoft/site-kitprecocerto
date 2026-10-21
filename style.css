@@ -932,3 +932,15 @@ select.area:focus{outline:3px solid var(--rose);border-color:var(--magenta)}
 .lead-form label{margin:9px 0 3px}
 .chk{margin:12px 0 10px}
 select.area{height:44px;padding-top:0;padding-bottom:0}
+
+/* ===== v51: pilula dourada com selo GRATIS + brilho; botoes da obrigado do mesmo tamanho; nomes em negrito ===== */
+.top a.badge.pillbar.gold{gap:12px;padding:6px 6px 6px 20px;overflow:hidden;box-shadow:0 0 0 2px #fff,0 0 0 4px #d9a441,0 14px 28px rgba(185,125,20,.38),inset 0 2px 0 rgba(255,255,255,.75)}
+.top a.badge.pillbar.gold .gt{font-size:.74rem;letter-spacing:.06em}
+.top a.badge.pillbar.gold .gf{display:inline-flex;align-items:center;background:linear-gradient(180deg,#8a1a50,#5a1236);color:#f6d27a;font-family:Poppins,system-ui,sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:8px 14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 3px 8px rgba(90,18,54,.35);white-space:nowrap}
+.top a.badge.pillbar.gold:after{content:"";position:absolute;top:0;bottom:0;width:38%;left:-50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:goldsw 3.8s ease-in-out infinite}
+@keyframes goldsw{0%,55%{left:-50%}100%{left:130%}}
+@media(max-width:430px){.top a.badge.pillbar.gold{padding:5px 5px 5px 16px;gap:9px}.top a.badge.pillbar.gold .gt{font-size:.68rem;letter-spacing:.04em}.top a.badge.pillbar.gold .gf{font-size:.66rem;padding:7px 11px}}
+@media(prefers-reduced-motion:reduce){.top a.badge.pillbar.gold:after{animation:none;display:none}}
+a#gs.btn.btn,a#dl.btn.btn{display:flex!important;align-items:center;justify-content:center;width:100%;max-width:300px;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box;min-height:48px!important;height:48px!important;padding:0 18px!important;font-size:.84rem!important;font-weight:700!important;letter-spacing:.06em!important;text-align:center;border-radius:999px!important;line-height:1!important;margin-left:0;margin-right:0}
+a.btn.btn.btn.btn#dl{background:linear-gradient(180deg,#8a1a50,#5a1236)!important;color:#f6d27a!important;border:0!important;box-shadow:0 8px 18px -8px rgba(90,18,54,.75)!important}
+a.btn.btn.btn.btn#dl:before{content:"↓";margin-right:8px;font-weight:800}
