@@ -906,3 +906,6 @@ body:has(.count) a.btn.btn.btn.ig{background:#fff!important;color:#C2185B!import
 .hero-row .gains{margin:0}
 .hero-row .gains li{text-align:left}
 }
+
+/* ===== v47: titulo do formulario final igual ao do topo ===== */
+.final .card h3{font-family:var(--disp);font-weight:700;font-size:1.5rem;color:var(--ink);letter-spacing:0;line-height:1.12}
