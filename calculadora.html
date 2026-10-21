@@ -257,6 +257,8 @@ main{padding-top:0}
     <input class="in txt" id="ig" maxlength="30" autocomplete="off" autocapitalize="none" placeholder="@seuperfil">
     <label for="zap">WhatsApp</label>
     <input class="in txt" id="zap" maxlength="20" inputmode="tel" autocomplete="off" placeholder="(11) 90000-0000">
+    <label for="ad">Endereço <small style="font-weight:500;color:var(--mut)">(bairro e cidade, se preferir)</small></label>
+    <input class="in txt" id="ad" maxlength="60" autocomplete="off" placeholder="Ex.: Centro, Osasco - SP">
     <label for="frase">Frase de chamada</label>
     <input class="in txt" id="frase" maxlength="34" autocomplete="off" placeholder="Ex.: Agende seu horário">
     <label for="pag">Formas de pagamento</label>
@@ -418,55 +420,62 @@ $('copy').addEventListener('click',function(){
 });
 function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
 var THEMES={
- rosa:{n:'Rosa',bg:['#FFF4F8','#FBD3E2','#F4A7C3'],title:'#8a1a50',sub:'#8a1a50',accent:'#E91E78',price:'#E91E78',text:'#3A0A26',card:'#ffffff',pill:'#8a1a50',pillText:'#ffffff',foot:'#8a1a50',glow:'rgba(255,255,255,.7)'},
- vinho:{n:'Vinho e dourado',bg:['#5a1236','#8a1a50','#a61b5f'],title:'#f6d27a',sub:'#ffd1e6',accent:'#f6d27a',price:'#f6d27a',text:'#ffffff',card:'rgba(255,255,255,.10)',pill:'#f6d27a',pillText:'#4a0f2e',foot:'#ffd1e6',glow:'rgba(255,120,180,.25)'},
- preto:{n:'Preto e dourado',bg:['#141114','#211a1f','#2d2229'],title:'#e7c27d',sub:'#e7c27d',accent:'#e7c27d',price:'#e7c27d',text:'#f4ece6',card:'rgba(255,255,255,.07)',pill:'#e7c27d',pillText:'#201519',foot:'#e7c27d',glow:'rgba(231,194,125,.14)'},
- lilas:{n:'Lilás',bg:['#F7EEFB','#E5CBF2','#CFA6E6'],title:'#5b2a86',sub:'#5b2a86',accent:'#8e44ad',price:'#7b2fa0',text:'#2c1240',card:'#ffffff',pill:'#5b2a86',pillText:'#ffffff',foot:'#5b2a86',glow:'rgba(255,255,255,.7)'},
- verde:{n:'Verde sálvia',bg:['#F4F8F2','#D8E7D4','#B3CFAE'],title:'#2f5d3a',sub:'#2f5d3a',accent:'#4f8a5b',price:'#2b7a42',text:'#1f3324',card:'#ffffff',pill:'#2f5d3a',pillText:'#ffffff',foot:'#2f5d3a',glow:'rgba(255,255,255,.7)'},
- nude:{n:'Nude',bg:['#FFF9F1','#F1DEC8','#E2C2A3'],title:'#7a4a2e',sub:'#7a4a2e',accent:'#b0693f',price:'#a9552c',text:'#3b2416',card:'#ffffff',pill:'#7a4a2e',pillText:'#ffffff',foot:'#7a4a2e',glow:'rgba(255,255,255,.7)'}
+ rosa:{deco:'circles',n:'Rosa',bg:['#FFF4F8','#FBD3E2','#F4A7C3'],title:'#8a1a50',sub:'#8a1a50',accent:'#E91E78',price:'#E91E78',text:'#3A0A26',card:'#ffffff',pill:'#8a1a50',pillText:'#ffffff',foot:'#8a1a50',glow:'rgba(255,255,255,.7)'},
+ vinho:{deco:'frame',n:'Vinho e dourado',bg:['#5a1236','#8a1a50','#a61b5f'],title:'#f6d27a',sub:'#ffd1e6',accent:'#f6d27a',price:'#f6d27a',text:'#ffffff',card:'rgba(255,255,255,.10)',pill:'#f6d27a',pillText:'#4a0f2e',foot:'#ffd1e6',glow:'rgba(255,120,180,.25)'},
+ preto:{deco:'frame2',n:'Preto e dourado',bg:['#141114','#211a1f','#2d2229'],title:'#e7c27d',sub:'#e7c27d',accent:'#e7c27d',price:'#e7c27d',text:'#f4ece6',card:'rgba(255,255,255,.07)',pill:'#e7c27d',pillText:'#201519',foot:'#e7c27d',glow:'rgba(231,194,125,.14)'},
+ lilas:{deco:'duo',n:'Lilás',bg:['#F7EEFB','#E5CBF2','#CFA6E6'],title:'#5b2a86',sub:'#5b2a86',accent:'#8e44ad',price:'#7b2fa0',text:'#2c1240',card:'#ffffff',pill:'#5b2a86',pillText:'#ffffff',foot:'#5b2a86',glow:'rgba(255,255,255,.7)'},
+ verde:{deco:'arc',n:'Verde sálvia',bg:['#F4F8F2','#D8E7D4','#B3CFAE'],title:'#2f5d3a',sub:'#2f5d3a',accent:'#4f8a5b',price:'#2b7a42',text:'#1f3324',card:'#ffffff',pill:'#2f5d3a',pillText:'#ffffff',foot:'#2f5d3a',glow:'rgba(255,255,255,.7)'},
+ nude:{deco:'band',n:'Nude',bg:['#FFF9F1','#F1DEC8','#E2C2A3'],title:'#7a4a2e',sub:'#7a4a2e',accent:'#b0693f',price:'#a9552c',text:'#3b2416',card:'#ffffff',pill:'#7a4a2e',pillText:'#ffffff',foot:'#7a4a2e',glow:'rgba(255,255,255,.7)'}
 };
 var LOGO=null;
-function CFG(){if(!S.cfg)S.cfg={t:'rosa',f:'f',ig:'',zap:'',frase:'',pag:'',obs:''};return S.cfg;}
+function CFG(){if(!S.cfg)S.cfg={t:'rosa',f:'f',ig:'',zap:'',ad:'',frase:'',pag:'',obs:''};return S.cfg;}
 function fitFont(g,txt,weight,size,maxW,min,fam){var f=size;g.font=weight+' '+f+'px '+fam;while(f>min&&g.measureText(txt).width>maxW){f-=2;g.font=weight+' '+f+'px '+fam;}return f;}
 function ellip(g,txt,maxW){if(g.measureText(txt).width<=maxW)return txt;while(txt.length>3&&g.measureText(txt+'…').width>maxW)txt=txt.slice(0,-1);return txt.trim()+'…';}
+function trk(g,px){if('letterSpacing' in g)g.letterSpacing=px+'px';}
+function deco(g,T,W,H){var d=T.deco,a=T.accent;g.save();
+ if(d==='circles'){g.globalAlpha=.4;g.fillStyle='#fff';g.beginPath();g.arc(W*.94,H*.05,W*.28,0,6.2832);g.fill();g.globalAlpha=.55;g.strokeStyle=a;g.lineWidth=3;g.beginPath();g.arc(W*.05,H*.95,W*.17,0,6.2832);g.stroke();}
+ else if(d==='frame'){g.globalAlpha=.6;g.strokeStyle=a;g.lineWidth=3;rr(g,34,34,W-68,H-68,30);g.stroke();}
+ else if(d==='frame2'){g.globalAlpha=.55;g.strokeStyle=a;g.lineWidth=2.5;rr(g,34,34,W-68,H-68,6);g.stroke();g.globalAlpha=.7;rr(g,50,50,W-100,H-100,6);g.stroke();}
+ else if(d==='duo'){g.fillStyle=a;g.globalAlpha=.16;g.beginPath();g.arc(W*.08,H*.06,W*.24,0,6.2832);g.fill();g.globalAlpha=.12;g.beginPath();g.arc(W*.2,H*.02,W*.2,0,6.2832);g.fill();g.globalAlpha=.14;g.beginPath();g.arc(W*.95,H*.96,W*.22,0,6.2832);g.fill();}
+ else if(d==='arc'){g.fillStyle=a;g.globalAlpha=.16;g.beginPath();g.arc(W,H,W*.34,0,6.2832);g.fill();g.globalAlpha=.12;g.beginPath();g.arc(0,0,W*.26,0,6.2832);g.fill();}
+ else if(d==='band'){g.fillStyle=a;g.globalAlpha=.18;g.fillRect(0,0,W,H*.05);g.globalAlpha=.35;g.fillRect(0,H*.05,W,5);g.globalAlpha=.18;g.fillRect(0,H*.95-5,W,5);g.fillRect(0,H*.95,W,H*.05);}
+ g.restore();}
 function draw(l){
   var c=CFG(),T=THEMES[c.t]||THEMES.rosa,W=1080,H=c.f==='s'?1920:1350,PAD=64;
   var cv=document.createElement('canvas');cv.width=W;cv.height=H;var g=cv.getContext('2d');
   var P='Poppins, sans-serif',SC='"Dancing Script", cursive';
-  var bg=g.createLinearGradient(0,0,W*.6,H);bg.addColorStop(0,T.bg[0]);bg.addColorStop(.55,T.bg[1]);bg.addColorStop(1,T.bg[2]);g.fillStyle=bg;g.fillRect(0,0,W,H);
+  var bg=g.createLinearGradient(0,0,W*.6,H);bg.addColorStop(0,T.bg[0]);bg.addColorStop(.55,T.bg[1]);bg.addColorStop(1,T.bg[2]);g.fillStyle=bg;g.fillRect(0,0,W,H);deco(g,T,W,H);
   var gl=g.createRadialGradient(W*.85,H*.08,0,W*.85,H*.08,W*.7);gl.addColorStop(0,T.glow);gl.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=gl;g.fillRect(0,0,W,H);
   g.textBaseline='middle';g.textAlign='center';
-  var y=H>1500?120:80;
+  var y=H>1500?130:90;
   if(LOGO){var r=H>1500?100:84,cx=W/2,cy=y+r;g.save();g.beginPath();g.arc(cx,cy,r,0,6.2832);g.closePath();g.clip();
     var sc=Math.max(2*r/LOGO.width,2*r/LOGO.height),iw=LOGO.width*sc,ih=LOGO.height*sc;g.drawImage(LOGO,cx-iw/2,cy-ih/2,iw,ih);g.restore();
     g.strokeStyle=T.accent;g.lineWidth=6;g.beginPath();g.arc(cx,cy,r,0,6.2832);g.stroke();y+=2*r+26;}
-  if(S.studio){g.fillStyle=T.title;var st=S.studio.toUpperCase(),fs0=fitFont(g,st,'700',H>1500?72:64,W-2*PAD,34,P);g.font='700 '+fs0+'px '+P;g.fillText(st,W/2,y+fs0*.55);y+=fs0+22;}
-  g.fillStyle=T.title;var tf=fitFont(g,'Tabela de preços','700',S.studio?(H>1500?112:96):(H>1500?150:128),W-2*PAD,60,SC);g.font='700 '+tf+'px '+SC;g.fillText('Tabela de preços',W/2,y+tf*.5);y+=tf+6;
-  // enfeite
-  g.strokeStyle=T.accent;g.lineWidth=3;g.beginPath();g.moveTo(W/2-190,y+8);g.lineTo(W/2-34,y+8);g.moveTo(W/2+34,y+8);g.lineTo(W/2+190,y+8);g.stroke();
-  g.fillStyle=T.accent;g.font='700 34px '+P;g.fillText('♥',W/2,y+9);y+=48;
+  if(S.studio){g.fillStyle=T.sub;var st=S.studio.toUpperCase(),fs0=fitFont(g,st,'600',H>1500?46:40,W-2*PAD,26,P);g.font='600 '+fs0+'px '+P;trk(g,6);g.fillText(st,W/2,y+fs0*.55);trk(g,0);y+=fs0+30;}
+  g.fillStyle=T.title;var tt='TABELA DE PREÇOS',tf=fitFont(g,tt,'800',H>1500?96:84,W-2*PAD,46,P);g.font='800 '+tf+'px '+P;trk(g,3);g.fillText(tt,W/2,y+tf*.5);trk(g,0);y+=tf+22;
+  g.fillStyle=T.accent;rr(g,W/2-50,y,100,8,4);g.fill();y+=46;
   // rodape (altura)
   var pills=[];if(c.zap)pills.push('WhatsApp '+c.zap);if(c.ig)pills.push(c.ig);
-  var fh=44;if(c.frase)fh+=84;if(pills.length)fh+=(pills.length===2?160:90);if(c.pag)fh+=48;if(c.obs)fh+=44;
+  var fh=44;if(c.frase)fh+=84;if(pills.length)fh+=(pills.length===2?160:90);if(c.pag)fh+=48;if(c.ad)fh+=48;if(c.obs)fh+=44;
   var bottom=H-fh-30,top=y+10,avail=bottom-top;
   var n=l.length,cols=n>12?2:1,rpc=Math.ceil(n/cols),gap=36,colW=(W-2*PAD-(cols-1)*gap)/cols;
   var big=H>1500,rh=Math.min(cols===2?(big?110:86):(big?132:100),(avail-40)/rpc),fs=Math.max(22,Math.min(cols===2?(big?42:36):(big?54:46),rh*.46));
-  var cardH=rh*rpc+40;g.fillStyle=T.card;rr(g,PAD-20,top-8,W-2*PAD+40,cardH,34);g.fill();
+  var cardH=rh*rpc+40;g.save();g.shadowColor='rgba(0,0,0,.14)';g.shadowBlur=44;g.shadowOffsetY=16;g.fillStyle=T.card;rr(g,PAD-20,top-8,W-2*PAD+40,cardH,44);g.fill();g.restore();
   for(var i=0;i<n;i++){
     var col=Math.floor(i/rpc),row=i%rpc,x0=PAD+col*(colW+gap)+(cols===1?20:6),x1=PAD+col*(colW+gap)+colW-(cols===1?20:6),yy=top+12+row*rh+rh/2;
     var price=brl(l[i].p);g.font='700 '+fs+'px '+P;var pw=g.measureText(price).width;
     g.textAlign='right';g.fillStyle=T.price;g.fillText(price,x1,yy);
     var maxW=x1-x0-pw-50;g.textAlign='left';g.fillStyle=T.text;var nm=l[i].n,f2=fitFont(g,nm,'500',fs,maxW,Math.max(20,fs*.72),P);nm=ellip(g,nm,maxW);g.font='500 '+f2+'px '+P;g.fillText(nm,x0,yy);
-    var nw=g.measureText(nm).width,lx0=x0+nw+14,lx1=x1-pw-14;
-    if(lx1-lx0>24){g.save();g.strokeStyle=T.accent;g.globalAlpha=.55;g.lineWidth=3;g.lineCap='round';g.setLineDash([1,9]);g.beginPath();g.moveTo(lx0,yy+fs*.3);g.lineTo(lx1,yy+fs*.3);g.stroke();g.restore();}
+    if(row<rpc-1&&i<n-1){g.save();g.strokeStyle=T.text;g.globalAlpha=.13;g.lineWidth=2;g.beginPath();g.moveTo(x0,yy+rh/2);g.lineTo(x1,yy+rh/2);g.stroke();g.restore();}
   }
   // rodape
   var fy=bottom+24;g.textAlign='center';
-  if(c.frase){g.fillStyle=T.title;var ff=fitFont(g,c.frase,'700',66,W-2*PAD,40,SC);g.font='700 '+ff+'px '+SC;g.fillText(c.frase,W/2,fy+34);fy+=84;}
+  if(c.frase){g.fillStyle=T.title;var ff=fitFont(g,c.frase,'700',56,W-2*PAD,34,P);g.font='700 '+ff+'px '+P;g.fillText(c.frase,W/2,fy+34);fy+=84;}
   if(pills.length){g.font='600 32px '+P;var ws=pills.map(function(t){return g.measureText(t).width+70;}),tot=ws.reduce(function(a,b){return a+b;},0)+(pills.length-1)*20;
     if(tot<=W-2*PAD){var px=(W-tot)/2;pills.forEach(function(t,k){g.fillStyle=T.pill;rr(g,px,fy,ws[k],64,32);g.fill();g.fillStyle=T.pillText;g.textAlign='center';g.fillText(t,px+ws[k]/2,fy+33);px+=ws[k]+20;});fy+=90;}
     else{var w=Math.min(W-2*PAD,Math.max.apply(null,ws));pills.forEach(function(t){g.fillStyle=T.pill;rr(g,(W-w)/2,fy,w,64,32);g.fill();g.fillStyle=T.pillText;g.textAlign='center';g.fillText(ellip(g,t,w-40),W/2,fy+33);fy+=76;});fy+=14;}}
   if(c.pag){g.fillStyle=T.foot;g.font='500 30px '+P;g.fillText(ellip(g,c.pag,W-2*PAD),W/2,fy+22);fy+=48;}
+  if(c.ad){g.font='500 30px '+P;var adt=ellip(g,c.ad,W-2*PAD-70),tw=g.measureText(adt).width,sx=(W-tw-46)/2;g.fillStyle=T.accent;g.beginPath();g.moveTo(sx+4,fy+14);g.arc(sx+15,fy+14,11,Math.PI,0);g.lineTo(sx+15,fy+36);g.closePath();g.fill();g.fillStyle='rgba(255,255,255,.92)';g.beginPath();g.arc(sx+15,fy+14,4.5,0,6.2832);g.fill();g.fillStyle=T.foot;g.textAlign='left';g.fillText(adt,sx+46,fy+22);g.textAlign='center';fy+=48;}
   if(c.obs){g.fillStyle=T.foot;g.globalAlpha=.8;g.font='italic 400 26px '+P;g.fillText(ellip(g,c.obs,W-2*PAD),W/2,fy+20);g.globalAlpha=1;fy+=44;}
   g.fillStyle=T.foot;g.globalAlpha=.55;g.font='500 22px '+P;g.fillText('Feito com Kit Preço Certo · kitprecocerto.com.br',W/2,H-34);g.globalAlpha=1;
   return cv;
@@ -480,10 +489,10 @@ var pvT=null;function pvSoon(){clearTimeout(pvT);pvT=setTimeout(pv,120);}
 function fontsReady(cb){var f=function(){cb();};if(document.fonts&&document.fonts.load){Promise.all([document.fonts.load('700 40px Poppins'),document.fonts.load('500 40px Poppins'),document.fonts.load('600 40px Poppins'),document.fonts.load('700 60px "Dancing Script"')]).then(f,f);}else f();}
 function buildThemes(){var c=CFG(),h='';Object.keys(THEMES).forEach(function(k){var T=THEMES[k];h+='<button type="button" role="radio" data-t="'+k+'" aria-checked="'+(c.t===k)+'" class="'+(c.t===k?'on':'')+'"><i style="background:linear-gradient(135deg,'+T.bg[0]+','+T.bg[2]+');box-shadow:inset 0 0 0 3px '+T.accent+'"></i>'+T.n+'</button>';});$('themes').innerHTML=h;
   [].forEach.call($('fmts').children,function(b){b.classList.toggle('on',b.getAttribute('data-f')===c.f);});
-  $('ig').value=c.ig||'';$('zap').value=c.zap||'';$('frase').value=c.frase||'';$('pag').value=c.pag||'';$('obs').value=c.obs||'';}
+  $('ig').value=c.ig||'';$('zap').value=c.zap||'';$('frase').value=c.frase||'';$('pag').value=c.pag||'';$('obs').value=c.obs||'';$('ad').value=c.ad||'';}
 $('themes').addEventListener('click',function(e){var b=e.target.closest('[data-t]');if(!b)return;CFG().t=b.getAttribute('data-t');save();buildThemes();pv();});
 $('fmts').addEventListener('click',function(e){var b=e.target.closest('[data-f]');if(!b)return;CFG().f=b.getAttribute('data-f');save();buildThemes();pv();});
-[['ig','ig'],['zap','zap'],['frase','frase'],['pag','pag'],['obs','obs']].forEach(function(p){$(p[0]).addEventListener('input',function(){var v=this.value;if(p[0]==='ig'){v=v.replace(/\s/g,'');if(v&&v.charAt(0)!=='@')v='@'+v;}CFG()[p[1]]=v;save();pvSoon();});});
+[['ig','ig'],['zap','zap'],['ad','ad'],['frase','frase'],['pag','pag'],['obs','obs']].forEach(function(p){$(p[0]).addEventListener('input',function(){var v=this.value;if(p[0]==='ig'){v=v.replace(/\s/g,'');if(v&&v.charAt(0)!=='@')v='@'+v;}CFG()[p[1]]=v;save();pvSoon();});});
 $('studio').addEventListener('input',pvSoon);
 $('logo').addEventListener('change',function(){var f=this.files&&this.files[0];if(!f)return;var u=URL.createObjectURL(f),im=new Image();im.onload=function(){LOGO=im;pv();};im.src=u;});
 /* Janela com a imagem: funciona até no navegador interno do Instagram, onde download direto costuma falhar */
