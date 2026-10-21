@@ -919,15 +919,14 @@ a#gs.btn.btn,a#dl.btn.btn{display:flex!important;align-items:center;justify-cont
 a.btn.btn.btn.btn#dl{background:linear-gradient(180deg,#8a1a50,#5a1236)!important;color:#f6d27a!important;border:0!important;box-shadow:0 8px 18px -8px rgba(90,18,54,.75)!important}
 a.btn.btn.btn.btn#dl:before{content:"↓";margin-right:8px;font-weight:800}
 
-/* ===== v52: laco dourado premium (faixa fina com pontas) ===== */
-.top a.badge.pillbar.gold{position:relative;isolation:isolate;display:block;width:max-content;max-width:calc(100% - 56px);margin:12px auto 18px;padding:10px 14px;border:0;border-radius:2px;text-decoration:none;overflow:visible!important;
-background:linear-gradient(180deg,#fff0b3 0%,#f6d27a 32%,#e2a93b 70%,#f3cf74 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 0 rgba(150,100,10,.35),0 8px 16px -6px rgba(150,100,10,.45)}
-.top a.badge.pillbar.gold:before,.top a.badge.pillbar.gold:after{display:block!important;animation:none!important;content:"";position:absolute;z-index:-1;top:8px;bottom:-8px;width:22px;background:linear-gradient(180deg,#d4a03a,#a8761a)}
-.top a.badge.pillbar.gold:before{left:-22px!important;right:auto;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,9px 50%)}
-.top a.badge.pillbar.gold:after{right:-22px!important;left:auto;clip-path:polygon(0 0,100% 0,calc(100% - 9px) 50%,100% 100%,0 100%)}
-.top a.badge.pillbar.gold .shn{position:absolute;inset:0;overflow:hidden;border-radius:2px;pointer-events:none}
-.top a.badge.pillbar.gold .shn:after{content:"";position:absolute;top:0;bottom:0;left:-45%;width:30%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:goldsw 4s ease-in-out infinite}
-@keyframes goldsw{0%,50%{left:-45%}100%{left:125%}}
-.top a.badge.pillbar.gold .gt{display:block;font-family:Poppins,system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.68rem;line-height:1.2;color:#4a0f2e;white-space:nowrap!important;text-align:center;text-shadow:0 1px 0 rgba(255,255,255,.65)}
-.top a.badge.pillbar.gold .gt b{color:#8a1a50;font-weight:800}
+/* ===== v52: etiqueta creme igual ao Bonus, com GRATIS em destaque e brilho ===== */
+.top a.badge.pillbar.gold{position:relative;display:block;width:max-content;max-width:calc(100% - 24px);margin:14px auto 16px;padding:8px 18px;border:1px solid #e8c775;border-radius:999px;text-decoration:none;overflow:hidden!important;isolation:isolate;
+background:linear-gradient(180deg,#fff8e6,#f7e2ac);box-shadow:0 6px 14px -8px rgba(150,100,10,.5)}
+.top a.badge.pillbar.gold:before,.top a.badge.pillbar.gold:after{display:none!important;content:none}
+.top a.badge.pillbar.gold .shn{position:absolute;inset:0;overflow:hidden;border-radius:999px;pointer-events:none}
+.top a.badge.pillbar.gold .shn:after{content:"";position:absolute;top:0;bottom:0;left:-45%;width:30%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-20deg);animation:goldsw 3.6s ease-in-out infinite}
+@keyframes goldsw{0%,45%{left:-45%}100%{left:125%}}
+.top a.badge.pillbar.gold .gt{display:flex;align-items:center;gap:8px;font-family:Poppins,system-ui,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;line-height:1.2;color:#5a1236;white-space:nowrap!important}
+.top a.badge.pillbar.gold .gt b{display:inline-block;background:linear-gradient(180deg,#FF5FAE,#E91E78);color:#fff;font-weight:800;letter-spacing:.09em;padding:4px 11px;border-radius:999px;box-shadow:0 3px 8px -3px rgba(233,30,120,.7)}
+@media(max-width:430px){.top a.badge.pillbar.gold{padding:7px 12px}.top a.badge.pillbar.gold .gt{font-size:.66rem;letter-spacing:.06em;gap:6px}.top a.badge.pillbar.gold .gt b{padding:4px 9px}}
 @media(prefers-reduced-motion:reduce){.top a.badge.pillbar.gold .shn:after{animation:none;display:none}}
