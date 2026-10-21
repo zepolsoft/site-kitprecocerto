@@ -956,3 +956,12 @@ select.area{height:44px;padding-top:0;padding-bottom:0}
 .gains li.key>span>b{font-size:1.08rem;line-height:1.25;margin-bottom:4px}
 .gains li.key .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .gains li.key .chips i{font-style:normal;font-size:.74rem;font-weight:600;color:#8a1a50;background:#fde3ee;border:1px solid #f4b6cf;border-radius:999px;padding:3px 10px;white-space:nowrap}
+
+/* v55 botões unificados (home, obrigado, valeu) */
+.btn.btn.btn.btn:not(.ig):not(.o):not(.s):not(.g),form button[type=submit]{min-height:46px;padding:0 20px;border:0;border-radius:999px;font-size:.84rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 8px 18px -8px rgba(233,30,120,.75);display:flex;align-items:center;justify-content:center;text-align:center}
+a.btn.btn.btn.btn#gs,a.btn.btn.btn.btn#dl{height:46px!important;min-height:46px!important}
+a.btn.btn.btn.btn.ig:not(#dl){display:flex!important;align-items:center;justify-content:center;width:100%;max-width:300px;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box;min-height:46px!important;height:46px!important;padding:0 20px!important;font-size:.84rem!important;font-weight:700!important;letter-spacing:.06em!important;text-transform:uppercase;background:#fff!important;color:#C2185B!important;border:1.5px solid #C2185B!important;box-shadow:none!important}
+.sim-out .btn.btn.btn.btn.sim-btn{min-height:46px;white-space:nowrap;padding:0 22px;font-size:.78rem;letter-spacing:.04em;width:fit-content;max-width:100%}
+.sim-out .btn.btn.btn.btn.sim-btn{box-shadow:none}
+.sim-out .btn.btn.btn.btn.sim-btn{border:1.5px solid rgba(246,210,122,.75)}
+.sim-out .btn.btn.btn.btn.sim-btn.sim-btn.sim-btn{border:1.5px solid rgba(246,210,122,.75);box-shadow:none;background:transparent;color:#f6d27a}
