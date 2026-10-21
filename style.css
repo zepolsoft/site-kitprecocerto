@@ -888,3 +888,21 @@ body:has(.count) a.btn.btn.btn.ig{background:#fff!important;color:#C2185B!import
 .bonus-tag{display:inline-block;margin-bottom:10px;padding:4px 14px;border-radius:999px;background:linear-gradient(180deg,#fff8e6,#f7e2ac);border:1px solid #e8c775;color:#5a1236;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 .dentro-note{margin:0 auto 12px;max-width:34em;font-size:.88rem;color:#8a1a50;font-weight:600}
 .dentro-note{margin-top:10px!important}
+/* v46: so no desktop, tabela de precos ao lado dos 5 itens */
+@media(min-width:861px){
+.top .hero>div:first-child{display:grid;grid-template-columns:minmax(0,310px) minmax(0,1fr);column-gap:26px;align-items:center}
+.top .hero>div:first-child>*{grid-column:1/-1}
+.top .hero>div:first-child>.hero-tab{grid-column:1;margin:0;max-width:310px}
+.top .hero>div:first-child>.gains{grid-column:2;margin:0}
+.top .hero>div:first-child>.gains li{text-align:left}
+}
+/* v46b: linha tabela + lista (desktop) */
+.hero-row{display:block}
+@media(min-width:861px){
+.top .hero>div:first-child{display:block}
+.top .hero>div:first-child>.hero-tab,.top .hero>div:first-child>.gains{grid-column:auto}
+.hero-row{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,310px) minmax(0,1fr);gap:40px;align-items:center;justify-content:center;max-width:900px;margin:10px auto 0}
+.hero-row .hero-tab{margin:0;max-width:310px}
+.hero-row .gains{margin:0}
+.hero-row .gains li{text-align:left}
+}
