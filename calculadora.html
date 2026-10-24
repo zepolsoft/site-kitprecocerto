@@ -48,6 +48,8 @@ label small{font-weight:400;color:var(--mut)}
 .svc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;margin:0 0 12px;box-shadow:0 10px 24px rgba(194,24,91,.06)}
 .svc .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 .svc label{margin:10px 0 3px;font-size:.78rem}
+.extag{display:inline-block;margin-left:6px;background:#FFF0C2;color:#8A6208;border-radius:999px;padding:1px 9px;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;vertical-align:middle}
+.hint{margin:-4px 0 10px;font-size:.88rem;color:#7a4a62}.hint b{color:#C2185B}
 .svc .in{padding:10px 10px;font-size:1rem}
 .svc .pre .in{padding-left:34px}.svc .pre i{left:10px}
 .res{margin-top:12px;background:var(--blush);border-radius:14px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
@@ -199,7 +201,7 @@ main{padding-top:0}
   <div class="banner" id="exban">Os números abaixo são <b>exemplos</b>, só para você ver a conta funcionando.
     <button class="btn s" id="clear" type="button">Começar com os meus números</button></div>
 
-  <div class="card"><h3>Gastos fixos do mês</h3><div id="fixos"></div>
+  <div class="card"><h3>Gastos fixos do mês</h3><p class="hint">Não tem algum desses gastos? Deixe <b>0</b>.</p><div id="fixos"></div>
     <div class="tot"><span>Total de gastos fixos</span><span id="totfix">R$ 0,00</span></div></div>
 
   <div class="card"><h3>Quanto você quer tirar para você</h3>
@@ -214,7 +216,7 @@ main{padding-top:0}
 
   <div class="card"><h3>Taxas e margem <small style="font-weight:400;color:var(--mut)">(valem para todos os serviços)</small></h3>
     <label for="card">Taxa da maquininha / cartão</label><div class="pc"><input class="in" id="card" inputmode="decimal" autocomplete="off"><i>%</i></div>
-    <label for="res">Reserva de segurança <small>(imprevistos e crescer; 0% se não quiser)</small></label><div class="pc"><input class="in" id="res" inputmode="decimal" autocomplete="off"><i>%</i></div></div>
+    <label for="res">Reserva de segurança <small>(sobra extra no preço, para imprevistos. Pode deixar 0%)</small></label><div class="pc"><input class="in" id="res" inputmode="decimal" autocomplete="off"><i>%</i></div></div>
 
   <div class="hero"><small>O custo da sua hora</small><strong id="ch">R$ 0,00</strong>
     <p id="chd"></p></div>
@@ -253,7 +255,7 @@ main{padding-top:0}
     <p class="sec"><b>1</b> Escolha o modelo</p>
     <div class="themes" id="themes" role="radiogroup" aria-label="Modelo da tabela"></div>
     <p class="sec" style="margin-top:16px"><b>2</b> Formato</p>
-    <div class="seg" id="fmts"><button type="button" data-f="f" class="on">Feed (4:5)</button><button type="button" data-f="s">Stories (9:16)</button></div>
+    <div class="seg" id="fmts"><button type="button" data-f="s" class="on">Stories (9:16)</button><button type="button" data-f="f">Feed (4:5)</button></div>
   </div>
 
   <div class="card">
@@ -298,9 +300,9 @@ main{padding-top:0}
 (function(){
 var KEY='kpc_calc_v1';
 function ex(){return {ex:true,
- fixos:[['Aluguel / cadeira / espaço',900],['Luz, água, internet',200],['Imposto (ex.: DAS do MEI)',80],['Telefone / aplicativos / agenda',80],['Divulgação (anúncios, cartões etc.)',100],['Reposição de equipamentos',120],['Outros gastos fixos',0]].map(function(x){return {l:x[0],v:x[1]};}),
+ fixos:[['Aluguel / cadeira / espaço',900],['Luz, água, internet',200],['Imposto (ex.: DAS do MEI)',80],['Telefone / aplicativos / agenda',80],['Divulgação (anúncios, cartões etc.)',100],['Reposição de equipamentos',120],['Outros gastos fixos (some tudo aqui)',0]].map(function(x){return {l:x[0],v:x[1]};}),
  ret:5000,hd:6,dias:5,ocup:65,card:4,res:10,studio:'',
- sv:[['Corte feminino',60,10,105],['Escova',45,8,70],['Manicure em gel',60,15,90],['Design de sobrancelha',30,5,55],['Limpeza de pele',75,20,140],['Massagem relaxante',60,10,110],['Extensão de cílios',120,40,230],['Depilação (perna)',40,10,75]].map(function(x){return {n:x[0],t:x[1],m:x[2],p:x[3]};})};}
+ sv:[['Corte feminino',60,10,105],['Manicure em gel',60,15,90]].map(function(x,i){return {n:x[0],t:x[1],m:x[2],p:x[3],x:i+1};})};}
 var S; try{S=JSON.parse(localStorage.getItem(KEY));}catch(e){} if(!S||!S.fixos||!S.sv)S=ex();
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
 function num(v){if(v===''||v==null)return NaN; if(typeof v==='number')return v; v=String(v).trim().replace(/[^\d,.\-]/g,''); if(v.indexOf(',')>-1)v=v.replace(/\./g,'').replace(',','.'); return parseFloat(v);}
@@ -348,7 +350,7 @@ function buildSvcs(){
   var h='';
   S.sv.forEach(function(s,i){
     h+='<div class="svc" data-i="'+i+'"><button class="btn g s rm" type="button" data-rm="'+i+'">Remover</button>'
-     +'<label style="margin-top:0">Serviço</label><input class="in txt" data-f="n" placeholder="Ex.: Esmaltação em gel" maxlength="60" value="'+esc(s.n||'')+'">'
+     +'<label style="margin-top:0">Serviço'+(s.x?' <span class="extag">exemplo '+s.x+'</span>':'')+'</label><input class="in txt" data-f="n" placeholder="Ex.: Esmaltação em gel" maxlength="60" value="'+esc(s.n||'')+'">'
      +'<div class="g3"><div><label>Tempo (min)</label><input class="in" data-f="t" inputmode="numeric" value="'+esc(fmt(s.t))+'"></div>'
      +'<div><label>Material</label><div class="pre"><i>R$</i><input class="in" data-f="m" inputmode="decimal" value="'+esc(fmt(s.m))+'"></div></div>'
      +'<div><label>Cobro hoje</label><div class="pre"><i>R$</i><input class="in" data-f="p" inputmode="decimal" value="'+esc(fmt(s.p))+'"></div></div></div>'
@@ -359,7 +361,7 @@ function buildSvcs(){
 }
 $('svcs').addEventListener('input',function(e){
   var card=e.target.closest('.svc'); if(!card)return; var f=e.target.getAttribute('data-f'); if(!f)return;
-  S.sv[+card.getAttribute('data-i')][f]=e.target.value; update();
+  var sv0=S.sv[+card.getAttribute('data-i')]; sv0[f]=e.target.value; if(sv0.x){sv0.x=0;var tg=card.querySelector('.extag');if(tg)tg.remove();} update();
 });
 $('svcs').addEventListener('click',function(e){
   var r=e.target.getAttribute('data-rm'); if(r==null)return;
@@ -435,7 +437,7 @@ var THEMES={
  nude:{deco:'band',n:'Nude',bg:['#FFF9F1','#F1DEC8','#E2C2A3'],title:'#7a4a2e',sub:'#7a4a2e',accent:'#b0693f',price:'#a9552c',text:'#3b2416',card:'#ffffff',pill:'#7a4a2e',pillText:'#ffffff',foot:'#7a4a2e',glow:'rgba(255,255,255,.7)'}
 };
 var LOGO=null;
-function CFG(){if(!S.cfg)S.cfg={t:'rosa',f:'f',ig:'',zap:'',ad:'',frase:'',pag:'',obs:''};return S.cfg;}
+function CFG(){if(!S.cfg)S.cfg={t:'rosa',f:'s',ig:'',zap:'',ad:'',frase:'',pag:'',obs:''};return S.cfg;}
 function fitFont(g,txt,weight,size,maxW,min,fam){var f=size;g.font=weight+' '+f+'px '+fam;while(f>min&&g.measureText(txt).width>maxW){f-=2;g.font=weight+' '+f+'px '+fam;}return f;}
 function ellip(g,txt,maxW){if(g.measureText(txt).width<=maxW)return txt;while(txt.length>3&&g.measureText(txt+'…').width>maxW)txt=txt.slice(0,-1);return txt.trim()+'…';}
 function trk(g,px){if('letterSpacing' in g)g.letterSpacing=px+'px';}
@@ -475,7 +477,7 @@ function draw(l){
   var fh=44;if(c.frase)fh+=84;if(pills.length)fh+=(pills.length===2?160:90);if(c.pag)fh+=48;if(c.ad)fh+=48;if(c.obs)fh+=44;
   var bottom=H-fh-30,top=y+10,avail=bottom-top;
   var n=l.length,cols=n>12?2:1,rpc=Math.ceil(n/cols),gap=36,colW=(W-2*PAD-(cols-1)*gap)/cols;
-  var big=H>1500,rh=Math.min(cols===2?(big?110:86):(n<=5?(big?170:130):(big?132:100)),(avail-40)/rpc),fs=Math.max(22,Math.min(cols===2?(big?42:36):(big?54:46),rh*.46));
+  var big=H>1500,rh=Math.min(cols===2?(big?110:86):(n<=3?(big?250:180):n<=5?(big?170:130):(big?132:100)),(avail-40)/rpc),fs=Math.max(22,Math.min(cols===2?(big?42:36):(n<=3?(big?68:54):(big?54:46)),rh*.46));
   var cardH=rh*rpc+40;top+=Math.max(0,Math.round((avail-cardH-30)/2*.8));g.save();g.shadowColor='rgba(0,0,0,.10)';g.shadowBlur=36;g.shadowOffsetY=12;g.fillStyle=T.card;rr(g,PAD-20,top-8,W-2*PAD+40,cardH,30);g.fill();g.restore();g.save();g.strokeStyle=T.accent;g.globalAlpha=.45;g.lineWidth=2;rr(g,PAD-20,top-8,W-2*PAD+40,cardH,30);g.stroke();g.restore();
   for(var i=0;i<n;i++){
     var col=Math.floor(i/rpc),row=i%rpc,x0=PAD+col*(colW+gap)+(cols===1?20:6),x1=PAD+col*(colW+gap)+colW-(cols===1?20:6),yy=top+12+row*rh+rh/2;
