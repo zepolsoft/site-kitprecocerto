@@ -965,3 +965,39 @@ a.btn.btn.btn.btn.ig:not(#dl){display:flex!important;align-items:center;justify-
 .sim-out .btn.btn.btn.btn.sim-btn{box-shadow:none}
 .sim-out .btn.btn.btn.btn.sim-btn{border:1.5px solid rgba(246,210,122,.75)}
 .sim-out .btn.btn.btn.btn.sim-btn.sim-btn.sim-btn{border:1.5px solid rgba(246,210,122,.75);box-shadow:none;background:transparent;color:#f6d27a}
+
+/* ===== Como funciona: 3 passos + entrega ===== */
+.hero-row{display:block;max-width:1040px;margin:14px auto 0;grid-column:1/-1}
+.how{text-align:center}
+.how .k{display:inline-block;font:800 .74rem Poppins,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#C2185B;background:#fff;border-radius:999px;padding:7px 16px;box-shadow:0 6px 16px rgba(138,26,80,.14)}
+.how h2{font-family:Fredoka,Poppins,sans-serif;font-weight:700;font-size:clamp(1.6rem,4.2vw,2.4rem);line-height:1.1;color:#5a1236;margin:14px 0 8px}
+.how .lead{color:#6b2a4a;max-width:640px;margin:0 auto 30px;font-size:1.02rem;line-height:1.5}
+.steps3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;text-align:center}
+.steps3 li{position:relative;background:#fff;border-radius:28px;padding:34px 16px 22px;box-shadow:0 16px 38px rgba(138,26,80,.16);display:flex;flex-direction:column;align-items:center}
+.steps3 .n{position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:46px;height:46px;border-radius:50%;background:linear-gradient(180deg,#FF74BA,#E01B7C);color:#fff;font:800 1.25rem Poppins,sans-serif;display:grid;place-items:center;border:4px solid #fff;box-shadow:0 4px 0 #A3125D}
+.steps3 h3{margin:0;font:700 1.35rem Fredoka,Poppins,sans-serif;color:#5a1236}
+.steps3 .q{margin:2px 0 0;color:#C2185B;font-weight:700;font-size:.95rem;line-height:1.3}
+.steps3 .sph{width:min(236px,82%);margin:16px auto 14px;border:6px solid #3a0a26;border-radius:28px;overflow:hidden;box-shadow:0 14px 30px rgba(58,10,38,.28);background:#3a0a26}
+.steps3 .sph img{display:block;width:100%;height:auto}
+.steps3 .why{margin:0;color:#4a0f2e;font-size:.92rem;line-height:1.45;text-align:left}
+.steps3 .why b{color:#C2185B}
+.steps3 .out{margin:14px 0 0;background:#e8f7ee;color:#14663a;font-weight:700;font-size:.88rem;line-height:1.3;border-radius:14px;padding:10px 12px;width:100%;margin-top:auto}
+.steps3 .why{margin-bottom:14px}
+.steps3 li:not(:last-child)::after{content:"\2192";position:absolute;right:-24px;top:42%;width:22px;font-size:1.5rem;font-weight:800;color:#C2185B;line-height:1}
+.how-btn{display:block;width:fit-content;max-width:100%;margin:28px auto 8px;padding:16px 34px!important}
+.how-note{margin:6px 0 0;font-size:.78rem;color:#8a5a70}
+.deliver-h{margin:34px 0 18px;text-align:center}
+.deliver-h span{display:inline-block;font:700 1.25rem Fredoka,Poppins,sans-serif;color:#fff;background:linear-gradient(135deg,#8a1a50,#5a1236);padding:10px 26px;border-radius:999px;box-shadow:0 8px 20px rgba(90,18,54,.3);position:relative}
+.deliver-h span::before{content:"\2193";display:block;position:absolute;left:50%;top:-30px;transform:translateX(-50%);color:#C2185B;font-size:1.6rem;font-weight:800}
+.deliver{display:grid;grid-template-columns:minmax(0,310px) minmax(0,1fr);gap:40px;align-items:center;max-width:900px;margin:0 auto}
+.deliver .hero-tab{margin:0;max-width:310px}
+.deliver .gains{margin:0;max-width:none}
+.deliver .gains li{text-align:left}
+@media(max-width:860px){
+ .steps3{grid-template-columns:1fr;gap:36px;max-width:420px;margin:0 auto}
+ .steps3 li:not(:last-child)::after{content:none}
+ .steps3 .sph{width:min(250px,74%)}
+ .deliver{grid-template-columns:1fr;gap:22px;max-width:520px}
+ .deliver .hero-tab{margin:0 auto;max-width:300px}
+ .how-btn{width:100%;text-align:center}
+}
