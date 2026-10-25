@@ -188,7 +188,55 @@ main{padding-top:0}
 </style><script>try{if(/[?&]ignorar=1/.test(location.search))localStorage.setItem("umami.disabled","1");if(/[?&]ignorar=0/.test(location.search))localStorage.removeItem("umami.disabled")}catch(e){}</script>
 <script defer src="https://stats.kitprecocerto.com.br/script.js" data-website-id="849c7c60-d34a-4f54-abd3-b72d5e8b705a"></script>
 </head><body>
+<script>(function(){var h=document.documentElement;try{if(/[?&]ignorar=1/.test(location.search))localStorage.setItem("kpc_ok","1");if(!localStorage.getItem("kpc_ok"))h.className+=" lock";}catch(e){h.className+=" lock";}})();</script>
+<style>
+html.lock main,html.lock nav,html.lock .toast{display:none!important}
+#gate{display:none;max-width:520px;margin:0 auto;padding:22px 18px 60px}
+html.lock #gate{display:block}
+#gate .gc{background:#fff;border:1px solid var(--line);border-top:5px solid var(--pink);border-radius:24px;padding:24px 20px;box-shadow:0 14px 34px rgba(194,24,91,.12)}
+#gate h1{margin:0 0 6px;font:700 1.55rem/1.15 Fredoka,Poppins,sans-serif;color:var(--ink)}
+#gate p{margin:0 0 14px;color:var(--mut);font-size:1rem;line-height:1.45}
+#gate label{display:block;font-weight:700;font-size:.95rem;margin:12px 0 6px;color:var(--ink)}
+#gate select.in{appearance:auto;background:#fff;border-color:var(--rose)}
+#gate .in{background:#fff;border-color:var(--rose)}
+#gate .chk{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:.9rem;color:var(--mut);line-height:1.4}
+#gate .chk input{width:22px;height:22px;margin-top:2px;flex:none}
+#gate .err{color:#C62828;font-weight:600;font-size:.92rem;min-height:1.2em;margin-top:10px}
+#gate .small{font-size:.85rem;margin:14px 0 0;text-align:center}
+</style>
+
 <div class="top"><a href="./" onclick="return confirm('Sair da calculadora? O que você preencheu pode ser perdido.')" aria-label="Ir para a página inicial" style="display:flex;align-items:center;gap:10px;text-decoration:none"><img src="favicon.png" alt=""><b>Kit Preço Certo</b></a><span>Calculadora de preço</span></div>
+<section id="gate" aria-label="Cadastro para liberar a calculadora"><div class="gc">
+<h1>Libere a calculadora grátis</h1>
+<p>Preencha em 20 segundos e use agora no celular. Sem cartão.</p>
+<form id="gf" novalidate>
+<label for="gn">Seu nome</label><input class="in" id="gn" name="nome" type="text" autocomplete="given-name" maxlength="60">
+<label for="gz">Seu WhatsApp (com DDD)</label><input class="in" id="gz" name="zap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000">
+<label for="ga">Qual a sua área? (opcional)</label><select class="in" id="ga" name="area"><option value="">Escolha (opcional)</option><option>Unhas</option><option>Cabelo</option><option>Sobrancelha</option><option>Cílios</option><option>Maquiagem</option><option>Estética</option><option>Massagem</option><option>Outra área</option></select>
+<div class="chk"><input id="go" name="ok" type="checkbox"><label for="go" style="margin:0;font-weight:500">Aceito receber a calculadora e avisos no WhatsApp. Sai quando quiser. <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></label></div>
+<button class="btn" type="submit" id="gb">Liberar a calculadora</button>
+<div class="err" id="ge" role="alert"></div>
+</form>
+<p class="small">Já se cadastrou em outro navegador? Digite o mesmo WhatsApp, é rapidinho.</p>
+</div></section>
+<script>(function(){
+var f=document.getElementById('gf');if(!f)return;
+var URL_='https://n8n-n8n.wg1izd.easypanel.host/webhook/kit-preco-certo-lead';
+function clean(v){return String(v||'').toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,30);}
+var o='';try{var q=new URLSearchParams(location.search);o=clean(q.get('o')||q.get('utm_source'));}catch(e){}
+var origem=o?'calc-'+o:'calc-link';
+f.addEventListener('submit',function(ev){
+ ev.preventDefault();var e=document.getElementById('ge');e.textContent='';
+ var nome=f.elements.nome.value.trim(),zap=f.elements.zap.value.replace(/\D/g,'');
+ if(nome.length<2){e.textContent='Digite seu nome.';f.elements.nome.focus();return;}
+ if(!/^[1-9][1-9]9\d{8}$/.test(zap)){e.textContent='Digite seu WhatsApp com DDD, com 11 números. Ex.: (11) 91234-5678';f.elements.zap.focus();return;}
+ if(!f.elements.ok.checked){e.textContent='Marque a caixinha para continuar.';return;}
+ var b=document.getElementById('gb');b.disabled=true;b.textContent='Liberando...';
+ try{fetch(URL_,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({nome:nome,whatsapp:zap,area:f.elements.area.value,consentimento:true,origem:origem,data:new Date().toISOString()}),keepalive:true});}catch(x){}
+ try{localStorage.setItem('kpc_ok','1');}catch(x){}
+ setTimeout(function(){document.documentElement.className=document.documentElement.className.replace(/\s*\block\b/,'');window.scrollTo(0,0);},350);
+});
+})();</script>
 <main>
 <div class="banner" id="inapp" style="display:none;background:#FFF3C4;border:1px solid #E8D48A"><b>✨ Truque de 5 segundos</b><br>Toque nos <b>3 pontinhos ⋮</b> lá em cima e escolha <b>“Abrir no navegador”</b>. Assim você consegue salvar a tabela na galeria e seus números ficam guardados. 
 <button class="btn s" id="openchrome" type="button" style="display:none;margin-top:8px">Abrir no Chrome</button>

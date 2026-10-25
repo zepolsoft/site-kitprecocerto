@@ -343,6 +343,7 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     if(!/^[1-9][1-9]9\d{8}$/.test(zap)){e.textContent='Digite seu WhatsApp com DDD, com 11 números. Ex.: (11) 91234-5678';f.elements.zap.focus();return;}
     if(!f.elements.ok.checked){e.textContent='Marque a caixinha para continuar.';return;}
     b.disabled=true; b.textContent='Liberando sua calculadora...';
+    try{localStorage.setItem('kpc_ok','1');}catch(x){}
     var done=false, go=function(){if(!done){done=true;location.href='obrigado.html';}};
     if(!WEBHOOK_URL){go();return;}
     setTimeout(go,2500);
