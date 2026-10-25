@@ -191,33 +191,83 @@ main{padding-top:0}
 <script>(function(){var h=document.documentElement;try{if(/[?&]ignorar=1/.test(location.search))localStorage.setItem("kpc_ok","1");if(!localStorage.getItem("kpc_ok"))h.className+=" lock";}catch(e){h.className+=" lock";}})();</script>
 <style>
 html.lock main,html.lock nav,html.lock .toast{display:none!important}
-#gate{display:none;max-width:520px;margin:0 auto;padding:22px 18px 60px}
+html.lock{background:radial-gradient(circle at 85% 4%,rgba(255,79,163,.28),transparent 45%),linear-gradient(165deg,#fff4f8 0%,#fbd3e2 62%,#f4a7c3 120%) no-repeat;min-height:100%}
+html.lock body{background:transparent;min-height:100vh}
+#gate{display:none;padding:22px 18px 70px}
 html.lock #gate{display:block}
-#gate .gc{background:#fff;border:1px solid var(--line);border-top:5px solid var(--pink);border-radius:24px;padding:24px 20px;box-shadow:0 14px 34px rgba(194,24,91,.12)}
-#gate h1{margin:0 0 6px;font:700 1.55rem/1.15 Fredoka,Poppins,sans-serif;color:var(--ink)}
-#gate p{margin:0 0 14px;color:var(--mut);font-size:1rem;line-height:1.45}
-#gate label{display:block;font-weight:700;font-size:.95rem;margin:12px 0 6px;color:var(--ink)}
-#gate select.in{appearance:auto;background:#fff;border-color:var(--rose)}
-#gate .in{background:#fff;border-color:var(--rose)}
-#gate .chk{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:.9rem;color:var(--mut);line-height:1.4}
-#gate .chk input{width:22px;height:22px;margin-top:2px;flex:none}
+#gate .gw{max-width:1000px;margin:0 auto;display:grid;gap:22px}
+#gate .gk{display:inline-block;font:800 .74rem Poppins,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#C2185B;background:#fff;border-radius:999px;padding:7px 15px;box-shadow:0 6px 16px rgba(138,26,80,.14)}
+#gate h1{margin:12px 0 8px;font:700 clamp(1.8rem,7.4vw,2.3rem)/1.08 Fredoka,Poppins,sans-serif;color:#5a1236}
+#gate h1 em{font-style:normal;color:#E91E78}
+#gate .gs{margin:0 0 16px;color:#6b2a4a;font-size:1.02rem;line-height:1.45}
+#gate .gb{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+#gate .gb li{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.78);border:1px solid rgba(233,30,120,.2);border-radius:18px;padding:12px 14px;box-shadow:0 6px 16px rgba(138,26,80,.08);color:#4a0f2e;font-size:.93rem;line-height:1.35}
+#gate .gb i{flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(180deg,#FF74BA,#E01B7C);display:grid;place-items:center;box-shadow:0 3px 0 #A3125D}
+#gate .gb i svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+#gate .gb b{display:block;color:#C2185B;font-size:1rem;margin-bottom:1px}
+#gate .gt{display:flex;align-items:center;gap:12px;margin-top:16px}
+#gate .gt .th{display:flex}
+#gate .gt .th img{width:50px;height:76px;object-fit:cover;border-radius:9px;border:2px solid #fff;box-shadow:0 6px 14px rgba(90,18,54,.25);margin-left:-14px}
+#gate .gt .th img:first-child{margin-left:0;transform:rotate(-5deg)}#gate .gt .th img:nth-child(2){transform:rotate(2deg)}#gate .gt .th img:nth-child(3){transform:rotate(-2deg)}#gate .gt .th img:nth-child(4){transform:rotate(5deg)}
+#gate .gt span{font-weight:700;color:#5a1236;font-size:.92rem;line-height:1.3}
+#gate .gd{display:none}
+#gate .gc{position:relative;background:#fff;border-radius:30px;padding:26px 20px 22px;box-shadow:0 26px 60px rgba(138,26,80,.28),0 0 0 6px rgba(255,255,255,.6)}
+#gate .gc::before{content:"";position:absolute;left:30px;right:30px;top:0;height:5px;border-radius:0 0 8px 8px;background:linear-gradient(90deg,#FF74BA,#E91E78)}
+#gate .gc h2{margin:6px 0 4px;font:700 1.45rem/1.15 Fredoka,Poppins,sans-serif;color:#3a0a26}
+#gate .gc .gl{margin:0 0 6px;color:#7A4A62;font-size:.95rem}
+#gate label{display:block;font-weight:700;font-size:.92rem;margin:13px 0 6px;color:#3a0a26}
+#gate .in{background:#fff;border:2px solid #F4B6CC;border-radius:14px;min-height:52px}
+#gate .in:focus{border-color:#E91E78;box-shadow:0 0 0 4px rgba(233,30,120,.15)}
+#gate select.in{appearance:auto}
+#gate .chk{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:.85rem;color:#7A4A62;line-height:1.4}
+#gate .chk input{width:22px;height:22px;margin-top:1px;flex:none;accent-color:#E91E78}
+#gate .chk label{margin:0;font-weight:500;font-size:.85rem;color:#7A4A62}
+#gate .btn{min-height:56px;font-size:1.02rem;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;gap:10px}
 #gate .err{color:#C62828;font-weight:600;font-size:.92rem;min-height:1.2em;margin-top:10px}
-#gate .small{font-size:.85rem;margin:14px 0 0;text-align:center}
+#gate .gf{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;margin:12px 0 0;font-size:.8rem;color:#7A4A62;font-weight:600}
+#gate .gf span:before{content:"✓ ";color:#16a05a;font-weight:800}
+#gate a{color:#C2185B;font-weight:700}
+#gate .sm{font-size:.82rem;margin:12px 0 0;text-align:center;color:#8a5a70}
+@media(min-width:861px){
+ #gate{padding:34px 24px 80px}
+ #gate .gw{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:46px;align-items:center}
+ #gate .gc{padding:32px 30px 26px}
+ #gate .gt{display:none}
+ #gate .gd{display:block;position:relative;height:300px;margin-top:22px}
+ #gate .gd img{position:absolute;height:290px;width:auto;border-radius:16px;border:4px solid #fff;box-shadow:0 22px 44px rgba(90,18,54,.32)}
+ #gate .gd img:nth-child(1){left:0;top:14px;transform:rotate(-6deg)}#gate .gd img:nth-child(2){left:30%;top:0;transform:rotate(2deg);z-index:2}#gate .gd img:nth-child(3){left:60%;top:12px;transform:rotate(6deg);z-index:1}#gate .gd img:nth-child(4){display:none}
+}
 </style>
 
+
 <div class="top"><a href="./" onclick="return confirm('Sair da calculadora? O que você preencheu pode ser perdido.')" aria-label="Ir para a página inicial" style="display:flex;align-items:center;gap:10px;text-decoration:none"><img src="favicon.png" alt=""><b>Kit Preço Certo</b></a><span>Calculadora de preço</span></div>
-<section id="gate" aria-label="Cadastro para liberar a calculadora"><div class="gc">
-<h1>Libere a calculadora grátis</h1>
-<p>Preencha em 20 segundos e use agora no celular. Sem cartão.</p>
+<section id="gate" aria-label="Cadastro para liberar a calculadora"><div class="gw">
+<div class="gi">
+<span class="gk">Quase lá</span>
+<h1>Libere a sua <em>calculadora grátis</em></h1>
+<p class="gs">Descubra o preço certo de cada serviço e leve a sua tabela de preços pronta para postar. Leva 20 segundos.</p>
+<ul class="gb">
+<li><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span><b>O custo real da sua hora</b>aluguel, contas, imposto e o salário que você quer tirar</span></li>
+<li><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span><b>O preço certo de cada serviço, com lucro</b>e aviso na hora se algum está dando prejuízo</span></li>
+<li><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span><b>Tabela de preços pronta para postar</b>6 estilos lindos, em Stories e Feed, com o seu nome e a sua cara</span></li>
+</ul>
+<div class="gt"><div class="th"><img src="tab-rosa.jpg?v=4" alt="" width="50" height="76"><img src="tab-vinho.jpg?v=4" alt="" width="50" height="76"><img src="tab-lilas.jpg?v=4" alt="" width="50" height="76"><img src="tab-verde.jpg?v=4" alt="" width="50" height="76"></div><span>Veja como sua tabela<br>vai ficar linda</span></div>
+<div class="gd" aria-hidden="true"><img src="tab-rosa.jpg?v=4" alt=""><img src="tab-vinho.jpg?v=4" alt=""><img src="tab-preto.jpg?v=4" alt=""><img src="tab-lilas.jpg?v=4" alt=""></div>
+</div>
+<div class="gc">
+<h2>Receba o acesso agora</h2>
+<p class="gl">Preencha e use a calculadora na hora, direto no celular.</p>
 <form id="gf" novalidate>
 <label for="gn">Seu nome</label><input class="in" id="gn" name="nome" type="text" autocomplete="given-name" maxlength="60">
 <label for="gz">Seu WhatsApp (com DDD)</label><input class="in" id="gz" name="zap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000">
 <label for="ga">Qual a sua área? (opcional)</label><select class="in" id="ga" name="area"><option value="">Escolha (opcional)</option><option>Unhas</option><option>Cabelo</option><option>Sobrancelha</option><option>Cílios</option><option>Maquiagem</option><option>Estética</option><option>Massagem</option><option>Outra área</option></select>
-<div class="chk"><input id="go" name="ok" type="checkbox"><label for="go" style="margin:0;font-weight:500">Aceito receber a calculadora e avisos no WhatsApp. Sai quando quiser. <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></label></div>
+<div class="chk"><input id="go" name="ok" type="checkbox"><label for="go">Aceito receber a calculadora e avisos no WhatsApp. Sai quando quiser. <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></label></div>
 <button class="btn" type="submit" id="gb">Liberar a calculadora</button>
 <div class="err" id="ge" role="alert"></div>
 </form>
-<p class="small">Já se cadastrou em outro navegador? Digite o mesmo WhatsApp, é rapidinho.</p>
+<div class="gf"><span>Grátis</span><span>Sem cartão</span><span>Acesso na hora</span></div>
+<p class="sm">Já se cadastrou em outro navegador? Digite o mesmo WhatsApp, é rapidinho.</p>
+</div>
 </div></section>
 <script>(function(){
 var f=document.getElementById('gf');if(!f)return;
