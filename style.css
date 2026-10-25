@@ -1034,3 +1034,6 @@ a.btn.btn.btn.btn.ig:not(#dl){display:flex!important;align-items:center;justify-
 .hero #form-slot:empty{display:none}
 @media(min-width:861px){.hero #form-slot{display:none}}
 .top .trust{gap:8px}.top .trust svg{width:16px;height:16px}
+
+#estilos{scroll-margin-top:56px}
+@media(max-width:860px){.hero-row{margin-top:-26px}}
