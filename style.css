@@ -1046,3 +1046,8 @@ a.btn.btn.btn.btn.ig:not(#dl){display:flex!important;align-items:center;justify-
 .ex-b{position:absolute;z-index:2;top:8px;right:8px;background:#ffe08a;color:#5a1236;font:700 .68rem Poppins,sans-serif;letter-spacing:.3px;text-transform:uppercase;padding:3px 9px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.25)}
 .deliver-h span{max-width:min(92%,520px);line-height:1.2;border-radius:26px;padding:12px 22px}
 .hero-tab figcaption b{color:#5a1236}
+/* titulo sem pilula (diferente do botao) + faixa em 1 linha */
+.deliver-h{margin:30px 0 16px}
+.deliver-h span{background:none;box-shadow:none;padding:0 2px 6px;max-width:none;border-radius:0;color:#5a1236;white-space:nowrap;font-size:clamp(.82rem,3.75vw,1.45rem);border-bottom:3px solid #E91E78}
+.deliver-h span::before{top:-32px}
+.ex-bar{white-space:nowrap;font-size:clamp(.7rem,3.3vw,.82rem);padding:9px 6px}
