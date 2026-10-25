@@ -1029,3 +1029,8 @@ a.btn.btn.btn.btn.ig:not(#dl){display:flex!important;align-items:center;justify-
 @media(max-width:360px){.mini3 .m{font-size:.74rem;padding:5px 8px 5px 5px;gap:4px}.mini3 .m b{width:19px;height:19px;font-size:.68rem}.mini3{gap:3px}}
 @media(max-width:480px){.mini3{flex-wrap:nowrap;gap:4px}.mini3 .m{font-size:12.5px;padding:5px 9px 5px 5px;gap:5px}.mini3 .m b{width:20px;height:20px;font-size:11px}.mini3 i{font-size:13px}}
 @media(max-width:350px){.mini3 .m{font-size:11.5px;padding:4px 7px 4px 4px;gap:4px}.mini3 .m b{width:18px;height:18px;font-size:10px}}
+
+.hero #form-slot{grid-column:1/-1;padding:6px 0 10px;max-width:560px;margin:0 auto;width:100%}
+.hero #form-slot:empty{display:none}
+@media(min-width:861px){.hero #form-slot{display:none}}
+.top .trust{gap:8px}.top .trust svg{width:16px;height:16px}
