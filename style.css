@@ -1013,3 +1013,5 @@ a.btn.btn.btn.btn.ig:not(#dl){display:flex!important;align-items:center;justify-
 .cs6 u{display:inline-block;width:14px;height:14px;border-radius:50%;border:1.5px solid #fff;box-shadow:0 0 0 1px rgba(138,26,80,.25);text-decoration:none}
 .gains li .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;justify-content:flex-start}
 .gains li .chips i{font-style:normal;font-size:.74rem;font-weight:600;color:#8a1a50;background:#fde3ee;border:1px solid #f4b6cf;border-radius:999px;padding:3px 10px;white-space:nowrap}
+
+@media(max-width:600px){.xs-d,.xs-fade{display:none}}
