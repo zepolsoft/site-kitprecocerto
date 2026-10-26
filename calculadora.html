@@ -204,7 +204,7 @@ main{max-width:620px;padding:14px 16px 24px}
 .welcome b{display:block;margin:6px 0 0;font:700 1.9rem/1.05 "Dancing Script","Segoe Script",cursive;color:#ffe08a}
 .welcome p{margin:4px 0 0;font-size:.88rem;line-height:1.4;color:#FFD3E8}
 #wclose{position:absolute;right:10px;top:10px;width:32px;height:32px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:1.2rem;line-height:1;cursor:pointer}
-.demo.btn.btn.btn{width:fit-content;margin:-4px auto 12px;justify-content:center}
+.demo.btn.btn.btn{display:flex;width:fit-content;margin:-4px auto 12px;justify-content:center}
 .banner.warn{background:#FFF3C4;border:1px solid #E8D48A}
 .banner.warn[hidden]{display:none}
 .themes{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:2px 0 4px}
@@ -212,6 +212,7 @@ main{max-width:620px;padding:14px 16px 24px}
 .themes button i{display:block;width:38px;height:38px;border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 3px #e9b6cb;transition:transform .2s,box-shadow .2s}
 .themes button.on i{transform:scale(1.18);box-shadow:0 0 0 2px #fff,0 0 0 4px #E91E78}
 .tname{margin:8px 0 10px;text-align:center;font-weight:700;font-size:.92rem;color:#8a1a50}
+.step>h1>span{display:inline-block;max-width:100%;border-bottom:3px solid #E91E78;padding-bottom:7px;margin-bottom:6px;text-wrap:balance}
 .pvframe{max-width:380px;margin:0 auto 10px;background:#fff;border-radius:22px;padding:8px 8px 4px;box-shadow:0 24px 50px rgba(138,26,80,.3),0 0 0 1px rgba(138,26,80,.08)}
 .pvframe .pvbox{max-width:none;margin:0;border-radius:16px;box-shadow:none}
 .ex-bar{margin:2px 0 8px;padding:9px 6px;border-radius:12px;background:linear-gradient(135deg,#fff3c4,#ffe08a);color:#5a1236;font-size:.8rem;line-height:1.3;text-align:center;font-weight:600;border:1px dashed #c9961a;white-space:nowrap}
@@ -340,7 +341,7 @@ f.addEventListener('submit',function(ev){
 <!-- PASSO 1 -->
 <section class="step on" id="s1">
   <span class="kick">Passo 1 de 3</span>
-  <h1>Quanto custa a sua hora</h1>
+  <h1><span>Quanto custa a sua hora</span></h1>
   <p class="lead">Preencha os campos amarelos. O resultado aparece na hora, aqui embaixo.</p>
   <button class="btn g s demo" id="demo" type="button">Ver um exemplo preenchido</button>
   <div class="banner" id="exban">Este é um <b>exemplo preenchido</b>, só para você ver a conta funcionando.
@@ -371,7 +372,7 @@ f.addEventListener('submit',function(ev){
 <!-- PASSO 2 -->
 <section class="step" id="s2">
   <span class="kick">Passo 2 de 3</span>
-  <h1>Quanto cobrar em cada serviço</h1>
+  <h1><span>Quanto cobrar em cada serviço</span></h1>
   <p class="lead">Escreva o serviço, o tempo, o material gasto e o que você cobra hoje.</p>
   <div class="banner warn" id="warn2" hidden>Antes dos serviços, falta o <b>passo 1</b>: o preço depende do custo da sua hora.
     <button class="btn s" type="button" data-go="1">Ir para o passo 1</button></div>
@@ -396,7 +397,7 @@ f.addEventListener('submit',function(ev){
 <!-- PASSO 3 -->
 <section class="step" id="s3">
   <span class="kick">Passo 3 de 3</span>
-  <h1>Sua tabela de preços</h1>
+  <h1><span>Sua tabela de preços</span></h1>
   <p class="lead">Escolha o estilo, veja a prévia e salve a imagem para postar.</p>
   <div class="themes" id="themes" role="radiogroup" aria-label="Estilo da tabela"></div>
   <p class="tname" id="tname">Estilo: Rosa</p>
