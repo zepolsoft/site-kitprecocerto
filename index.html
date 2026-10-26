@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=132">
+<link rel="stylesheet" href="style.css?v=133">
 <script>document.documentElement.className+=' js';</script><script>try{if(/[?&]ignorar=1/.test(location.search))localStorage.setItem("umami.disabled","1");if(/[?&]ignorar=0/.test(location.search))localStorage.removeItem("umami.disabled")}catch(e){}</script>
 <script defer src="https://stats.kitprecocerto.com.br/script.js" data-website-id="849c7c60-d34a-4f54-abd3-b72d5e8b705a"></script>
 </head><body>
@@ -62,11 +62,11 @@
       <label for="zap1">Seu WhatsApp (com DDD)</label>
       <input id="zap1" name="zap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" enterkeyhint="done" required>
       <select class="area" name="area" aria-label="Qual a sua área? (opcional)"><option value="">Qual a sua área? (opcional)</option><option>Unhas</option><option>Cabelo</option><option>Sobrancelha</option><option>Cílios</option><option>Maquiagem</option><option>Estética</option><option>Massagem</option><option>Outra área</option></select>
-      <div class="chk"><input id="ok1" name="ok" type="checkbox"><label for="ok1">Aceito receber o link da calculadora e avisos no WhatsApp. Sai quando quiser. <a href="privacidade.html">Privacidade</a></label></div>
+      <div class="chk"><input id="ok1" name="ok" type="checkbox"><label for="ok1">Aceito receber novidades sobre a calculadora no WhatsApp. Sai quando quiser. <a href="privacidade.html">Privacidade</a></label></div>
       <button type="submit">Quero usar a calculadora</button>
       <div class="err" role="alert"></div>
     </form>
-    <p class="micro">Grátis e sem cartão. Seu WhatsApp é usado só para enviar o link e novidades sobre a calculadora.</p>
+    <p class="micro">Grátis e sem cartão. Seu WhatsApp é usado só para novidades sobre a calculadora.</p>
   </div>
   <div class="hero-row">
     <section class="how" id="passos" aria-labelledby="how-h">
@@ -294,7 +294,7 @@
   <details><summary>Funciona no celular?</summary><p>Sim, ela foi feita para o celular. Depois do cadastro, você abre a calculadora no navegador, sem instalar nada, e salva a tabela de preços como imagem. De bônus, você também recebe a planilha Excel para usar no computador.</p></details>
   <details><summary>Preciso saber Excel?</summary><p>Não. No celular você só preenche os campos e ela calcula tudo sozinha. Na planilha Excel (o bônus), basta preencher as células amarelas.</p></details>
   <details><summary>Serve para o meu tipo de serviço?</summary><p>Sim. Serve para qualquer serviço que você cobra por atendimento: unhas, cabelo, sobrancelha, cílios, maquiagem, estética, massagem e muito mais. Você cadastra os seus serviços e o material de cada um. Os exemplos da calculadora são só para você ver a conta funcionando: troque pelos seus.</p></details>
-  <details><summary>O que fazem com o meu WhatsApp?</summary><p>Usamos para enviar o link da calculadora e novidades sobre ela. Não vendemos seus dados e você pode sair quando quiser. Detalhes na <a href="privacidade.html">política de privacidade</a>.</p></details>
+  <details><summary>O que fazem com o meu WhatsApp?</summary><p>Usamos para enviar novidades sobre a calculadora. Não vendemos seus dados e você pode sair quando quiser. Detalhes na <a href="privacidade.html">política de privacidade</a>.</p></details>
   </div>
 </div></section>
 
@@ -313,7 +313,7 @@
       <label for="zap2">Seu WhatsApp (com DDD)</label>
       <input id="zap2" name="zap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" required>
       <select class="area" name="area" aria-label="Qual a sua área? (opcional)"><option value="">Qual a sua área? (opcional)</option><option>Unhas</option><option>Cabelo</option><option>Sobrancelha</option><option>Cílios</option><option>Maquiagem</option><option>Estética</option><option>Massagem</option><option>Outra área</option></select>
-      <div class="chk"><input id="ok2" name="ok" type="checkbox"><label for="ok2">Aceito receber o link da calculadora e avisos no WhatsApp. Sai quando quiser. <a href="privacidade.html">Privacidade</a></label></div>
+      <div class="chk"><input id="ok2" name="ok" type="checkbox"><label for="ok2">Aceito receber novidades sobre a calculadora no WhatsApp. Sai quando quiser. <a href="privacidade.html">Privacidade</a></label></div>
       <button type="submit">Quero usar a calculadora</button>
       <div class="err" role="alert"></div>
     </form>
@@ -370,9 +370,9 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     if(nome.length<2){e.textContent='Digite seu nome.';f.elements.nome.focus();return;}
     if(!/^[1-9][1-9]9\d{8}$/.test(zap)){e.textContent='Digite seu WhatsApp com DDD, com 11 números. Ex.: (11) 91234-5678';f.elements.zap.focus();return;}
     if(!f.elements.ok.checked){e.textContent='Marque a caixinha para continuar.';return;}
-    b.disabled=true; b.textContent='Liberando sua calculadora...';
+    b.disabled=true; b.textContent='Abrindo a calculadora...';
     try{localStorage.setItem('kpc_ok','1');}catch(x){}
-    var done=false, go=function(){if(!done){done=true;location.href='obrigado.html';}};
+    var done=false, go=function(){if(!done){done=true;try{if(window.umami&&umami.track)umami.track('lead');}catch(x){}location.href='calculadora.html?novo=1';}};
     if(!WEBHOOK_URL){go();return;}
     setTimeout(go,2500);
     try{fetch(WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},

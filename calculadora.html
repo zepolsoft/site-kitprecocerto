@@ -185,6 +185,42 @@ main{padding-top:0}
 .btn.o.btn.btn{background:#fff;color:#C2185B;border:1.5px solid #C2185B;box-shadow:none}
 .btn.g.btn.btn{background:none;border:0;box-shadow:none;color:var(--mut);text-transform:none;letter-spacing:0;font-weight:500;min-height:40px;text-decoration:underline}
 .btn[data-go]:after{content:"→";font-size:1.1em;line-height:1}
+
+/* ===== v4: visual igual ao site principal ===== */
+html{background:radial-gradient(circle at 85% 4%,rgba(255,79,163,.28),transparent 45%),linear-gradient(165deg,#fff4f8 0%,#fbd3e2 62%,#f4a7c3 120%) no-repeat;min-height:100%}
+body{background:transparent}
+body::before,body::after{display:none}
+.top{background:rgba(255,244,248,.9);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(233,30,120,.15)}
+.top b{color:#5a1236;font-family:var(--disp);font-size:1.05rem;font-weight:700}
+.top span{color:#8a5a70}
+.top img{box-shadow:0 0 0 2px #fff,0 0 0 3px #E91E78}
+main{max-width:620px;padding:14px 16px 24px}
+.kick{display:block;width:fit-content;margin:4px auto 10px;font:800 .7rem Poppins,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#C2185B;background:#fff;border-radius:999px;padding:6px 14px;box-shadow:0 6px 16px rgba(138,26,80,.14)}
+.step>h1{margin:0 0 6px!important;padding:0!important;background:none!important;-webkit-text-fill-color:#5a1236!important;color:#5a1236!important;text-shadow:none!important;filter:none!important;text-transform:none!important;letter-spacing:0!important;text-align:center;font:700 clamp(1.55rem,7vw,2rem)/1.1 Fredoka,Poppins,sans-serif!important}
+.step>h1+.lead{margin:0 0 14px!important;padding:0!important;background:none!important;color:#6b2a4a!important;text-align:center;font-size:.95rem!important;line-height:1.45}
+.welcome{position:relative;margin:0 0 16px;padding:16px 46px 16px 16px;border-radius:22px;color:#fff;background:radial-gradient(circle at 92% 0,rgba(255,79,163,.5),transparent 55%),linear-gradient(160deg,#5a1236,#8a1a50 70%,#c2185b 140%);box-shadow:0 14px 30px rgba(90,18,54,.3)}
+.welcome[hidden]{display:none}
+.welcome .wk{display:inline-block;font:800 .66rem Poppins,sans-serif;letter-spacing:.12em;text-transform:uppercase;background:#f6d27a;color:#4a0f2e;border-radius:999px;padding:4px 11px}
+.welcome b{display:block;margin:6px 0 0;font:700 1.9rem/1.05 "Dancing Script","Segoe Script",cursive;color:#ffe08a}
+.welcome p{margin:4px 0 0;font-size:.88rem;line-height:1.4;color:#FFD3E8}
+#wclose{position:absolute;right:10px;top:10px;width:32px;height:32px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:1.2rem;line-height:1;cursor:pointer}
+.demo.btn.btn.btn{width:fit-content;margin:-4px auto 12px;justify-content:center}
+.banner.warn{background:#FFF3C4;border:1px solid #E8D48A}
+.banner.warn[hidden]{display:none}
+.themes{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:2px 0 4px}
+.themes button,.themes button.on{border:0;background:none;padding:0;width:auto;font-size:0;line-height:0;cursor:pointer;display:block;box-shadow:none;border-radius:50%}
+.themes button i{display:block;width:38px;height:38px;border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 3px #e9b6cb;transition:transform .2s,box-shadow .2s}
+.themes button.on i{transform:scale(1.18);box-shadow:0 0 0 2px #fff,0 0 0 4px #E91E78}
+.tname{margin:8px 0 10px;text-align:center;font-weight:700;font-size:.92rem;color:#8a1a50}
+.pvnote{margin:0 auto 10px;max-width:360px;text-align:center;font-size:.85rem;color:#6b2a4a;background:#FFF0C2;border:1px dashed #c9961a;border-radius:14px;padding:9px 12px;line-height:1.35}
+.pvnote[hidden]{display:none}
+.swipe{margin:-2px 0 14px;text-align:center;font-size:.78rem;color:#8a5a70}
+.bonus{background:linear-gradient(180deg,#fffbe8,#FFF0C2);border:1.5px dashed #c9961a;text-align:left}
+.btag{display:inline-block;font:800 .66rem Poppins,sans-serif;letter-spacing:.1em;text-transform:uppercase;background:#5a1236;color:#fff;border-radius:999px;padding:4px 11px}
+.bonus .bh{margin:8px 0 4px;font:700 1.3rem Fredoka,Poppins,sans-serif;color:#3a0a26}
+.bonus p{margin:0 0 12px;font-size:.92rem;color:#6b2a4a}
+.tbl td.emp{white-space:normal;text-align:left;font-weight:400;color:#7A4A62;border:0;padding-left:0}
+#dl.btn.btn.btn.btn{background:linear-gradient(180deg,#8a1a50,#5a1236);color:#fff;box-shadow:0 8px 18px -8px rgba(90,18,54,.7)}
 </style><script>try{if(/[?&]ignorar=1/.test(location.search))localStorage.setItem("umami.disabled","1");if(/[?&]ignorar=0/.test(location.search))localStorage.removeItem("umami.disabled")}catch(e){}</script>
 <script defer src="https://stats.kitprecocerto.com.br/script.js" data-website-id="849c7c60-d34a-4f54-abd3-b72d5e8b705a"></script>
 </head><body>
@@ -261,7 +297,7 @@ html.lock #gate{display:block}
 <label for="gn">Seu nome</label><input class="in" id="gn" name="nome" type="text" autocomplete="given-name" maxlength="60">
 <label for="gz">Seu WhatsApp (com DDD)</label><input class="in" id="gz" name="zap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000">
 <label for="ga">Qual a sua área? (opcional)</label><select class="in" id="ga" name="area"><option value="">Escolha (opcional)</option><option>Unhas</option><option>Cabelo</option><option>Sobrancelha</option><option>Cílios</option><option>Maquiagem</option><option>Estética</option><option>Massagem</option><option>Outra área</option></select>
-<div class="chk"><input id="go" name="ok" type="checkbox"><label for="go">Aceito receber o link da calculadora e avisos no WhatsApp. Sai quando quiser. <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></label></div>
+<div class="chk"><input id="go" name="ok" type="checkbox"><label for="go">Aceito receber novidades sobre a calculadora no WhatsApp. Sai quando quiser. <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></label></div>
 <button class="btn" type="submit" id="gb">Liberar a calculadora</button>
 <div class="err" id="ge" role="alert"></div>
 </form>
@@ -284,19 +320,22 @@ f.addEventListener('submit',function(ev){
  var b=document.getElementById('gb');b.disabled=true;b.textContent='Liberando...';
  try{fetch(URL_,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({nome:nome,whatsapp:zap,area:f.elements.area.value,consentimento:true,origem:origem,data:new Date().toISOString()}),keepalive:true});}catch(x){}
  try{localStorage.setItem('kpc_ok','1');}catch(x){}
- setTimeout(function(){document.documentElement.className=document.documentElement.className.replace(/\s*\block\b/,'');window.scrollTo(0,0);},350);
+ setTimeout(function(){document.documentElement.className=document.documentElement.className.replace(/\s*\block\b/,'');window.scrollTo(0,0);if(window.kpcWelcome)window.kpcWelcome();},350);
 });
 })();</script>
 <main>
+<div class="welcome" id="welcome" hidden><span class="wk">✓ Acesso liberado</span><b>Bora acertar os seus preços</b><p>São 3 passos e leva uns 10 minutos. Seus números ficam só neste celular.</p><button type="button" id="wclose" aria-label="Fechar">×</button></div>
 <div class="banner" id="inapp" style="display:none;background:#FFF3C4;border:1px solid #E8D48A"><b>✨ Truque de 5 segundos</b><br>Toque nos <b>3 pontinhos ⋮</b> lá em cima e escolha <b>“Abrir no navegador”</b>. Assim você consegue salvar a tabela na galeria e seus números ficam guardados. 
 <button class="btn s" id="openchrome" type="button" style="display:none;margin-top:8px">Abrir no Chrome</button>
 <p class="note" style="margin:8px 0 0">Sem pressa: também dá para tirar um print da tabela pronta.</p></div>
 
 <!-- PASSO 1 -->
 <section class="step on" id="s1">
+  <span class="kick">Passo 1 de 3</span>
   <h1>Quanto custa a sua hora</h1>
   <p class="lead">Preencha os campos amarelos. O resultado aparece na hora, aqui embaixo.</p>
-  <div class="banner" id="exban">Os números abaixo são <b>exemplos</b>, só para você ver a conta funcionando.
+  <button class="btn g s demo" id="demo" type="button">Ver um exemplo preenchido</button>
+  <div class="banner" id="exban">Este é um <b>exemplo preenchido</b>, só para você ver a conta funcionando.
     <button class="btn s" id="clear" type="button">Começar com os meus números</button></div>
 
   <div class="card"><h3>Gastos fixos do mês</h3><p class="hint">Não tem algum desses gastos? Deixe <b>0</b>.</p><div id="fixos"></div>
@@ -304,11 +343,11 @@ f.addEventListener('submit',function(ev){
 
   <div class="card"><h3>Quanto você quer tirar para você</h3>
     <label for="ret">Retirada mensal desejada <small>(seu salário, além dos gastos)</small></label>
-    <div class="pre"><i>R$</i><input class="in" id="ret" inputmode="decimal" autocomplete="off"></div></div>
+    <div class="pre"><i>R$</i><input class="in" id="ret" inputmode="decimal" autocomplete="off" placeholder="Ex.: 3000"></div></div>
 
   <div class="card"><h3>Seu tempo de trabalho</h3>
-    <label for="hd">Horas de atendimento por dia</label><input class="in" id="hd" inputmode="decimal" autocomplete="off">
-    <label for="dias">Dias trabalhados por semana</label><input class="in" id="dias" inputmode="numeric" autocomplete="off">
+    <label for="hd">Horas de atendimento por dia</label><input class="in" id="hd" inputmode="decimal" autocomplete="off" placeholder="Ex.: 6">
+    <label for="dias">Dias trabalhados por semana</label><input class="in" id="dias" inputmode="numeric" autocomplete="off" placeholder="Ex.: 5">
     <label for="ocup">Agenda ocupada <small>(parte das horas com cliente; seja realista, 50 a 80%)</small></label>
     <div class="pc"><input class="in" id="ocup" inputmode="decimal" autocomplete="off"><i>%</i></div></div>
 
@@ -323,8 +362,11 @@ f.addEventListener('submit',function(ev){
 
 <!-- PASSO 2 -->
 <section class="step" id="s2">
-  <h1>Preço sugerido por serviço</h1>
+  <span class="kick">Passo 2 de 3</span>
+  <h1>Quanto cobrar em cada serviço</h1>
   <p class="lead">Escreva o serviço, o tempo, o material gasto e o que você cobra hoje.</p>
+  <div class="banner warn" id="warn2" hidden>Antes dos serviços, falta o <b>passo 1</b>: o preço depende do custo da sua hora.
+    <button class="btn s" type="button" data-go="1">Ir para o passo 1</button></div>
   <div class="banner" id="exban2">Os serviços abaixo são <b>exemplos</b>. Troque pelos seus ou toque em
     <button class="btn s" id="clear2" type="button">Começar com os meus serviços</button></div>
   <div class="stats">
@@ -345,19 +387,22 @@ f.addEventListener('submit',function(ev){
 
 <!-- PASSO 3 -->
 <section class="step" id="s3">
-  <h1>Tabela de preços pronta</h1>
-  <p class="lead">Escolha o modelo, preencha o que quiser e salve a imagem para postar. Tudo é opcional.</p>
-  <div class="pvbox"><canvas id="pv" width="540" height="675" aria-label="Prévia da sua tabela de preços"></canvas></div>
+  <span class="kick">Passo 3 de 3</span>
+  <h1>Sua tabela de preços</h1>
+  <p class="lead">Escolha o estilo, veja a prévia e salve a imagem para postar.</p>
+  <div class="themes" id="themes" role="radiogroup" aria-label="Estilo da tabela"></div>
+  <p class="tname" id="tname">Estilo: Rosa</p>
+  <p class="pvnote" id="pvnote" hidden>Prévia com <b>serviços de exemplo</b>. Cadastre os seus no passo 2 e eles aparecem aqui.</p>
+  <div class="pvbox" id="pvbox"><canvas id="pv" width="540" height="675" aria-label="Prévia da sua tabela de preços"></canvas></div>
+  <p class="swipe">Toque nas cores ou deslize a tabela para trocar de estilo</p>
 
   <div class="card">
-    <p class="sec"><b>1</b> Escolha o modelo</p>
-    <div class="themes" id="themes" role="radiogroup" aria-label="Modelo da tabela"></div>
-    <p class="sec" style="margin-top:16px"><b>2</b> Formato</p>
+    <p class="sec"><b>1</b> Formato</p>
     <div class="seg" id="fmts"><button type="button" data-f="s" class="on">Stories (9:16)</button><button type="button" data-f="f">Feed (4:5)</button></div>
   </div>
 
   <div class="card">
-    <p class="sec"><b>3</b> Seus dados <small>(opcional, aparecem na imagem)</small></p>
+    <p class="sec"><b>2</b> <span>Seus dados <small>(opcional, aparecem na imagem)</small></span></p>
     <label for="studio" style="margin-top:6px">Nome do seu studio</label>
     <input class="in txt" id="studio" maxlength="40" autocomplete="off" placeholder="Ex.: Studio da Ana">
     <label for="ig">Instagram</label>
@@ -382,8 +427,16 @@ f.addEventListener('submit',function(ev){
   <button class="btn o" type="button" id="copy">Copiar texto para o WhatsApp</button>
 
   <div class="card" style="margin-top:14px"><p class="sec" style="margin-top:0">Serviços na tabela</p><table class="tbl" id="tbl"></table></div>
-  <p class="note" style="margin-top:12px">Seus números ficam salvos só neste aparelho. Os valores iniciais da calculadora eram exemplos: confira os seus antes de divulgar.</p>
-  <button class="btn g" type="button" id="reset">Voltar aos exemplos</button>
+
+  <div class="card bonus" id="bonus">
+    <span class="btag">Bônus · para o computador</span>
+    <h2 class="bh">Planilha Excel profissional</h2>
+    <p>Painel com indicadores e gráficos. Você só preenche as células amarelas.</p>
+    <a class="btn" id="dl" href="Calculadora-Preco-Certo.xlsx" download>↓ Baixar a planilha (Excel)</a>
+  </div>
+
+  <p class="note" style="margin-top:12px">Seus números ficam salvos só neste aparelho. Confira os valores antes de divulgar.</p>
+  <button class="btn g" type="button" id="reset">Começar do zero</button>
 </section>
 </main>
 
@@ -401,7 +454,9 @@ function ex(){return {ex:true,
  fixos:[['Aluguel / cadeira / espaço',900],['Luz, água, internet',200],['Imposto (ex.: DAS do MEI)',80],['Telefone / aplicativos / agenda',80],['Divulgação (anúncios, cartões etc.)',100],['Reposição de equipamentos',120],['Outros gastos fixos (some tudo aqui)',0]].map(function(x){return {l:x[0],v:x[1]};}),
  ret:5000,hd:6,dias:5,ocup:65,card:4,res:10,studio:'',
  sv:[['Corte feminino',60,10,105],['Manicure em gel',60,15,90]].map(function(x,i){return {n:x[0],t:x[1],m:x[2],p:x[3],x:i+1};})};}
-var S; try{S=JSON.parse(localStorage.getItem(KEY));}catch(e){} if(!S||!S.fixos||!S.sv)S=ex();
+function empty(){var e=ex();e.ex=false;e.demo=false;e.fixos.forEach(function(f){f.v='';});e.ret='';e.hd='';e.dias='';e.ocup=65;e.card=4;e.res=10;e.sv=[{n:'',t:'',m:'',p:''}];return e;}
+var PHF=['900','200','80','80','100','120','0'];
+var S; try{S=JSON.parse(localStorage.getItem(KEY));}catch(e){} if(!S||!S.fixos||!S.sv||(S.ex&&!S.demo))S=empty();
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
 function num(v){if(v===''||v==null)return NaN; if(typeof v==='number')return v; v=String(v).trim().replace(/[^\d,.\-]/g,''); if(v.indexOf(',')>-1)v=v.replace(/\./g,'').replace(',','.'); return parseFloat(v);}
 function n0(v){var x=num(v);return isNaN(x)?0:x;}
@@ -432,7 +487,7 @@ function calc(){
 var FIX_IDS=[];
 function buildFixos(){
   var h='';
-  S.fixos.forEach(function(f,i){h+='<label for="f'+i+'">'+esc(f.l)+'</label><div class="pre"><i>R$</i><input class="in" id="f'+i+'" data-i="'+i+'" inputmode="decimal" autocomplete="off" value="'+esc(fmt(f.v))+'"></div>';});
+  S.fixos.forEach(function(f,i){h+='<label for="f'+i+'">'+esc(f.l)+'</label><div class="pre"><i>R$</i><input class="in" id="f'+i+'" data-i="'+i+'" inputmode="decimal" autocomplete="off" placeholder="Ex.: '+(PHF[i]||'0')+'" value="'+esc(fmt(f.v))+'"></div>';});
   $('fixos').innerHTML=h;
 }
 function fillTop(){
@@ -449,9 +504,9 @@ function buildSvcs(){
   S.sv.forEach(function(s,i){
     h+='<div class="svc" data-i="'+i+'"><button class="btn g s rm" type="button" data-rm="'+i+'">Remover</button>'
      +'<label style="margin-top:0">Serviço'+(s.x?' <span class="extag">exemplo '+s.x+'</span>':'')+'</label><input class="in txt" data-f="n" placeholder="Ex.: Esmaltação em gel" maxlength="60" value="'+esc(s.n||'')+'">'
-     +'<div class="g3"><div><label>Tempo (min)</label><input class="in" data-f="t" inputmode="numeric" value="'+esc(fmt(s.t))+'"></div>'
-     +'<div><label>Material</label><div class="pre"><i>R$</i><input class="in" data-f="m" inputmode="decimal" value="'+esc(fmt(s.m))+'"></div></div>'
-     +'<div><label>Cobro hoje</label><div class="pre"><i>R$</i><input class="in" data-f="p" inputmode="decimal" value="'+esc(fmt(s.p))+'"></div></div></div>'
+     +'<div class="g3"><div><label>Tempo (min)</label><input class="in" data-f="t" inputmode="numeric" placeholder="60" value="'+esc(fmt(s.t))+'"></div>'
+     +'<div><label>Material</label><div class="pre"><i>R$</i><input class="in" data-f="m" inputmode="decimal" placeholder="15" value="'+esc(fmt(s.m))+'"></div></div>'
+     +'<div><label>Cobro hoje</label><div class="pre"><i>R$</i><input class="in" data-f="p" inputmode="decimal" placeholder="100" value="'+esc(fmt(s.p))+'"></div></div></div>'
      +'<div class="res"><div><small>Preço sugerido</small><strong data-o="sug">R$ 0</strong></div><span class="badge" data-o="bd"></span></div>'
      +'<div class="lucro" data-o="lc"></div></div>';
   });
@@ -472,12 +527,12 @@ $('add').addEventListener('click',function(){
 });
 
 function clearAll(){
-  S.ex=false; S.fixos.forEach(function(f){f.v='';}); S.ret='';S.hd=8;S.dias=5;S.ocup=65;S.card=4;S.res=10;
-  S.sv=[{n:'',t:'',m:'',p:''}]; buildFixos();fillTop();buildSvcs();update();window.scrollTo(0,0);
+  var cfg=S.cfg; S=empty(); if(cfg)S.cfg=cfg; buildFixos();fillTop();buildSvcs();update();window.scrollTo(0,0);
 }
+$('demo').addEventListener('click',function(){var cfg=S.cfg;S=ex();S.demo=true;if(cfg)S.cfg=cfg;buildFixos();fillTop();buildSvcs();update();window.scrollTo(0,0);toast('Exemplo carregado');});
 $('clear').addEventListener('click',clearAll);
 $('clear2').addEventListener('click',function(){clearAll();go(1);toast('Comece pelos seus gastos fixos');});
-$('reset').addEventListener('click',function(){if(confirm('Voltar aos exemplos? Seus números atuais serão apagados deste aparelho.')){S=ex();LOGO=null;buildFixos();fillTop();buildSvcs();buildThemes();update();go(1);}});
+$('reset').addEventListener('click',function(){if(confirm('Começar do zero? Seus números atuais serão apagados deste aparelho.')){S=empty();LOGO=null;buildFixos();fillTop();buildSvcs();buildThemes();update();go(1);}});
 
 /* Atualiza tudo */
 function update(){
@@ -485,7 +540,7 @@ function update(){
   $('totfix').textContent=brl(c.tf);
   $('ch').textContent=brl(c.ch);
   $('chd').textContent=c.hv>0?('Você tem cerca de '+c.hv.toLocaleString('pt-BR',{maximumFractionDigits:1})+' horas vendáveis por mês. Cada hora precisa render isso para cobrir seus gastos e a sua retirada.'):'Preencha as horas, os dias e a agenda ocupada para calcular.';
-  $('exban').style.display=S.ex?'block':'none'; $('exban2').style.display=S.ex?'block':'none';
+  $('exban').style.display=S.ex?'block':'none'; $('exban2').style.display=S.ex?'block':'none'; $('warn2').hidden=c.ch>0;
   $('p-ch').textContent=brl(c.ch,2);
   var n=0,rj=0,pr=0;
   document.querySelectorAll('.svc').forEach(function(card,i){
@@ -500,12 +555,12 @@ function update(){
   // tabela
   var h='',any=false;
   S.sv.forEach(function(s,i){var r=c.rows[i]; if(!r.ok||isNaN(r.price))return; any=true; h+='<tr><td>'+esc(s.n||('Serviço '+(i+1)))+'</td><td>'+brl(r.price)+'</td></tr>';});
-  $('tbl').innerHTML=any?h:'<tr><td style="border:0;color:#7A4A62">Cadastre seus serviços no passo 2 para ver a tabela aqui.</td></tr>';
+  $('tbl').innerHTML=any?h:'<tr><td colspan="2" class="emp">Cadastre seus serviços no passo 2 para ver a tabela aqui.</td></tr>';
   save();
 }
 
 /* Navegação */
-function go(k){if(k==3)setTimeout(pv,0);
+function go(k){if(k==3)setTimeout(pv,0);var w=$('welcome');if(w)w.hidden=true;
   document.querySelectorAll('.step').forEach(function(s){s.classList.toggle('on',s.id==='s'+k);});
   document.querySelectorAll('.nav button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-go')==k);});
   window.scrollTo(0,0);
@@ -598,14 +653,17 @@ function draw(l){
 }
 function pv(){
   var l=lista(),el=$('pv');if(!el)return;var c=CFG(),W=540,H=c.f==='s'?960:675;el.width=W;el.height=H;var g=el.getContext('2d');
-  if(!l.length){g.fillStyle='#fff';g.fillRect(0,0,W,H);g.fillStyle='#7A4A62';g.font='500 18px Poppins, sans-serif';g.textAlign='center';g.fillText('Cadastre seus serviços no passo 2',W/2,H/2);return;}
+  var demo=!l.length;if(demo)l=SAMPLE;$('pvnote').hidden=!demo;
   g.drawImage(draw(l),0,0,W,H);
 }
+var SAMPLE=[['Corte feminino',101],['Escova',81],['Manicure em gel',107],['Design de sobrancelha',51],['Extensão de cílios',231],['Massagem relaxante',99],['Limpeza de pele',119],['Depilação (perna)',52]].map(function(x){return {n:x[0],p:x[1]};});
 var pvT=null;function pvSoon(){clearTimeout(pvT);pvT=setTimeout(pv,120);}
 function fontsReady(cb){var f=function(){cb();};if(document.fonts&&document.fonts.load){Promise.all([document.fonts.load('700 40px Poppins'),document.fonts.load('500 40px Poppins'),document.fonts.load('600 40px Poppins'),document.fonts.load('700 60px "Dancing Script"'),document.fonts.load('600 60px "Playfair Display"'),document.fonts.load('italic 600 60px "Playfair Display"')]).then(f,f);}else f();}
-function buildThemes(){var c=CFG(),h='';Object.keys(THEMES).forEach(function(k){var T=THEMES[k];h+='<button type="button" role="radio" data-t="'+k+'" aria-checked="'+(c.t===k)+'" class="'+(c.t===k?'on':'')+'"><i style="background:linear-gradient(135deg,'+T.bg[0]+','+T.bg[2]+');box-shadow:inset 0 0 0 3px '+T.accent+'"></i>'+T.n+'</button>';});$('themes').innerHTML=h;
+function buildThemes(){var c=CFG(),h='';Object.keys(THEMES).forEach(function(k){var T=THEMES[k];h+='<button type="button" role="radio" data-t="'+k+'" aria-checked="'+(c.t===k)+'" class="'+(c.t===k?'on':'')+'"><i style="background:linear-gradient(135deg,'+T.bg[1]+','+T.accent+')"></i>'+T.n+'</button>';});$('themes').innerHTML=h;$('tname').textContent='Estilo: '+(THEMES[c.t]||THEMES.rosa).n;
   [].forEach.call($('fmts').children,function(b){b.classList.toggle('on',b.getAttribute('data-f')===c.f);});
   $('ig').value=c.ig||'';$('zap').value=c.zap||'';$('frase').value=c.frase||'';$('pag').value=c.pag||'';$('obs').value=c.obs||'';$('ad').value=c.ad||'';}
+$('pvbox').addEventListener('touchstart',function(e){$('pvbox')._x=e.touches[0].clientX;},{passive:true});
+$('pvbox').addEventListener('touchend',function(e){var x0=$('pvbox')._x;if(x0==null)return;$('pvbox')._x=null;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)<45)return;var ks=Object.keys(THEMES),i=ks.indexOf(CFG().t);i=(i+(dx<0?1:-1)+ks.length)%ks.length;CFG().t=ks[i];save();buildThemes();pv();},{passive:true});
 $('themes').addEventListener('click',function(e){var b=e.target.closest('[data-t]');if(!b)return;CFG().t=b.getAttribute('data-t');save();buildThemes();pv();});
 $('fmts').addEventListener('click',function(e){var b=e.target.closest('[data-f]');if(!b)return;CFG().f=b.getAttribute('data-f');save();buildThemes();pv();});
 [['ig','ig'],['zap','zap'],['ad','ad'],['frase','frase'],['pag','pag'],['obs','obs']].forEach(function(p){$(p[0]).addEventListener('input',function(){var v=this.value;if(p[0]==='ig'){v=v.replace(/\s/g,'');if(v&&v.charAt(0)!=='@')v='@'+v;}CFG()[p[1]]=v;save();pvSoon();});});
@@ -647,6 +705,10 @@ document.addEventListener('focusin',function(e){var t=e.target;if(t.classList&&t
   if(/Android/i.test(ua)){var b=$('openchrome');b.style.display='inline-block';
     b.onclick=function(){var u=location.host+location.pathname;location.href='intent://'+u+'#Intent;scheme=https;package=com.android.chrome;end';};}
 })();
+(function(){var w=$('welcome');function show(){w.hidden=false;}window.kpcWelcome=show;
+  try{if(/[?&]novo=1/.test(location.search)){show();history.replaceState(null,'',location.pathname);}}catch(e){}
+  $('wclose').addEventListener('click',function(){w.hidden=true;});})();
+$('dl').addEventListener('click',function(){try{if(window.umami&&umami.track)umami.track('bonus');}catch(e){}toast('Baixando a planilha...');});
 buildFixos();fillTop();buildSvcs();buildThemes();update();fontsReady(pv);
 })();
 </script>
