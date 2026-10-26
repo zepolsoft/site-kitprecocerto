@@ -212,6 +212,14 @@ main{max-width:620px;padding:14px 16px 24px}
 .themes button i{display:block;width:38px;height:38px;border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 3px #e9b6cb;transition:transform .2s,box-shadow .2s}
 .themes button.on i{transform:scale(1.18);box-shadow:0 0 0 2px #fff,0 0 0 4px #E91E78}
 .tname{margin:8px 0 10px;text-align:center;font-weight:700;font-size:.92rem;color:#8a1a50}
+.pvframe{max-width:380px;margin:0 auto 10px;background:#fff;border-radius:22px;padding:8px 8px 4px;box-shadow:0 24px 50px rgba(138,26,80,.3),0 0 0 1px rgba(138,26,80,.08)}
+.pvframe .pvbox{max-width:none;margin:0;border-radius:16px;box-shadow:none}
+.ex-bar{margin:2px 0 8px;padding:9px 6px;border-radius:12px;background:linear-gradient(135deg,#fff3c4,#ffe08a);color:#5a1236;font-size:.8rem;line-height:1.3;text-align:center;font-weight:600;border:1px dashed #c9961a;white-space:nowrap}
+.ex-bar[hidden]{display:none}
+.ex-bar b{color:#C2185B}
+.pvcap{margin:0;padding:10px 8px 10px;font-size:.78rem;color:#8a5a70;text-align:center}
+.pvcap[hidden]{display:none}
+.pvcap b{color:#5a1236}
 .pvnote{margin:0 auto 10px;max-width:360px;text-align:center;font-size:.85rem;color:#6b2a4a;background:#FFF0C2;border:1px dashed #c9961a;border-radius:14px;padding:9px 12px;line-height:1.35}
 .pvnote[hidden]{display:none}
 .swipe{margin:-2px 0 14px;text-align:center;font-size:.78rem;color:#8a5a70}
@@ -392,8 +400,11 @@ f.addEventListener('submit',function(ev){
   <p class="lead">Escolha o estilo, veja a prévia e salve a imagem para postar.</p>
   <div class="themes" id="themes" role="radiogroup" aria-label="Estilo da tabela"></div>
   <p class="tname" id="tname">Estilo: Rosa</p>
-  <p class="pvnote" id="pvnote" hidden>Prévia com <b>serviços de exemplo</b>. Cadastre os seus no passo 2 e eles aparecem aqui.</p>
-  <div class="pvbox" id="pvbox"><canvas id="pv" width="540" height="675" aria-label="Prévia da sua tabela de preços"></canvas></div>
+  <div class="pvframe">
+    <p class="ex-bar" id="pvnote" hidden>✨ Exemplo: coloque os <b>seus</b> serviços</p>
+    <div class="pvbox" id="pvbox"><canvas id="pv" width="540" height="675" aria-label="Prévia da sua tabela de preços"></canvas></div>
+    <p class="pvcap" id="pvcap" hidden><b>Serviços de exemplo.</b> Os seus aparecem aqui quando você cadastrar no passo 2.</p>
+  </div>
   <p class="swipe">Toque nas cores ou deslize a tabela para trocar de estilo</p>
 
   <div class="card">
@@ -653,10 +664,12 @@ function draw(l){
 }
 function pv(){
   var l=lista(),el=$('pv');if(!el)return;var c=CFG(),W=540,H=c.f==='s'?960:675;el.width=W;el.height=H;var g=el.getContext('2d');
-  var demo=!l.length;if(demo)l=SAMPLE;$('pvnote').hidden=!demo;
+  var demo=!l.length;$('pvnote').hidden=!demo;$('pvcap').hidden=!demo;
+  if(demo){var bk={st:S.studio,c:JSON.parse(JSON.stringify(c))};l=SAMPLE;S.studio='Studio da Ana';c.ig='@studio.ana';c.zap='(11) 98888-7777';c.ad='Centro, São Paulo - SP';c.frase='Agende seu horário';c.pag='Pix e cartão em até 3x';c.obs='';
+    try{g.drawImage(draw(l),0,0,W,H);}finally{S.studio=bk.st;['ig','zap','ad','frase','pag','obs'].forEach(function(k){c[k]=bk.c[k];});}return;}
   g.drawImage(draw(l),0,0,W,H);
 }
-var SAMPLE=[['Corte feminino',101],['Escova',81],['Manicure em gel',107],['Design de sobrancelha',51],['Extensão de cílios',231],['Massagem relaxante',99],['Limpeza de pele',119],['Depilação (perna)',52]].map(function(x){return {n:x[0],p:x[1]};});
+var SAMPLE=[['Corte feminino',101],['Escova',81],['Manicure em gel',107],['Design de sobrancelha',51],['Extensão de cílios',231],['Massagem relaxante',99],['Limpeza de pele',119],['Depilação (perna)',52],['Hidratação capilar',113],['Maquiagem social',169],['Coloração',249]].map(function(x){return {n:x[0],p:x[1]};});
 var pvT=null;function pvSoon(){clearTimeout(pvT);pvT=setTimeout(pv,120);}
 function fontsReady(cb){var f=function(){cb();};if(document.fonts&&document.fonts.load){Promise.all([document.fonts.load('700 40px Poppins'),document.fonts.load('500 40px Poppins'),document.fonts.load('600 40px Poppins'),document.fonts.load('700 60px "Dancing Script"'),document.fonts.load('600 60px "Playfair Display"'),document.fonts.load('italic 600 60px "Playfair Display"')]).then(f,f);}else f();}
 function buildThemes(){var c=CFG(),h='';Object.keys(THEMES).forEach(function(k){var T=THEMES[k];h+='<button type="button" role="radio" data-t="'+k+'" aria-checked="'+(c.t===k)+'" class="'+(c.t===k?'on':'')+'"><i style="background:linear-gradient(135deg,'+T.bg[1]+','+T.accent+')"></i>'+T.n+'</button>';});$('themes').innerHTML=h;$('tname').textContent='Estilo: '+(THEMES[c.t]||THEMES.rosa).n;

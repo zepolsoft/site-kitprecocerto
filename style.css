@@ -1051,3 +1051,6 @@ a.btn.btn.btn.btn.ig:not(#dl){display:flex!important;align-items:center;justify-
 .deliver-h span{background:none;box-shadow:none;padding:0 2px 6px;max-width:none;border-radius:0;color:#5a1236;white-space:nowrap;font-size:clamp(.82rem,3.75vw,1.45rem);border-bottom:3px solid #E91E78}
 .deliver-h span::before{top:-32px}
 .ex-bar{white-space:nowrap;font-size:clamp(.7rem,3.3vw,.82rem);padding:9px 6px}
+
+/* titulo dos 3 passos com a mesma linha rosa do titulo das tabelas */
+.how h2 span{display:inline-block;max-width:100%;border-bottom:3px solid #E91E78;padding-bottom:7px;margin-bottom:6px;text-wrap:balance}
